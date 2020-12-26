@@ -38,6 +38,13 @@ namespace GTMusicPlayer
             Application.Idle += Idle;
         }
 
+        public new static void Hide()
+        {
+            if (_dialog == null || _dialog.IsDisposed) return;
+
+            Idle(null, EventArgs.Empty);
+        }
+
         private static void Idle(object sender, EventArgs e)
         {
             Application.Idle -= Idle;

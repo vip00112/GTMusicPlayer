@@ -1,4 +1,5 @@
-﻿using MetroFramework.Controls;
+﻿using MetroFramework.Components;
+using MetroFramework.Controls;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -16,6 +17,7 @@ namespace GTMusicPlayer
         private bool _isNow;
         private Font _originFont;
         private Font _nowFont;
+        private MetroToolTip _tooltip;
 
         #region Constructor
         private LyricListItemControl()
@@ -28,6 +30,7 @@ namespace GTMusicPlayer
             Size = new Size(250, 12);
             _originFont = Font;
             _nowFont = new Font(Font.Name, Font.Size, FontStyle.Bold);
+            _tooltip = new MetroToolTip();
         }
 
         public LyricListItemControl(Lyric lyric) : this()
@@ -59,6 +62,13 @@ namespace GTMusicPlayer
         {
             base.OnClick(e);
             OnClicked?.Invoke(this, EventArgs.Empty);
+        }
+
+        protected override void OnMouseHover(EventArgs e)
+        {
+            base.OnMouseHover(e);
+
+            _tooltip.Show(Lyric.Time.ViewFull(), this, 1000);
         }
         #endregion
     }

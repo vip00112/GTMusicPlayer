@@ -112,7 +112,7 @@ namespace GTMusicPlayer
         {
             var of = new OpenFileDialog();
             of.Multiselect = true;
-            of.Filter = "MP3|*.mp3";
+            of.Filter = "Sound File|*.mp3;*.mp4;*.wav;*.flac;*.m4a;*.oga;*.ogg;";
             if (of.ShowDialog() != DialogResult.OK) return;
 
             string[] filePaths = of.FileNames;

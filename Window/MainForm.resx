@@ -133,6 +133,18 @@
   <metadata name="metroContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>184, 19</value>
   </metadata>
+  <data name="menuItem_toolLyric.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="menuItem_toolLyric.Text" xml:space="preserve">
+    <value>Lyric</value>
+  </data>
+  <data name="toolToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="toolToolStripMenuItem.Text" xml:space="preserve">
+    <value>Tool</value>
+  </data>
   <data name="menuItem_album.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 22</value>
   </data>
@@ -158,7 +170,7 @@
     <value>Exit</value>
   </data>
   <data name="metroContextMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 114</value>
+    <value>181, 136</value>
   </data>
   <data name="&gt;&gt;metroContextMenu.Name" xml:space="preserve">
     <value>metroContextMenu</value>
@@ -542,6 +554,18 @@
   </data>
   <data name="&gt;&gt;metroStyleManager.Type" xml:space="preserve">
     <value>MetroFramework.Components.MetroStyleManager, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;toolToolStripMenuItem.Name" xml:space="preserve">
+    <value>toolToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;toolToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;menuItem_toolLyric.Name" xml:space="preserve">
+    <value>menuItem_toolLyric</value>
+  </data>
+  <data name="&gt;&gt;menuItem_toolLyric.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;menuItem_album.Name" xml:space="preserve">
     <value>menuItem_album</value>

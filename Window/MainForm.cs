@@ -122,6 +122,30 @@ namespace GTMusicPlayer
             }
         }
 
+        private void menuItem_toolLyric_Click(object sender, EventArgs e)
+        {
+            LyricEditForm lyricForm = null;
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is LyricEditForm)
+                {
+                    lyricForm = form as LyricEditForm;
+                    break;
+                }
+            }
+            if (lyricForm == null)
+            {
+                lyricForm = new LyricEditForm(metroStyleManager);
+            }
+
+            if (lyricForm.WindowState == FormWindowState.Minimized)
+            {
+                lyricForm.WindowState = FormWindowState.Normal;
+            }
+            lyricForm.Activate();
+            lyricForm.Show();
+        }
+
         private void menuItem_setting_Click(object sender, EventArgs e)
         {
             SettingForm settingForm = null;

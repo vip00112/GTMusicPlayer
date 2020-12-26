@@ -30,6 +30,8 @@ namespace GTMusicPlayer
 
             UseStyleColors = true;
             AutoScroll = true;
+            VerticalScrollbar = true;
+            VerticalScrollbarHighlightOnWheel = true;
             VerticalScrollbarSize = 5;
             HorizontalScrollbar = false;
             HorizontalScrollbarHighlightOnWheel = false;

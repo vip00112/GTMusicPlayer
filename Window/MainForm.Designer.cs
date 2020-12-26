@@ -39,6 +39,8 @@
             this.metroLabel_singer = new MetroFramework.Controls.MetroLabel();
             this.metroCheckBox_mute = new MetroFramework.Controls.MetroCheckBox();
             this.metroContextMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
+            this.toolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItem_toolLyric = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItem_album = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItem_setting = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItem_mode = new System.Windows.Forms.ToolStripMenuItem();
@@ -134,6 +136,7 @@
             this.metroContextMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
             this.metroContextMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.metroContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolToolStripMenuItem,
             this.menuItem_album,
             this.menuItem_setting,
             this.menuItem_mode,
@@ -142,6 +145,19 @@
             resources.ApplyResources(this.metroContextMenu, "metroContextMenu");
             this.metroContextMenu.UseStyleColors = true;
             this.metroContextMenu.Opening += new System.ComponentModel.CancelEventHandler(this.metroContextMenu_Opening);
+            // 
+            // toolToolStripMenuItem
+            // 
+            this.toolToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuItem_toolLyric});
+            this.toolToolStripMenuItem.Name = "toolToolStripMenuItem";
+            resources.ApplyResources(this.toolToolStripMenuItem, "toolToolStripMenuItem");
+            // 
+            // menuItem_toolLyric
+            // 
+            this.menuItem_toolLyric.Name = "menuItem_toolLyric";
+            resources.ApplyResources(this.menuItem_toolLyric, "menuItem_toolLyric");
+            this.menuItem_toolLyric.Click += new System.EventHandler(this.menuItem_toolLyric_Click);
             // 
             // menuItem_album
             // 
@@ -278,6 +294,8 @@
         private System.Windows.Forms.NotifyIcon notifyIcon;
         private System.Windows.Forms.ToolStripMenuItem menuItem_exit;
         private System.Windows.Forms.ToolStripMenuItem menuItem_mode;
+        private System.Windows.Forms.ToolStripMenuItem toolToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem menuItem_toolLyric;
     }
 }
 

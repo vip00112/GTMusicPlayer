@@ -12,16 +12,19 @@ namespace GTMusicPlayer
     {
         public static void Info(IWin32Window owner, string msg)
         {
+            WaitDialog.Hide();
             MetroMessageBox.Show(owner, msg, "GTMusicPlayer", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public static void Error(IWin32Window owner, string msg)
         {
+            WaitDialog.Hide();
             MetroMessageBox.Show(owner, msg, "GTMusicPlayer", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         public static bool Confirm(IWin32Window owner, string msg)
         {
+            WaitDialog.Hide();
             var result = MetroMessageBox.Show(owner, msg, "GTMusicPlayer", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             return result == DialogResult.OK;
         }

@@ -26,10 +26,19 @@ namespace GTMusicPlayer
         }
         #endregion
 
+        #region Properties
+        public List<Lyric> Lyrics
+        {
+            get { return _items.Select(o => o.Lyric).OrderBy(o => o.Time).ToList(); }
+        }
+        #endregion
+
         #region Public Method
         public bool InitUI(List<Lyric> lyrics)
         {
             if (lyrics == null || lyrics.Count == 0) return false;
+
+            WaitDialog.Show(this, StyleManager);
 
             stackPanel.SuspendLayout();
             foreach (var item in _items)
@@ -69,6 +78,12 @@ namespace GTMusicPlayer
             if (_oldItem != null) _oldItem.IsNow = false;
             _oldItem = nowItem;
             _oldItem.IsNow = true;
+        }
+
+        public void ReorderUI()
+        {
+            var lyrics = _items.Select(o => o.Lyric).OrderBy(o => o.Time).ToList();
+            InitUI(lyrics);
         }
         #endregion
 
