@@ -295,6 +295,7 @@ namespace GTMusicPlayer
                     Width = 305;
                     lyricListControl.Visible = false;
                 }
+                metroLabel_title.Focus();
             });
         }
 
