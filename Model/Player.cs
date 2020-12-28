@@ -144,6 +144,20 @@ namespace GTMusicPlayer
                 return;
             }
 
+            // 가사 파일 확인
+            string dirPath = Path.GetDirectoryName(CurrentMusic.FilePath);
+            string fileName = Path.GetFileNameWithoutExtension(CurrentMusic.FilePath) + ".lyric";
+            string lyricFilePath = Path.Combine(dirPath, fileName);
+            if (File.Exists(lyricFilePath))
+            {
+                string content = File.ReadAllText(lyricFilePath);
+                var lyrics = LyricParser.Convert(content);
+                if (lyrics != null && lyrics.Count > 0)
+                {
+                    CurrentMusic.Lyrics.AddRange(lyrics);
+                }
+            }
+
             try
             {
                 _reader = CreateReader(CurrentMusic.FilePath);

@@ -11,7 +11,7 @@ using MetroFramework.Controls;
 
 namespace GTMusicPlayer
 {
-    public partial class AlbumListItemControl : MetroUserControl
+    public partial class AlbumListItemControl : MetroUserControl, IStackItem
     {
         public EventHandler OnEdited;
         public EventHandler OnDeleted;
@@ -36,6 +36,8 @@ namespace GTMusicPlayer
 
         #region Properties
         public Album Album { get; private set; }
+
+        public int FixedY { get; set; }
         #endregion
 
         #region Control Event

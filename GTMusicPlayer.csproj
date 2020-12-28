@@ -85,6 +85,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\IStackItem.cs" />
     <Compile Include="Window\Lyric\LyricEditDialog.cs">
       <SubType>Form</SubType>
     </Compile>

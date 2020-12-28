@@ -44,6 +44,9 @@ namespace GTMusicPlayer
         #region Public Method
         public bool ValidateExtension(string extension)
         {
+            if (string.IsNullOrWhiteSpace(extension)) return false;
+
+            extension = extension.ToLower();
             return GaneralExtensions.Contains(extension) || VorbisExtensions.Contains(extension);
         }
 

@@ -25,10 +25,10 @@ namespace GTMusicPlayer
         public MusicListControl()
         {
             InitializeComponent();
-
             DoubleBuffered = true;
 
             _items = new List<MusicListItemControl>();
+            stackPanel.ScrollMoveControlCount = 2;
             stackPanel.OnMovedItem += OnMovedItem;
         }
         #endregion
@@ -150,6 +150,8 @@ namespace GTMusicPlayer
                         Singers = file.Tag.Performers.ToList(),
                         DurationTime = file.Properties.Duration,
                     };
+                    if (string.IsNullOrWhiteSpace(music.Album)) music.Album = "Unknown";
+                    if (string.IsNullOrWhiteSpace(music.Title)) music.Title = "Unknown";
                 }
                 if (music == null) return;
 
@@ -209,6 +211,7 @@ namespace GTMusicPlayer
             if (item == null) return;
 
             item.SetPlay(true);
+            stackPanel.ScrollMove(item);
         }
 
         public void SetErrorUI(Music music, string message)

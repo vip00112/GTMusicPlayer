@@ -51,6 +51,8 @@ namespace GTMusicPlayer
         public int EmptySpaceLeft { get; set; }
 
         public int EmptySpaceBetween { get; set; }
+
+        public int ScrollMoveControlCount { get; set; }
         #endregion
 
         #region Protected Method
@@ -58,6 +60,7 @@ namespace GTMusicPlayer
         {
             base.OnControlAdded(e);
             if (!_isLoaded) return;
+            if (e.Control is IStackItem == false) return;
 
             _controls.Add(e.Control);
             MoveControl(e.Control);
@@ -75,6 +78,7 @@ namespace GTMusicPlayer
         {
             base.OnControlRemoved(e);
             if (!_isLoaded) return;
+            if (e.Control is IStackItem == false) return;
 
             _controls.Remove(e.Control);
             MoveControls();
@@ -186,6 +190,7 @@ namespace GTMusicPlayer
             }
 
             control.Location = new System.Drawing.Point(x, y);
+            (control as IStackItem).FixedY = y - AutoScrollPosition.Y;
             control.Invalidate();
         }
         
@@ -201,6 +206,49 @@ namespace GTMusicPlayer
                 if (y >= startY && y <= endY) return control as MusicListItemControl;
             }
             return null;
+        }
+
+        private int GetCountInScreen()
+        {
+            var item = _controls.FirstOrDefault();
+            if (item == null) return 0;
+
+            int panelHeight = Height - EmptySpaceTop;
+            int countInScreen = 0;
+            int value = 0;
+            while (value < panelHeight)
+            {
+                if (countInScreen > 0)
+                {
+                    value += EmptySpaceBetween;
+                }
+                value += item.Height;
+                countInScreen++;
+            }
+            return countInScreen - 1;
+        }
+        #endregion
+
+        #region Public Method
+        public void ScrollMove(Control item)
+        {
+            if (ScrollMoveControlCount == 0) return;
+            if (!_controls.Contains(item)) return;
+
+            Control targetControl = null;
+            int idx = _controls.IndexOf(item) - ScrollMoveControlCount;
+            if (idx < 0)
+            {
+                targetControl = _controls[0];
+            }
+            else
+            {
+                targetControl = _controls[idx];
+            }
+            if (!_controls.Contains(targetControl)) return;
+
+            int y = (targetControl as IStackItem).FixedY;
+            AutoScrollPosition = new Point(AutoScrollPosition.X, y);
         }
         #endregion
     }

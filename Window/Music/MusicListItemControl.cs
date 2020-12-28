@@ -13,7 +13,7 @@ using MetroFramework.Interfaces;
 
 namespace GTMusicPlayer
 {
-    public partial class MusicListItemControl : MetroUserControl
+    public partial class MusicListItemControl : MetroUserControl, IStackItem
     {
         public EventHandler OnDeleted;
         public EventHandler OnDoubleClicked;
@@ -40,6 +40,8 @@ namespace GTMusicPlayer
         public Music Music { get; set; }
 
         public string ErrorMessage { get; private set; }
+
+        public int FixedY { get; set; }
         #endregion
 
         #region Control Event

@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace GTMusicPlayer
 {
-    public class LyricListItemControl : Label
+    public class LyricListItemControl : Label, IStackItem
     {
         public EventHandler OnClicked;
 
@@ -55,6 +55,8 @@ namespace GTMusicPlayer
                 Invalidate();
             }
         }
+
+        public int FixedY { get; set; }
         #endregion
 
         #region Protected Method

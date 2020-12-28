@@ -93,6 +93,7 @@ namespace GTMusicPlayer
             if (string.IsNullOrWhiteSpace(content)) return;
 
             var sf = new SaveFileDialog();
+            sf.FileName = _selectedItem.Header.Title;
             sf.Filter = "Lyric File|*.lyric;";
             if (sf.ShowDialog() != DialogResult.OK) return;
 

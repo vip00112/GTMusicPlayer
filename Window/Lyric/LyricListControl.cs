@@ -22,7 +22,10 @@ namespace GTMusicPlayer
         public LyricListControl()
         {
             InitializeComponent();
+            DoubleBuffered = true;
+
             _items = new List<LyricListItemControl>();
+            stackPanel.ScrollMoveControlCount = 4;
         }
         #endregion
 
@@ -78,6 +81,7 @@ namespace GTMusicPlayer
             if (_oldItem != null) _oldItem.IsNow = false;
             _oldItem = nowItem;
             _oldItem.IsNow = true;
+            stackPanel.ScrollMove(_oldItem);
         }
 
         public void ReorderUI()
