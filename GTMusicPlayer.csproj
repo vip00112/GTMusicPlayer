@@ -85,6 +85,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Window\MiniForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Window\MiniForm.Designer.cs">
+      <DependentUpon>MiniForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\IStackItem.cs" />
     <Compile Include="Window\Lyric\LyricEditDialog.cs">
       <SubType>Form</SubType>
@@ -230,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Window\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Window\MiniForm.resx">
+      <DependentUpon>MiniForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Window\Music\MusicListControl.ko.resx">
       <DependentUpon>MusicListControl.cs</DependentUpon>

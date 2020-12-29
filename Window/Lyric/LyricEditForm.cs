@@ -44,46 +44,8 @@ namespace GTMusicPlayer
         private void metroButton_search_Click(object sender, EventArgs e)
         {
             string title = metroTextBox_title.Text;
-            if (string.IsNullOrWhiteSpace(title))
-            {
-                MessageBoxUtil.Error(this, "Please input title.");
-                return;
-            }
-
             string singer = metroTextBox_singer.Text;
-            if (string.IsNullOrWhiteSpace(singer))
-            {
-                MessageBoxUtil.Error(this, "Please input singer.");
-                return;
-            }
-
-            WaitDialog.Show(this, StyleManager);
-            var headers = LyricParser.GetALSongLyricHeaders(title, singer, 10);
-            if (headers == null || headers.Count == 0)
-            {
-                MessageBoxUtil.Error(this, "Not found search results.");
-                return;
-            }
-
-            stackPanel_header.SuspendLayout();
-            foreach (var item in _items)
-            {
-                item.OnClicked -= OnClickedHeader;
-                stackPanel_header.Controls.Remove(item);
-            }
-            _items.Clear();
-
-            foreach (var header in headers)
-            {
-                var item = new ALSongLyricHeaderControl(header);
-                item.StyleManager = StyleManager;
-                item.SetStyleManager(StyleManager);
-                item.OnClicked += OnClickedHeader;
-
-                _items.Add(item);
-                stackPanel_header.Controls.Add(item);
-            }
-            stackPanel_header.ResumeLayout();
+            SearchLyrics(title, singer);
         }
 
         private void metroButton_save_Click(object sender, EventArgs e)
@@ -108,10 +70,8 @@ namespace GTMusicPlayer
 
             string content = File.ReadAllText(of.FileName);
             var lyrics = LyricParser.Convert(content);
-            if (lyrics == null) return;
 
-            if (!lyricListControl.InitUI(lyrics)) return;
-            if (_selectedItem != null) _selectedItem.IsSelected = false;
+            LoadLyrics(lyrics);
         }
         #endregion
 
@@ -149,6 +109,65 @@ namespace GTMusicPlayer
                 e.Lyric.Text = dialog.Lyric.Text;
                 lyricListControl.ReorderUI();
             }
+        }
+        #endregion
+
+        #region Public Method
+        public void SearchLyrics(string title, string singer)
+        {
+            metroTextBox_title.Text = title;
+            metroTextBox_singer.Text = singer;
+
+            if (string.IsNullOrWhiteSpace(title))
+            {
+                MessageBoxUtil.Error(this, "Please input title.");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(singer))
+            {
+                MessageBoxUtil.Error(this, "Please input singer.");
+                return;
+            }
+
+            WaitDialog.Show(this, StyleManager);
+            var headers = LyricParser.GetALSongLyricHeaders(title, singer, 10);
+            if (headers == null || headers.Count == 0)
+            {
+                MessageBoxUtil.Error(this, "Not found search results.");
+                return;
+            }
+
+            stackPanel_header.SuspendLayout();
+            foreach (var item in _items)
+            {
+                item.OnClicked -= OnClickedHeader;
+                stackPanel_header.Controls.Remove(item);
+            }
+            _items.Clear();
+
+            foreach (var header in headers)
+            {
+                var item = new ALSongLyricHeaderControl(header);
+                item.StyleManager = StyleManager;
+                item.SetStyleManager(StyleManager);
+                item.OnClicked += OnClickedHeader;
+
+                _items.Add(item);
+                stackPanel_header.Controls.Add(item);
+            }
+            stackPanel_header.ResumeLayout();
+        }
+
+        public bool LoadLyrics(List<Lyric> lyrics)
+        {
+            if (lyrics == null) return false;
+            if (lyricListControl.InitUI(lyrics))
+            {
+                if (_selectedItem != null) _selectedItem.IsSelected = false;
+                return true;
+            }
+            return false;
         }
         #endregion
     }

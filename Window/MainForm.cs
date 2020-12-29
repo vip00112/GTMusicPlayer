@@ -142,6 +142,14 @@ namespace GTMusicPlayer
             {
                 lyricForm.WindowState = FormWindowState.Normal;
             }
+
+            if (_player.CurrentMusic != null)
+            {
+                if (!lyricForm.LoadLyrics(_player.CurrentMusic.Lyrics))
+                {
+                    lyricForm.SearchLyrics(_player.CurrentMusic.Title, _player.CurrentMusic.ViewSinger);
+                }
+            }
             lyricForm.Activate();
             lyricForm.Show();
         }
@@ -196,7 +204,44 @@ namespace GTMusicPlayer
 
         private void menuItem_mode_Click(object sender, EventArgs e)
         {
-            // TODO : 미니모드, 일반모드 전환
+            MiniForm miniForm = null;
+            foreach (Form form in Application.OpenForms)
+            {
+                if (form is MiniForm)
+                {
+                    miniForm = form as MiniForm;
+                    break;
+                }
+            }
+
+            if (Visible)
+            {
+                Hide();
+                ShowInTaskbar = false;
+
+                if (miniForm == null)
+                {
+                    miniForm = new MiniForm(metroStyleManager);
+                }
+                if (miniForm.WindowState == FormWindowState.Minimized)
+                {
+                    miniForm.WindowState = FormWindowState.Normal;
+                }
+                miniForm.TopMost = true;
+                miniForm.Activate();
+                miniForm.Show();
+            }
+            else
+            {
+                if (miniForm != null)
+                {
+                    miniForm.Hide();
+                    miniForm.TopMost = false;
+                }
+                Activate();
+                Show();
+                ShowInTaskbar = true;
+            }
         }
 
         private void menuItem_exit_Click(object sender, EventArgs e)

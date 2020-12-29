@@ -134,7 +134,7 @@
     <value>184, 19</value>
   </metadata>
   <data name="menuItem_toolLyric.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>99, 22</value>
   </data>
   <data name="menuItem_toolLyric.Text" xml:space="preserve">
     <value>Lyric</value>
@@ -163,6 +163,10 @@
   <data name="menuItem_mode.Text" xml:space="preserve">
     <value>Mode</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="menuItem_mode.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="menuItem_exit.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 22</value>
   </data>
@@ -184,7 +188,6 @@
   <data name="lyricListControl.Size" type="System.Drawing.Size, System.Drawing">
     <value>265, 365</value>
   </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="lyricListControl.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
@@ -225,14 +228,14 @@
     <value>False</value>
   </data>
   <data name="metroLabel_next.Location" type="System.Drawing.Point, System.Drawing">
-    <value>255, 102</value>
+    <value>262, 102</value>
   </data>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="metroLabel_next.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="metroLabel_next.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 15</value>
+    <value>20, 19</value>
   </data>
   <data name="metroLabel_next.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -259,13 +262,13 @@
     <value>False</value>
   </data>
   <data name="metroLabel_prev.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 102</value>
+    <value>20, 102</value>
   </data>
   <data name="metroLabel_prev.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="metroLabel_prev.Size" type="System.Drawing.Size, System.Drawing">
-    <value>22, 19</value>
+    <value>20, 19</value>
   </data>
   <data name="metroLabel_prev.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -499,10 +502,10 @@
     <value>False</value>
   </data>
   <data name="metroTrackBar_duration.Location" type="System.Drawing.Point, System.Drawing">
-    <value>48, 102</value>
+    <value>43, 102</value>
   </data>
   <data name="metroTrackBar_duration.Size" type="System.Drawing.Size, System.Drawing">
-    <value>204, 19</value>
+    <value>216, 19</value>
   </data>
   <data name="metroTrackBar_duration.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>

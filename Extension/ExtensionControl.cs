@@ -20,6 +20,7 @@ namespace GTMusicPlayer
             {
                 ((IMetroControl) control).Theme = styleManager.Theme;
                 ((IMetroControl) control).Style = styleManager.Style;
+                ((IMetroControl) control).StyleManager = styleManager;
             }
 
             // 현재 컨트롤의 자식 컨트롤 적용

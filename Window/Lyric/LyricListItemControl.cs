@@ -1,5 +1,8 @@
-﻿using MetroFramework.Components;
+﻿using MetroFramework;
+using MetroFramework.Components;
 using MetroFramework.Controls;
+using MetroFramework.Drawing;
+using MetroFramework.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -10,7 +13,7 @@ using System.Windows.Forms;
 
 namespace GTMusicPlayer
 {
-    public class LyricListItemControl : Label, IStackItem
+    public class LyricListItemControl : Label, IStackItem, IMetroControl
     {
         public EventHandler OnClicked;
 
@@ -52,11 +55,17 @@ namespace GTMusicPlayer
 
                 _isNow = value;
                 Font = _isNow ? _nowFont : _originFont;
+                if (Theme == MetroThemeStyle.Light)
+                {
+                    ForeColor = _isNow ? Color.Black : Color.Gray;
+                }
+                else
+                {
+                    ForeColor = _isNow ? Color.LightGray : Color.Gray;
+                }
                 Invalidate();
             }
         }
-
-        public int FixedY { get; set; }
         #endregion
 
         #region Protected Method
@@ -72,6 +81,21 @@ namespace GTMusicPlayer
 
             _tooltip.Show(Lyric.Time.ViewFull(), this, 1000);
         }
+        #endregion
+
+        #region IMetroControl Event & Properties
+        public event EventHandler<MetroPaintEventArgs> CustomPaintBackground;
+        public event EventHandler<MetroPaintEventArgs> CustomPaint;
+        public event EventHandler<MetroPaintEventArgs> CustomPaintForeground;
+
+        public int FixedY { get; set; }
+        public MetroColorStyle Style { get; set; }
+        public MetroThemeStyle Theme { get; set; }
+        public MetroStyleManager StyleManager { get; set; }
+        public bool UseCustomBackColor { get; set; }
+        public bool UseCustomForeColor { get; set; }
+        public bool UseStyleColors { get; set; }
+        public bool UseSelectable { get; set; }
         #endregion
     }
 }

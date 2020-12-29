@@ -11,7 +11,7 @@ using MetroFramework.Controls;
 
 namespace GTMusicPlayer
 {
-    public partial class ALSongLyricHeaderControl : MetroUserControl
+    public partial class ALSongLyricHeaderControl : MetroUserControl, IStackItem
     {
         public EventHandler OnClicked;
 
@@ -47,6 +47,8 @@ namespace GTMusicPlayer
                 metroTile_select.Visible = _isSelected;
             }
         }
+
+        public int FixedY { get; set; }
         #endregion
 
         #region Control Event
