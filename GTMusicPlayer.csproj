@@ -85,6 +85,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Util\FormUtil.cs" />
     <Compile Include="Window\MiniForm.cs">
       <SubType>Form</SubType>
     </Compile>

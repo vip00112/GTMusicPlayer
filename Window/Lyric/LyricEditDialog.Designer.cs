@@ -204,6 +204,7 @@
             this.Controls.Add(this.metroTextBox_text);
             this.DisplayHeader = false;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "LyricEditDialog";
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.DropShadow;

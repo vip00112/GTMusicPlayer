@@ -154,6 +154,7 @@ namespace GTMusicPlayer
                 var lyrics = LyricParser.Convert(content);
                 if (lyrics != null && lyrics.Count > 0)
                 {
+                    CurrentMusic.Lyrics.Clear();
                     CurrentMusic.Lyrics.AddRange(lyrics);
                 }
             }

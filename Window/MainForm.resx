@@ -140,25 +140,25 @@
     <value>Lyric</value>
   </data>
   <data name="toolToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>112, 22</value>
   </data>
   <data name="toolToolStripMenuItem.Text" xml:space="preserve">
     <value>Tool</value>
   </data>
   <data name="menuItem_album.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>112, 22</value>
   </data>
   <data name="menuItem_album.Text" xml:space="preserve">
     <value>Album</value>
   </data>
   <data name="menuItem_setting.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>112, 22</value>
   </data>
   <data name="menuItem_setting.Text" xml:space="preserve">
     <value>Setting</value>
   </data>
   <data name="menuItem_mode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>112, 22</value>
   </data>
   <data name="menuItem_mode.Text" xml:space="preserve">
     <value>Mode</value>
@@ -168,13 +168,13 @@
     <value>False</value>
   </data>
   <data name="menuItem_exit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>112, 22</value>
   </data>
   <data name="menuItem_exit.Text" xml:space="preserve">
     <value>Exit</value>
   </data>
   <data name="metroContextMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 136</value>
+    <value>113, 114</value>
   </data>
   <data name="&gt;&gt;metroContextMenu.Name" xml:space="preserve">
     <value>metroContextMenu</value>

@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,6 +31,16 @@ namespace GTMusicPlayer
         public List<string> Singers { get; set; }
 
         public TimeSpan DurationTime { get; set; }
+
+        [JsonIgnore]
+        public string FileName
+        {
+            get
+            {
+                if (string.IsNullOrWhiteSpace(FilePath)) return "Unknown";
+                return Path.GetFileNameWithoutExtension(FilePath);
+            }
+        }
 
         [JsonIgnore]
         public List<Lyric> Lyrics { get; set; }

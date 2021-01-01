@@ -17,9 +17,10 @@ namespace GTMusicPlayer
         private bool _isLoaded;
         private List<Control> _controls;
 
-        private Point _originPoint;
+        private MusicListItemControl _movingControl;
+        private int _startIdx;
+        private Point _movePoint;
         private Point _mouseDownPoint;
-        private bool _isMouseDowned;
 
         #region Constructor
         public StackPanel()
@@ -99,8 +100,9 @@ namespace GTMusicPlayer
             var item = sender as MusicListItemControl;
             if (item == null) return;
 
-            _isMouseDowned = true;
-            _originPoint = item.Location;
+            _movingControl = item;
+            _startIdx = _controls.IndexOf(item);
+            _movePoint = item.Location;
             _mouseDownPoint = e.Location;
             item.BorderStyle = BorderStyle.FixedSingle;
             item.BringToFront();
@@ -108,7 +110,7 @@ namespace GTMusicPlayer
 
         private void OnMouseMoved(object sender, MouseEventArgs e)
         {
-            if (!_isMouseDowned) return;
+            if (_movingControl == null) return;
 
             var item = sender as MusicListItemControl;
             if (item == null) return;
@@ -135,18 +137,20 @@ namespace GTMusicPlayer
                     _controls.Insert(newIdx, item);
                     _controls.Insert(oldIdx, target);
                 }
-                _originPoint = target.Location;
+                _movePoint = target.Location;
                 MoveControls();
             }
         }
 
         private void OnMouseUped(object sender, MouseEventArgs e)
         {
+            if (_movingControl == null) return;
+
             var item = sender as MusicListItemControl;
             if (item == null) return;
 
-            _isMouseDowned = false;
-            item.Location = _originPoint;
+            _movingControl = null;
+            item.Location = _movePoint;
             item.BorderStyle = BorderStyle.None;
             item.Invalidate();
 

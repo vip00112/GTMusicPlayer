@@ -130,7 +130,7 @@ namespace GTMusicPlayer
                 return;
             }
 
-            WaitDialog.Show(this, StyleManager);
+            //WaitDialog.Show(this, StyleManager);
             var headers = LyricParser.GetALSongLyricHeaders(title, singer, 10);
             if (headers == null || headers.Count == 0)
             {

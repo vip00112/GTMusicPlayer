@@ -80,8 +80,6 @@ namespace GTMusicPlayer
 
         private void metroLabel_move_MouseUp(object sender, MouseEventArgs e)
         {
-            if (e.Button != MouseButtons.Left) return;
-
             OnMouseUped?.Invoke(this, e);
         }
         #endregion

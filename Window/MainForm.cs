@@ -80,6 +80,11 @@ namespace GTMusicPlayer
             StyleManager = metroStyleManager;
         }
 
+        private void MainForm_Activated(object sender, EventArgs e)
+        {
+            metroLabel_title.Focus();
+        }
+
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
         {
             Setting.Instance.Save();
@@ -124,122 +129,55 @@ namespace GTMusicPlayer
 
         private void menuItem_toolLyric_Click(object sender, EventArgs e)
         {
-            LyricEditForm lyricForm = null;
-            foreach (Form form in Application.OpenForms)
-            {
-                if (form is LyricEditForm)
-                {
-                    lyricForm = form as LyricEditForm;
-                    break;
-                }
-            }
-            if (lyricForm == null)
-            {
-                lyricForm = new LyricEditForm(metroStyleManager);
-            }
-
-            if (lyricForm.WindowState == FormWindowState.Minimized)
-            {
-                lyricForm.WindowState = FormWindowState.Normal;
-            }
+            var form = FormUtil.FindForm<LyricEditForm>();
+            if (form == null) form = new LyricEditForm(metroStyleManager);
 
             if (_player.CurrentMusic != null)
             {
-                if (!lyricForm.LoadLyrics(_player.CurrentMusic.Lyrics))
+                if (!form.LoadLyrics(_player.CurrentMusic.Lyrics))
                 {
-                    lyricForm.SearchLyrics(_player.CurrentMusic.Title, _player.CurrentMusic.ViewSinger);
+                    form.SearchLyrics(_player.CurrentMusic.Title, _player.CurrentMusic.ViewSinger);
                 }
             }
-            lyricForm.Activate();
-            lyricForm.Show();
+            FormUtil.ActiveForm(form);
         }
 
         private void menuItem_setting_Click(object sender, EventArgs e)
         {
-            SettingForm settingForm = null;
-            foreach (Form form in Application.OpenForms)
-            {
-                if (form is SettingForm)
-                {
-                    settingForm = form as SettingForm;
-                    break;
-                }
-            }
-            if (settingForm == null)
-            {
-                settingForm = new SettingForm(metroStyleManager);
-            }
+            var form = FormUtil.FindForm<SettingForm>();
+            if (form == null) form = new SettingForm(metroStyleManager);
 
-            if (settingForm.WindowState == FormWindowState.Minimized)
-            {
-                settingForm.WindowState = FormWindowState.Normal;
-            }
-            settingForm.Activate();
-            settingForm.Show();
+            FormUtil.ActiveForm(form);
         }
 
         private void menuItem_album_Click(object sender, EventArgs e)
         {
-            AlbumForm albumForm = null;
-            foreach (Form form in Application.OpenForms)
-            {
-                if (form is AlbumForm)
-                {
-                    albumForm = form as AlbumForm;
-                    break;
-                }
-            }
-            if (albumForm == null)
-            {
-                albumForm = new AlbumForm(metroStyleManager);
-            }
+            var form = FormUtil.FindForm<AlbumForm>();
+            if (form == null) form = new AlbumForm(metroStyleManager);
 
-            if (albumForm.WindowState == FormWindowState.Minimized)
-            {
-                albumForm.WindowState = FormWindowState.Normal;
-            }
-            albumForm.Activate();
-            albumForm.Show();
+            FormUtil.ActiveForm(form);
         }
 
         private void menuItem_mode_Click(object sender, EventArgs e)
         {
-            MiniForm miniForm = null;
-            foreach (Form form in Application.OpenForms)
-            {
-                if (form is MiniForm)
-                {
-                    miniForm = form as MiniForm;
-                    break;
-                }
-            }
-
+            var form = FormUtil.FindForm<MiniForm>();
             if (Visible)
             {
                 Hide();
                 ShowInTaskbar = false;
 
-                if (miniForm == null)
-                {
-                    miniForm = new MiniForm(metroStyleManager);
-                }
-                if (miniForm.WindowState == FormWindowState.Minimized)
-                {
-                    miniForm.WindowState = FormWindowState.Normal;
-                }
-                miniForm.TopMost = true;
-                miniForm.Activate();
-                miniForm.Show();
+                if (form == null) form = new MiniForm(metroStyleManager);
+                FormUtil.ActiveForm(form);
+                form.TopMost = true;
             }
             else
             {
-                if (miniForm != null)
+                if (form != null)
                 {
-                    miniForm.Hide();
-                    miniForm.TopMost = false;
+                    form.Hide();
+                    form.TopMost = false;
                 }
-                Activate();
-                Show();
+                FormUtil.ActiveForm(this);
                 ShowInTaskbar = true;
             }
         }
@@ -251,18 +189,14 @@ namespace GTMusicPlayer
 
         private void notifyIcon_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            foreach (Form form in Application.OpenForms)
+            if (Visible)
             {
-                if (form is MainForm)
-                {
-                    var mainForm = form as MainForm;
-                    if (mainForm.WindowState == FormWindowState.Minimized)
-                    {
-                        mainForm.WindowState = FormWindowState.Normal;
-                    }
-                    mainForm.Activate();
-                    mainForm.Show();
-                }
+                FormUtil.ActiveForm(this);
+            }
+            else
+            {
+                var form = FormUtil.FindForm<MiniForm>();
+                if (form != null) FormUtil.ActiveForm(form);
             }
         }
 
@@ -340,7 +274,11 @@ namespace GTMusicPlayer
                     Width = 305;
                     lyricListControl.Visible = false;
                 }
-                metroLabel_title.Focus();
+                
+                if (!FormUtil.HasFocusedForm(FormUtil.FindForm<LyricEditForm>()))
+                {
+                    metroLabel_title.Focus();
+                }
             });
         }
 
