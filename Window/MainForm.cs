@@ -51,6 +51,7 @@ namespace GTMusicPlayer
             lyricListControl.Visible = false;
             lyricListControl.OnClickedLyric += OnClickedLyric;
 
+            Playlist.Instance.OnChangedViewType += OnChangedViewType;
             Playlist.Instance.OnChangedAlbum += OnChangedAlbum;
 
             if (Setting.IsLoaded)
@@ -74,6 +75,7 @@ namespace GTMusicPlayer
                 Setting.Instance.UIStyle = (int) metroStyleManager.Style;
                 Setting.Instance.RepeatType = (int) RepeatType.All;
                 Setting.Instance.OrderType = (int) OrderType.Orderd;
+                Setting.Instance.OrderType = (int) ViewType.TitleTag;
                 Setting.Instance.Volume = metroTrackBar_volume.Value;
                 Setting.Instance.Save();
             }
@@ -134,10 +136,7 @@ namespace GTMusicPlayer
 
             if (_player.CurrentMusic != null)
             {
-                if (!form.LoadLyrics(_player.CurrentMusic.Lyrics))
-                {
-                    form.SearchLyrics(_player.CurrentMusic.Title, _player.CurrentMusic.ViewSinger);
-                }
+                if (!form.InitMusic(_player.CurrentMusic)) form.SearchLyrics();
             }
             FormUtil.ActiveForm(form);
         }
@@ -212,7 +211,7 @@ namespace GTMusicPlayer
 
         private void metroLabel_next_Click(object sender, EventArgs e)
         {
-            Next();
+            _player.Next();
         }
 
         private void metroCheckBox_mute_CheckedChanged(object sender, EventArgs e)
@@ -357,7 +356,7 @@ namespace GTMusicPlayer
         {
             Playlist.Instance.RemoveMusic(e.Music);
 
-            if (_player.CurrentMusic == e.Music) Next();
+            if (_player.CurrentMusic == e.Music) _player.Next();
         }
 
         private void OnSelectedMusic(object sender, MusicEventArgs e)
@@ -367,7 +366,7 @@ namespace GTMusicPlayer
             Playlist.Instance.ChangeMusic(e.Music);
             if (_player.IsPlaying)
             {
-                Next();
+                _player.Next();
                 _player.SetCurrentMusic(null);
             }
             else
@@ -381,9 +380,14 @@ namespace GTMusicPlayer
             Playlist.Instance.RefreshOrder(e.Musics);
         }
 
+        private void OnChangedViewType(object sender, EventArgs e)
+        {
+            musicListControl.ChangeViewType();
+        }
+
         private void OnChangedAlbum(object sender, AlbumEventArgs e)
         {
-            Next();
+            _player.Next();
             _player.SetCurrentMusic(null);
             InitUI();
 
@@ -412,6 +416,7 @@ namespace GTMusicPlayer
             if (keyData == Keys.Space)
             {
                 PlayOrPause();
+                return true;
             }
             #endregion
 
@@ -444,12 +449,14 @@ namespace GTMusicPlayer
                 if (!metroLabel_prev.Enabled) return true;
 
                 Prev();
+                return true;
             }
             if (keyData == Keys.PageDown)
             {
                 if (!metroLabel_next.Enabled) return true;
 
-                Next();
+                _player.Next();
+                return true;
             }
             if (keyData == Keys.Left)
             {
@@ -498,20 +505,16 @@ namespace GTMusicPlayer
 
         private void PlayOrPause()
         {
+            if (_player.CurrentMusic == null) return;
             if (!metroButton_play.Enabled) return;
 
             if (metroButton_play.Text == "▶")
             {
-                if (_player.CurrentMusic != null)
-                {
-                    _player.Resume();
-                    metroButton_play.Text = "■";
-                }
+                if (_player.Resume()) metroButton_play.Text = "■";
             }
             else
             {
-                _player.Pause();
-                metroButton_play.Text = "▶";
+                if (_player.Pause()) metroButton_play.Text = "▶";
             }
         }
 
@@ -521,19 +524,12 @@ namespace GTMusicPlayer
             if (current <= 3)
             {
                 _isPrev = true;
-                Next();
+                _player.Next();
             }
             else
             {
                 _player.Skip(-current);
             }
-        }
-
-        private void Next()
-        {
-            int total = (int) _player.TotalTime.TotalSeconds;
-            int current = (int) _player.CurrentTime.TotalSeconds;
-            _player.Skip(total - current);
         }
         #endregion
     }

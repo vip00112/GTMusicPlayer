@@ -44,6 +44,7 @@ namespace GTMusicPlayer
             WaitDialog.Show(this, StyleManager);
 
             stackPanel.SuspendLayout();
+            stackPanel.IsNotMove = true;
             foreach (var item in _items)
             {
                 item.OnClicked -= OnClicked;
@@ -62,6 +63,8 @@ namespace GTMusicPlayer
                 stackPanel.Controls.Add(item);
             }
             _items.ForEach(o => o.Font = new Font(o.Font.Name, o.Font.Size, FontStyle.Regular));
+            stackPanel.IsNotMove = false;
+            stackPanel.MoveControls();
             stackPanel.ResumeLayout();
             return true;
         }

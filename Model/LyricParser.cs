@@ -53,6 +53,7 @@ namespace GTMusicPlayer
                     if (container.HeaderContainer.Headers.Count == 0) return null;
 
                     var headers = container.HeaderContainer.Headers;
+                    headers = headers.OrderByDescending(o => o.LyricID).ToList();
                     if (max > 0)
                     {
                         if (max > headers.Count) max = headers.Count;

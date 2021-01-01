@@ -14,6 +14,7 @@ namespace GTMusicPlayer
         public static readonly string[] GaneralExtensions = new string[] { ".mp3", ".mp4", ".wav", ".flac", ".m4a" };
         public static readonly string[] VorbisExtensions = new string[] { ".oga", ".ogg" };
 
+        public EventHandler OnChangedViewType;
         public EventHandler<AlbumEventArgs> OnChangedAlbum;
 
         private List<Music> _playedMusics;
@@ -177,6 +178,11 @@ namespace GTMusicPlayer
                 }
                 _waitMusics.Shuffle();
             }
+        }
+
+        public void RefreshName()
+        {
+            OnChangedViewType?.Invoke(this, EventArgs.Empty);
         }
 
         public void ChangeAlbum(Album album)

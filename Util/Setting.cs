@@ -16,6 +16,7 @@ namespace GTMusicPlayer
         private int _uistyle;
         private int _repeatType;
         private int _orderType;
+        private int _viewType;
         private int _volume;
 
         static Setting()
@@ -89,6 +90,22 @@ namespace GTMusicPlayer
                 {
                     Save();
                     Playlist.Instance.RefreshOrder(null);
+                }
+            }
+        }
+
+        public int ViewType
+        {
+            get { return _viewType; }
+            set
+            {
+                if (_viewType == value) return;
+
+                _viewType = value;
+                if (IsLoaded)
+                {
+                    Save();
+                    Playlist.Instance.RefreshName();
                 }
             }
         }

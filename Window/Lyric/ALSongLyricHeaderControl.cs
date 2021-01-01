@@ -27,7 +27,7 @@ namespace GTMusicPlayer
         public ALSongLyricHeaderControl(ALSongLyricHeader header) : this()
         {
             Header = header;
-            metroLabel_id.Text = header.LyricID;
+            metroLabel_id.Text = header.LyricID.ToString();
             metroLabel_title.Text = header.Title;
             metroLabel_singer.Text = header.Artist;
         }

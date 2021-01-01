@@ -18,6 +18,7 @@ namespace GTMusicPlayer
     {
         private List<ALSongLyricHeaderControl> _items;
         private ALSongLyricHeaderControl _selectedItem;
+        private string _musicFilePath;
 
         #region Constructor
         private LyricEditForm()
@@ -43,9 +44,7 @@ namespace GTMusicPlayer
 
         private void metroButton_search_Click(object sender, EventArgs e)
         {
-            string title = metroTextBox_title.Text;
-            string singer = metroTextBox_singer.Text;
-            SearchLyrics(title, singer);
+            SearchLyrics();
         }
 
         private void metroButton_save_Click(object sender, EventArgs e)
@@ -55,8 +54,12 @@ namespace GTMusicPlayer
             if (string.IsNullOrWhiteSpace(content)) return;
 
             var sf = new SaveFileDialog();
-            sf.FileName = _selectedItem.Header.Title;
             sf.Filter = "Lyric File|*.lyric;";
+            if (!string.IsNullOrWhiteSpace(_musicFilePath))
+            {
+                sf.InitialDirectory = Path.GetDirectoryName(_musicFilePath);
+                sf.FileName = Path.GetFileNameWithoutExtension(_musicFilePath);
+            }
             if (sf.ShowDialog() != DialogResult.OK) return;
 
             File.WriteAllText(sf.FileName, content);
@@ -112,25 +115,44 @@ namespace GTMusicPlayer
         }
         #endregion
 
-        #region Public Method
-        public void SearchLyrics(string title, string singer)
+        #region Private Method
+        private bool LoadLyrics(List<Lyric> lyrics)
         {
-            metroTextBox_title.Text = title;
-            metroTextBox_singer.Text = singer;
+            if (lyrics == null) return false;
+            if (lyricListControl.InitUI(lyrics))
+            {
+                if (_selectedItem != null) _selectedItem.IsSelected = false;
+                return true;
+            }
+            return false;
+        }
+        #endregion
 
+        #region Public Method
+        public bool InitMusic(Music music)
+        {
+            metroTextBox_title.Text = music.Title;
+            metroTextBox_singer.Text = music.ViewSinger;
+            _musicFilePath = music.FilePath;
+            return LoadLyrics(music.Lyrics);
+        }
+
+        public void SearchLyrics()
+        {
+            string title = metroTextBox_title.Text;
             if (string.IsNullOrWhiteSpace(title))
             {
                 MessageBoxUtil.Error(this, "Please input title.");
                 return;
             }
 
+            string singer = metroTextBox_singer.Text;
             if (string.IsNullOrWhiteSpace(singer))
             {
                 MessageBoxUtil.Error(this, "Please input singer.");
                 return;
             }
 
-            //WaitDialog.Show(this, StyleManager);
             var headers = LyricParser.GetALSongLyricHeaders(title, singer, 10);
             if (headers == null || headers.Count == 0)
             {
@@ -139,6 +161,7 @@ namespace GTMusicPlayer
             }
 
             stackPanel_header.SuspendLayout();
+            stackPanel_header.IsNotMove = true;
             foreach (var item in _items)
             {
                 item.OnClicked -= OnClickedHeader;
@@ -156,18 +179,9 @@ namespace GTMusicPlayer
                 _items.Add(item);
                 stackPanel_header.Controls.Add(item);
             }
+            stackPanel_header.IsNotMove = false;
+            stackPanel_header.MoveControls();
             stackPanel_header.ResumeLayout();
-        }
-
-        public bool LoadLyrics(List<Lyric> lyrics)
-        {
-            if (lyrics == null) return false;
-            if (lyricListControl.InitUI(lyrics))
-            {
-                if (_selectedItem != null) _selectedItem.IsSelected = false;
-                return true;
-            }
-            return false;
         }
         #endregion
     }

@@ -12,6 +12,7 @@ namespace GTMusicPlayer
 {
     public enum OrderType { Orderd, Random }
     public enum RepeatType { All, One, None }
+    public enum ViewType { TitleTag, FileName }
 
     public class Player
     {
@@ -84,23 +85,36 @@ namespace GTMusicPlayer
             _bw.RunWorkerAsync(music);
         }
 
-        public void Resume()
+        public bool Resume()
         {
+            if (_player.PlaybackState == PlaybackState.Playing) return false;
+
             // 재생중이 아닐시 마지막 재생한 곡 리플레이
             if (!_bw.IsBusy)
             {
                 if (CurrentMusic != null) Play(CurrentMusic);
-                return;
+                return true;
             }
 
-            _player.Play();
+            try
+            {
+                _player.Play();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                Next();
+            }
+            return true;
         }
 
-        public void Pause()
+        public bool Pause()
         {
-            if (!_bw.IsBusy) return;
-
+            if (_player.PlaybackState != PlaybackState.Playing) return false;
+            if (!_bw.IsBusy) return false;
+            
             _player.Pause();
+            return true;
         }
 
         public void SetVolume(int value)
@@ -117,6 +131,14 @@ namespace GTMusicPlayer
             _reader.Skip(sec);
         }
 
+        public void Next()
+        {
+            if (!_bw.IsBusy) return;
+            if (_reader == null) return;
+
+            _reader.Position = _reader.Length;
+        }
+
         public void SetCurrentMusic(Music music)
         {
             CurrentMusic = music;
@@ -130,38 +152,16 @@ namespace GTMusicPlayer
             CurrentMusic = e.Argument as Music;
             if (CurrentMusic == null) return;
 
-            // TODO : 테스트 코드 (삭제할것)
-            if (CurrentMusic.Title.Contains("영원"))
+            if (!CurrentMusic.Load())
             {
-                OnError?.Invoke(this, new MusicEventArgs(CurrentMusic, "File does not exist."));
+                OnError?.Invoke(this, new MusicEventArgs(CurrentMusic, "Load failed. file does not exist."));
                 return;
-            }
-
-            // 파일 존재 여부 확인
-            if (!File.Exists(CurrentMusic.FilePath))
-            {
-                OnError?.Invoke(this, new MusicEventArgs(CurrentMusic, "File does not exist."));
-                return;
-            }
-
-            // 가사 파일 확인
-            string dirPath = Path.GetDirectoryName(CurrentMusic.FilePath);
-            string fileName = Path.GetFileNameWithoutExtension(CurrentMusic.FilePath) + ".lyric";
-            string lyricFilePath = Path.Combine(dirPath, fileName);
-            if (File.Exists(lyricFilePath))
-            {
-                string content = File.ReadAllText(lyricFilePath);
-                var lyrics = LyricParser.Convert(content);
-                if (lyrics != null && lyrics.Count > 0)
-                {
-                    CurrentMusic.Lyrics.Clear();
-                    CurrentMusic.Lyrics.AddRange(lyrics);
-                }
             }
 
             try
             {
                 _reader = CreateReader(CurrentMusic.FilePath);
+                _player = new WaveOut(WaveCallbackInfo.FunctionCallback());
                 _player.Init(_reader);
                 _player.Volume = _volume;
                 _player.Play();
@@ -201,6 +201,8 @@ namespace GTMusicPlayer
         private WaveStream CreateReader(string filePath)
         {
             string extension = Path.GetExtension(filePath);
+            extension = extension.ToLower();
+
             if (Playlist.VorbisExtensions.Contains(extension))
             {
                 return new VorbisWaveReader(filePath);

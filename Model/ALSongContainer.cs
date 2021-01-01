@@ -40,7 +40,7 @@ namespace GTMusicPlayer
     public class ALSongLyricHeader
     {
         [JsonProperty("lyricID")]
-        public string LyricID { get; set; }
+        public int LyricID { get; set; }
 
         [JsonProperty("title")]
         public string Title { get; set; }

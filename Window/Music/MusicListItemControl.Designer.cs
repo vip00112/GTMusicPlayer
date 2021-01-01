@@ -49,7 +49,8 @@
             this.metroLabel_title.TabIndex = 0;
             this.metroLabel_title.Text = "Title";
             this.metroLabel_title.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.metroLabel_MouseDoubleClick);
-            this.metroLabel_title.MouseHover += new System.EventHandler(this.metroLabel_MouseHover);
+            this.metroLabel_title.MouseEnter += new System.EventHandler(this.metroLabel_title_MouseEnter);
+            this.metroLabel_title.MouseLeave += new System.EventHandler(this.metroLabel_title_MouseLeave);
             // 
             // metroLabel_singer
             // 
@@ -62,7 +63,6 @@
             this.metroLabel_singer.TabIndex = 0;
             this.metroLabel_singer.Text = "Singer";
             this.metroLabel_singer.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.metroLabel_MouseDoubleClick);
-            this.metroLabel_singer.MouseHover += new System.EventHandler(this.metroLabel_MouseHover);
             // 
             // metroTile_play
             // 
@@ -91,7 +91,6 @@
             this.metroLabel_durationTime.Text = "00:00";
             this.metroLabel_durationTime.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.metroLabel_durationTime.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.metroLabel_MouseDoubleClick);
-            this.metroLabel_durationTime.MouseHover += new System.EventHandler(this.metroLabel_MouseHover);
             // 
             // metroToolTip
             // 
@@ -114,7 +113,6 @@
             this.metroLabel_delete.Text = "x";
             this.metroLabel_delete.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.metroLabel_delete.Click += new System.EventHandler(this.metroLabel_delete_Click);
-            this.metroLabel_delete.MouseHover += new System.EventHandler(this.metroLabel_MouseHover);
             // 
             // metroLabel_move
             // 
@@ -131,7 +129,6 @@
             this.metroLabel_move.Text = "≡";
             this.metroLabel_move.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel_move.MouseDown += new System.Windows.Forms.MouseEventHandler(this.metroLabel_move_MouseDown);
-            this.metroLabel_move.MouseHover += new System.EventHandler(this.metroLabel_MouseHover);
             this.metroLabel_move.MouseMove += new System.Windows.Forms.MouseEventHandler(this.metroLabel_move_MouseMove);
             this.metroLabel_move.MouseUp += new System.Windows.Forms.MouseEventHandler(this.metroLabel_move_MouseUp);
             // 

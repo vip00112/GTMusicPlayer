@@ -16,6 +16,7 @@ namespace GTMusicPlayer
 
         private bool _isLoaded;
         private List<Control> _controls;
+        private bool _isNeedMove;
 
         private MusicListItemControl _movingControl;
         private int _startIdx;
@@ -54,6 +55,8 @@ namespace GTMusicPlayer
         public int EmptySpaceBetween { get; set; }
 
         public int ScrollMoveControlCount { get; set; }
+
+        public bool IsNotMove { get; set; }
         #endregion
 
         #region Protected Method
@@ -64,7 +67,7 @@ namespace GTMusicPlayer
             if (e.Control is IStackItem == false) return;
 
             _controls.Add(e.Control);
-            MoveControl(e.Control);
+            if (!IsNotMove) MoveControls();
 
             if (e.Control is MusicListItemControl)
             {
@@ -82,7 +85,7 @@ namespace GTMusicPlayer
             if (e.Control is IStackItem == false) return;
 
             _controls.Remove(e.Control);
-            MoveControls();
+            if (!IsNotMove) MoveControls();
 
             if (e.Control is MusicListItemControl)
             {
@@ -161,14 +164,6 @@ namespace GTMusicPlayer
         #endregion
 
         #region Private Method
-        private void MoveControls()
-        {
-            foreach (var control in _controls)
-            {
-                MoveControl(control);
-            }
-        }
-
         private void MoveControl(Control control)
         {
             if (control == null) return;
@@ -234,6 +229,14 @@ namespace GTMusicPlayer
         #endregion
 
         #region Public Method
+        public void MoveControls()
+        {
+            foreach (var control in _controls)
+            {
+                MoveControl(control);
+            }
+        }
+
         public void ScrollMove(Control item)
         {
             if (ScrollMoveControlCount == 0) return;

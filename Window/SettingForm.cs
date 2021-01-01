@@ -31,6 +31,7 @@ namespace GTMusicPlayer
             metroComboBox_style.SelectedIndex = ((int) styleManager.Style) - 1;
             metroComboBox_repeat.SelectedIndex = Setting.Instance.RepeatType;
             metroComboBox_order.SelectedIndex = Setting.Instance.OrderType;
+            metroComboBox_view.SelectedIndex = Setting.Instance.ViewType;
         }
         #endregion
 
@@ -69,6 +70,11 @@ namespace GTMusicPlayer
         private void metroComboBox_repeat_SelectedIndexChanged(object sender, EventArgs e)
         {
             Setting.Instance.RepeatType = metroComboBox_repeat.SelectedIndex;
+        }
+
+        private void metroComboBox_view_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Setting.Instance.ViewType = metroComboBox_view.SelectedIndex;
         }
         #endregion
     }

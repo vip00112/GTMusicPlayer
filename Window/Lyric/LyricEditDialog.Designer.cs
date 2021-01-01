@@ -203,6 +203,7 @@
             this.Controls.Add(this.metroTextBox_min);
             this.Controls.Add(this.metroTextBox_text);
             this.DisplayHeader = false;
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "LyricEditDialog";

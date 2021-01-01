@@ -163,10 +163,9 @@ namespace GTMusicPlayer
         #region Public Method
         public void AddMusic(Music music)
         {
-            var item = new MusicListItemControl(music.Title, music.ViewSinger, music.DurationTime.View());
+            var item = new MusicListItemControl(music);
             item.StyleManager = StyleManager;
             item.SetStyleManager(StyleManager);
-            item.Music = music;
             item.OnDeleted += OnDeletedItem;
             item.OnDoubleClicked += OnDoubleClickedItem;
 
@@ -174,16 +173,9 @@ namespace GTMusicPlayer
             metroLabel_count.Text = string.Format("Total : {0}", _items.Count);
             stackPanel.Controls.Add(item);
 
-            // TODO : 테스트 코드 (삭제할것)
-            if (music.Title.Contains("영원"))
+            if (!music.Load())
             {
-                SetErrorUI(music, "File does not exist.");
-            }
-
-            // 파일 존재 여부 확인
-            if (!File.Exists(music.FilePath))
-            {
-                SetErrorUI(music, "File does not exist.");
+                SetErrorUI(music, "Load failed. file does not exist.");
             }
 
             OnAddedMusic?.Invoke(this, new MusicEventArgs(music));
@@ -201,6 +193,11 @@ namespace GTMusicPlayer
             stackPanel.ResumeLayout();
             _items.Clear();
             metroLabel_count.Text = string.Format("Total : {0}", _items.Count);
+        }
+
+        public void ChangeViewType()
+        {
+            _items.ForEach(o => o.ViewMusicInfo());
         }
 
         public void SetPlayUI(Music music)

@@ -28,16 +28,15 @@ namespace GTMusicPlayer
             DoubleBuffered = true;
         }
 
-        public MusicListItemControl(string title, string singer, string durationTime) : this()
+        public MusicListItemControl(Music music) : this()
         {
-            metroLabel_title.Text = title;
-            metroLabel_singer.Text = singer;
-            metroLabel_durationTime.Text = durationTime;
+            Music = music;
+            ViewMusicInfo();
         }
         #endregion
 
         #region Properties
-        public Music Music { get; set; }
+        public Music Music { get; }
 
         public string ErrorMessage { get; private set; }
 
@@ -45,9 +44,22 @@ namespace GTMusicPlayer
         #endregion
 
         #region Control Event
-        private void metroLabel_MouseHover(object sender, EventArgs e)
+        private void metroLabel_title_MouseEnter(object sender, EventArgs e)
         {
-            metroToolTip.Show(ErrorMessage, metroTile_play, 1000);
+            if (string.IsNullOrWhiteSpace(ErrorMessage))
+            {
+                string msg = string.Format("{0}\r\n{1}", metroLabel_title.Text, metroLabel_singer.Text);
+                metroToolTip.Show(msg, metroTile_play, 3000);
+            }
+            else
+            {
+                metroToolTip.Show(ErrorMessage, metroTile_play, 3000);
+            }
+        }
+
+        private void metroLabel_title_MouseLeave(object sender, EventArgs e)
+        {
+            metroToolTip.Hide(metroTile_play);
         }
 
         private void metroLabel_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -115,6 +127,27 @@ namespace GTMusicPlayer
                 }
                 metroLabel_title.Invalidate();
             });
+        }
+
+        public void ViewMusicInfo()
+        {
+            if (Music == null) return;
+
+            var type = (ViewType) Setting.Instance.ViewType;
+            if (type == ViewType.TitleTag)
+            {
+                metroLabel_title.Text = Music.Title;
+            }
+            else if (type == ViewType.FileName)
+            {
+                metroLabel_title.Text = Music.FileName;
+            }
+            metroLabel_singer.Text = Music.ViewSinger;
+            metroLabel_durationTime.Text = Music.DurationTime.View();
+
+            metroLabel_title.Invalidate();
+            metroLabel_singer.Invalidate();
+            metroLabel_durationTime.Invalidate();
         }
         #endregion
     }
