@@ -59,14 +59,34 @@ namespace GTMusicPlayer
             metroContextMenu.SetStyleManager(StyleManager);
         }
 
-        private void menuItem_file_Click(object sender, EventArgs e)
+        private void menuItem_add_Click(object sender, EventArgs e)
         {
             SelectMusics();
         }
 
-        private void metroLabel_file_Click(object sender, EventArgs e)
+        private void metroLabel_add_Click(object sender, EventArgs e)
         {
             SelectMusics();
+        }
+
+        private void metroLabel_delete_Click(object sender, EventArgs e)
+        {
+            DeleteSelected();
+        }
+
+        private void menuItem_deleteSelected_Click(object sender, EventArgs e)
+        {
+            DeleteSelected();
+        }
+
+        private void menuItem_deleteWithoutSelected_Click(object sender, EventArgs e)
+        {
+            DeleteWithoutSelected();
+        }
+
+        private void menuItem_deleteAll_Click(object sender, EventArgs e)
+        {
+            DeleteAll();
         }
         #endregion
 
@@ -157,6 +177,21 @@ namespace GTMusicPlayer
 
                 AddMusic(music);
             }
+        }
+
+        private void DeleteSelected()
+        {
+
+        }
+
+        private void DeleteWithoutSelected()
+        {
+
+        }
+
+        private void DeleteAll()
+        {
+
         }
         #endregion
 

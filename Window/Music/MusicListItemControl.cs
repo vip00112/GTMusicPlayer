@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using MetroFramework.Controls;
 using MetroFramework.Components;
 using MetroFramework.Interfaces;
+using MetroFramework;
 
 namespace GTMusicPlayer
 {
@@ -20,6 +21,8 @@ namespace GTMusicPlayer
         public EventHandler<MouseEventArgs> OnMouseDowned;
         public EventHandler<MouseEventArgs> OnMouseMoved;
         public EventHandler<MouseEventArgs> OnMouseUped;
+
+        private bool _isSelected;
 
         #region Constructor
         private MusicListItemControl()
@@ -41,9 +44,53 @@ namespace GTMusicPlayer
         public string ErrorMessage { get; private set; }
 
         public int FixedY { get; set; }
+
+        public bool IsSelected
+        {
+            get { return _isSelected; }
+            set
+            {
+                if (_isSelected == value) return;
+
+                _isSelected = value;
+                //MetroThemeStyle theme;
+                //Color backColor;
+                //if (_isSelected)
+                //{
+
+                //}
+                //Theme = theme;
+                //metroLabel_title.Theme = theme;
+                //metroLabel_singer.Theme = theme;
+                //metroLabel_durationTime.Theme = theme;
+                //metroLabel_delete.Theme = theme;
+                //metroLabel_move.Theme = theme;
+
+                //Invalidate();
+                //metroLabel_title.Invalidate();
+                //metroLabel_singer.Invalidate();
+                //metroLabel_durationTime.Invalidate();
+                //metroLabel_delete.Invalidate();
+                //metroLabel_move.Invalidate();
+            }
+        }
         #endregion
 
         #region Control Event
+        private void metroLabel_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left) return;
+
+            OnDoubleClicked?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void control_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left) return;
+
+            IsSelected = !IsSelected;
+        }
+
         private void metroLabel_title_MouseEnter(object sender, EventArgs e)
         {
             if (string.IsNullOrWhiteSpace(ErrorMessage))
@@ -60,13 +107,6 @@ namespace GTMusicPlayer
         private void metroLabel_title_MouseLeave(object sender, EventArgs e)
         {
             metroToolTip.Hide(metroTile_play);
-        }
-
-        private void metroLabel_MouseDoubleClick(object sender, MouseEventArgs e)
-        {
-            if (e.Button != MouseButtons.Left) return;
-
-            OnDoubleClicked?.Invoke(this, EventArgs.Empty);
         }
 
         private void metroLabel_delete_Click(object sender, EventArgs e)
@@ -117,6 +157,8 @@ namespace GTMusicPlayer
             {
                 if (!string.IsNullOrWhiteSpace(msg))
                 {
+                    metroLabel_title.BackColor = Color.Firebrick;
+                    metroLabel_title.ForeColor = Color.White;
                     metroLabel_title.UseCustomBackColor = true;
                     metroLabel_title.UseCustomForeColor = true;
                 }

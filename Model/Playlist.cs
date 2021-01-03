@@ -11,7 +11,7 @@ namespace GTMusicPlayer
     {
         public readonly static Playlist Instance = new Playlist();
 
-        public static readonly string[] GaneralExtensions = new string[] { ".mp3", ".mp4", ".wav", ".flac", ".m4a" };
+        public static readonly string[] GaneralExtensions = new string[] { ".mp3", ".mp4", ".wav", ".wma", ".flac", ".m4a" };
         public static readonly string[] VorbisExtensions = new string[] { ".oga", ".ogg" };
 
         public EventHandler OnChangedViewType;

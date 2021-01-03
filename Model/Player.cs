@@ -22,7 +22,7 @@ namespace GTMusicPlayer
         public EventHandler<ChangedDurationEventArgs> OnChangedDuration;
 
         private BackgroundWorker _bw;
-        private WaveOut _player;
+        private IWavePlayer _player;
         private WaveStream _reader;
         private float _volume;
         private Music _currentMusic;
@@ -112,7 +112,7 @@ namespace GTMusicPlayer
         {
             if (_player.PlaybackState != PlaybackState.Playing) return false;
             if (!_bw.IsBusy) return false;
-            
+
             _player.Pause();
             return true;
         }

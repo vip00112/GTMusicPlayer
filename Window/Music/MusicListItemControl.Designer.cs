@@ -49,6 +49,7 @@
             this.metroLabel_title.TabIndex = 0;
             this.metroLabel_title.Text = "Title";
             this.metroLabel_title.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.metroLabel_MouseDoubleClick);
+            this.metroLabel_title.MouseDown += new System.Windows.Forms.MouseEventHandler(this.control_MouseDown);
             this.metroLabel_title.MouseEnter += new System.EventHandler(this.metroLabel_title_MouseEnter);
             this.metroLabel_title.MouseLeave += new System.EventHandler(this.metroLabel_title_MouseLeave);
             // 
@@ -63,6 +64,7 @@
             this.metroLabel_singer.TabIndex = 0;
             this.metroLabel_singer.Text = "Singer";
             this.metroLabel_singer.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.metroLabel_MouseDoubleClick);
+            this.metroLabel_singer.MouseDown += new System.Windows.Forms.MouseEventHandler(this.control_MouseDown);
             // 
             // metroTile_play
             // 
@@ -77,6 +79,7 @@
             this.metroTile_play.UseSelectable = true;
             this.metroTile_play.UseStyleColors = true;
             this.metroTile_play.Visible = false;
+            this.metroTile_play.MouseDown += new System.Windows.Forms.MouseEventHandler(this.control_MouseDown);
             // 
             // metroLabel_durationTime
             // 
@@ -91,6 +94,7 @@
             this.metroLabel_durationTime.Text = "00:00";
             this.metroLabel_durationTime.TextAlign = System.Drawing.ContentAlignment.TopRight;
             this.metroLabel_durationTime.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.metroLabel_MouseDoubleClick);
+            this.metroLabel_durationTime.MouseDown += new System.Windows.Forms.MouseEventHandler(this.control_MouseDown);
             // 
             // metroToolTip
             // 
@@ -145,6 +149,7 @@
             this.Name = "MusicListItemControl";
             this.Size = new System.Drawing.Size(244, 30);
             this.UseStyleColors = true;
+            this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.control_MouseDown);
             this.ResumeLayout(false);
 
         }
