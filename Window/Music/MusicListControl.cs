@@ -21,6 +21,7 @@ namespace GTMusicPlayer
         public EventHandler<MusicListEventArgs> OnMovedMusic;
 
         private List<MusicListItemControl> _items;
+        private List<MusicListItemControl> _selectedItems;
 
         #region Constructor
         public MusicListControl()
@@ -29,6 +30,8 @@ namespace GTMusicPlayer
             DoubleBuffered = true;
 
             _items = new List<MusicListItemControl>();
+            _selectedItems = new List<MusicListItemControl>();
+
             stackPanel.ScrollMoveControlCount = 2;
             stackPanel.OnMovedItem += OnMovedItem;
         }
@@ -191,17 +194,60 @@ namespace GTMusicPlayer
 
         private void DeleteSelected()
         {
+            if (!MessageBoxUtil.Confirm(this, "Are you sure you want to delete selected musics?")) return;
 
+            foreach (var item in _selectedItems)
+            {
+                item.OnDeleted -= OnDeletedItem;
+                item.OnClicked -= OnClickedItem;
+                item.OnDoubleClicked -= OnDoubleClickedItem;
+
+                _items.Remove(item);
+                stackPanel.Controls.Remove(item);
+
+                OnDeletedMusic?.Invoke(this, new MusicEventArgs(item.Music));
+            }
+            metroLabel_count.Text = string.Format("Total : {0}", _items.Count);
         }
 
         private void DeleteWithoutSelected()
         {
+            if (!MessageBoxUtil.Confirm(this, "Are you sure you want to delete unselected musics?")) return;
 
+            var unselectedItems = _items.Where(o => !_selectedItems.Contains(o)).ToList();
+            foreach (var item in unselectedItems)
+            {
+                item.OnDeleted -= OnDeletedItem;
+                item.OnClicked -= OnClickedItem;
+                item.OnDoubleClicked -= OnDoubleClickedItem;
+
+                _items.Remove(item);
+                stackPanel.Controls.Remove(item);
+
+                OnDeletedMusic?.Invoke(this, new MusicEventArgs(item.Music));
+            }
+            metroLabel_count.Text = string.Format("Total : {0}", _items.Count);
         }
 
         private void DeleteAll()
         {
+            if (!MessageBoxUtil.Confirm(this, "Are you sure you want to delete all musics?")) return;
 
+            var allItems = _items.ToList();
+            foreach (var item in allItems)
+            {
+                item.OnDeleted -= OnDeletedItem;
+                item.OnClicked -= OnClickedItem;
+                item.OnDoubleClicked -= OnDoubleClickedItem;
+
+                _items.Remove(item);
+                stackPanel.Controls.Remove(item);
+
+                OnDeletedMusic?.Invoke(this, new MusicEventArgs(item.Music));
+            }
+
+            _selectedItems.Clear();
+            metroLabel_count.Text = string.Format("Total : {0}", _items.Count);
         }
         #endregion
 
@@ -267,6 +313,55 @@ namespace GTMusicPlayer
 
             item.SetPlay(false);
             item.SetError(message);
+        }
+
+        public void Select(SelectType selectType, Music music)
+        {
+            var item = _items.FirstOrDefault(o => o.Music == music);
+            if (item == null) return;
+
+            _selectedItems.ForEach(o => o.IsSelected = false);
+
+            switch (selectType)
+            {
+                case SelectType.None:
+                    _selectedItems.Clear();
+                    _selectedItems.Add(item);
+                    break;
+                case SelectType.Ctrl:
+                    _selectedItems.Add(item);
+                    break;
+                case SelectType.Shift:
+                    var firstItem = _selectedItems.FirstOrDefault();
+                    int startIdx = _items.IndexOf(firstItem);
+                    int endIdx = _items.IndexOf(item);
+                    if (startIdx < 0) startIdx = endIdx;
+
+                    _selectedItems.Clear();
+                    if (startIdx < endIdx)
+                    {
+                        for (int i = startIdx; i <= endIdx; i++)
+                        {
+                            _selectedItems.Add(_items[i]);
+                        }
+                    }
+                    else
+                    {
+                        for (int i = startIdx; i >= endIdx; i--)
+                        {
+                            _selectedItems.Add(_items[i]);
+                        }
+                    }
+                    break;
+            }
+
+            _selectedItems.ForEach(o => o.IsSelected = true);
+        }
+
+        public void Unselect()
+        {
+            _selectedItems.ForEach(o => o.IsSelected = false);
+            _selectedItems.Clear();
         }
         #endregion
     }

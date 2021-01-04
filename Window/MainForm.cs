@@ -20,6 +20,7 @@ namespace GTMusicPlayer
         private Player _player;
         private bool _isPrev;
         private bool _isFocusedDurationTrackBar;
+        private SelectType _selectType;
 
         #region Constructor
         public MainForm()
@@ -90,14 +91,9 @@ namespace GTMusicPlayer
 
         private void MainForm_KeyUp(object sender, KeyEventArgs e)
         {
-            // TODO : Ctrl, Shift 키 처리
-            if (e.KeyCode == Keys.ControlKey)
+            if (e.KeyCode == Keys.ControlKey || e.KeyCode == Keys.ShiftKey)
             {
-
-            }
-            else if (e.KeyCode == Keys.ShiftKey)
-            {
-
+                _selectType = SelectType.None;
             }
         }
 
@@ -375,7 +371,9 @@ namespace GTMusicPlayer
 
         private void OnClickedMusic(object sender, MusicEventArgs e)
         {
-            // TODO : 재생목록에서 노래 선택
+            if (e.Music == null) return;
+
+            musicListControl.Select(_selectType, e.Music);
         }
 
         private void OnDoubleClickedMusic(object sender, MusicEventArgs e)
@@ -501,6 +499,24 @@ namespace GTMusicPlayer
                 }
                 metroTrackBar_duration.Value += value;
                 _player.Skip(value);
+                return true;
+            }
+            #endregion
+
+            #region Select
+            if (keyData == (Keys.ControlKey | Keys.Control))
+            {
+                _selectType = SelectType.Ctrl;
+                return true;
+            }
+            if (keyData == (Keys.ShiftKey | Keys.Shift))
+            {
+                _selectType = SelectType.Shift;
+                return true;
+            }
+            if (keyData == Keys.Escape)
+            {
+                musicListControl.Unselect();
                 return true;
             }
             #endregion

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AlbumForm));
             this.musicListControl = new GTMusicPlayer.MusicListControl();
             this.albumListControl = new GTMusicPlayer.AlbumListControl();
@@ -61,6 +62,7 @@
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.DropShadow;
             this.Load += new System.EventHandler(this.AlbumForm_Load);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.AlbumForm_KeyUp);
             this.ResumeLayout(false);
 
         }

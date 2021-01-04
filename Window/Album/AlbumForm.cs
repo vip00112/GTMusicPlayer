@@ -18,6 +18,7 @@ namespace GTMusicPlayer
     {
         private List<Album> _albums;
         private Album _album;
+        private SelectType _selectType;
 
         #region Constructor
         private AlbumForm()
@@ -86,6 +87,14 @@ namespace GTMusicPlayer
             musicListControl.OnClickedMusic += OnClickedMusic;
             musicListControl.OnMovedMusic += OnMovedMusic;
         }
+
+        private void AlbumForm_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.ControlKey || e.KeyCode == Keys.ShiftKey)
+            {
+                _selectType = SelectType.None;
+            }
+        }
         #endregion
 
         #region Event Handler
@@ -141,7 +150,9 @@ namespace GTMusicPlayer
 
         private void OnClickedMusic(object sender, MusicEventArgs e)
         {
-            // TODO : 앨범에서 노래 선택
+            if (e.Music == null) return;
+
+            musicListControl.Select(_selectType, e.Music);
         }
 
         private void OnMovedMusic(object sender, MusicListEventArgs e)
@@ -149,6 +160,32 @@ namespace GTMusicPlayer
             CurrentAlbum.Musics.Clear();
             CurrentAlbum.Musics.AddRange(e.Musics);
             Setting.Instance.Save();
+        }
+        #endregion
+
+        #region Protected Method
+        // 전역 키 설정
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            #region Select
+            if (keyData == (Keys.ControlKey | Keys.Control))
+            {
+                _selectType = SelectType.Ctrl;
+                return true;
+            }
+            if (keyData == (Keys.ShiftKey | Keys.Shift))
+            {
+                _selectType = SelectType.Shift;
+                return true;
+            }
+            if (keyData == Keys.Escape)
+            {
+                musicListControl.Unselect();
+                return true;
+            }
+            #endregion
+
+            return base.ProcessCmdKey(ref msg, keyData);
         }
         #endregion
     }

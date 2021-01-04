@@ -306,24 +306,6 @@
   <data name="menuItem_add.Text" xml:space="preserve">
     <value>Add</value>
   </data>
-  <data name="menuItem_deleteSelected.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="menuItem_deleteSelected.Text" xml:space="preserve">
-    <value>Selected</value>
-  </data>
-  <data name="menuItem_deleteWithoutSelected.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="menuItem_deleteWithoutSelected.Text" xml:space="preserve">
-    <value>Without Selected</value>
-  </data>
-  <data name="menuItem_deleteAll.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="menuItem_deleteAll.Text" xml:space="preserve">
-    <value>All</value>
-  </data>
   <data name="deleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
     <value>180, 22</value>
   </data>
@@ -338,6 +320,24 @@
   </data>
   <data name="&gt;&gt;metroContextMenu.Type" xml:space="preserve">
     <value>MetroFramework.Controls.MetroContextMenu, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="menuItem_deleteSelected.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 22</value>
+  </data>
+  <data name="menuItem_deleteSelected.Text" xml:space="preserve">
+    <value>Selected</value>
+  </data>
+  <data name="menuItem_deleteWithoutSelected.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 22</value>
+  </data>
+  <data name="menuItem_deleteWithoutSelected.Text" xml:space="preserve">
+    <value>Without Selected</value>
+  </data>
+  <data name="menuItem_deleteAll.Size" type="System.Drawing.Size, System.Drawing">
+    <value>166, 22</value>
+  </data>
+  <data name="menuItem_deleteAll.Text" xml:space="preserve">
+    <value>All</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

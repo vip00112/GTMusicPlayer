@@ -10,10 +10,6 @@ using System.Threading;
 
 namespace GTMusicPlayer
 {
-    public enum OrderType { Orderd, Random }
-    public enum RepeatType { All, One, None }
-    public enum ViewType { TitleTag, FileName }
-
     public class Player
     {
         public EventHandler<MusicEventArgs> OnStarted;
