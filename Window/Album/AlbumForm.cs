@@ -83,6 +83,7 @@ namespace GTMusicPlayer
             albumListControl.OnSelectedAlbum += OnSelectedAlbum;
 
             musicListControl.OnDeletedMusic += OnDeletedMusic;
+            musicListControl.OnClickedMusic += OnClickedMusic;
             musicListControl.OnMovedMusic += OnMovedMusic;
         }
         #endregion
@@ -136,6 +137,11 @@ namespace GTMusicPlayer
 
             CurrentAlbum.Musics.Remove(e.Music);
             Setting.Instance.Save();
+        }
+
+        private void OnClickedMusic(object sender, MusicEventArgs e)
+        {
+            // TODO : 앨범에서 노래 선택
         }
 
         private void OnMovedMusic(object sender, MusicListEventArgs e)

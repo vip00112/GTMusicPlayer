@@ -17,6 +17,7 @@ namespace GTMusicPlayer
     public partial class MusicListItemControl : MetroUserControl, IStackItem
     {
         public EventHandler OnDeleted;
+        public EventHandler OnClicked;
         public EventHandler OnDoubleClicked;
         public EventHandler<MouseEventArgs> OnMouseDowned;
         public EventHandler<MouseEventArgs> OnMouseMoved;
@@ -53,25 +54,16 @@ namespace GTMusicPlayer
                 if (_isSelected == value) return;
 
                 _isSelected = value;
-                //MetroThemeStyle theme;
-                //Color backColor;
-                //if (_isSelected)
-                //{
 
-                //}
-                //Theme = theme;
-                //metroLabel_title.Theme = theme;
-                //metroLabel_singer.Theme = theme;
-                //metroLabel_durationTime.Theme = theme;
-                //metroLabel_delete.Theme = theme;
-                //metroLabel_move.Theme = theme;
+                Color backColor = Color.Empty;
+                Color foreColor = _isSelected ? Color.DarkGreen : Color.Empty;
 
-                //Invalidate();
-                //metroLabel_title.Invalidate();
-                //metroLabel_singer.Invalidate();
-                //metroLabel_durationTime.Invalidate();
-                //metroLabel_delete.Invalidate();
-                //metroLabel_move.Invalidate();
+                SetCustomColor(this, backColor, foreColor);
+                SetCustomColor(metroLabel_title, backColor, foreColor);
+                SetCustomColor(metroLabel_singer, backColor, foreColor);
+                SetCustomColor(metroLabel_durationTime, backColor, foreColor);
+                SetCustomColor(metroLabel_delete, backColor, foreColor);
+                SetCustomColor(metroLabel_move, backColor, foreColor);
             }
         }
         #endregion
@@ -84,11 +76,9 @@ namespace GTMusicPlayer
             OnDoubleClicked?.Invoke(this, EventArgs.Empty);
         }
 
-        private void control_MouseDown(object sender, MouseEventArgs e)
+        private void control_Click(object sender, EventArgs e)
         {
-            if (e.Button != MouseButtons.Left) return;
-
-            IsSelected = !IsSelected;
+            OnClicked?.Invoke(this, EventArgs.Empty);
         }
 
         private void metroLabel_title_MouseEnter(object sender, EventArgs e)
@@ -136,6 +126,35 @@ namespace GTMusicPlayer
         }
         #endregion
 
+        #region Private Method
+        private void SetCustomColor(Control control, Color backColor, Color foreColor)
+        {
+            if (control is IMetroControl == false) return;
+
+            if (backColor == Color.Empty)
+            {
+                (control as IMetroControl).UseCustomBackColor = false;
+            }
+            else
+            {
+                control.BackColor = backColor;
+                (control as IMetroControl).UseCustomBackColor = true;
+            }
+
+            if (foreColor == Color.Empty)
+            {
+                (control as IMetroControl).UseCustomForeColor = false;
+            }
+            else
+            {
+                control.ForeColor = foreColor;
+                (control as IMetroControl).UseCustomForeColor = true;
+            }
+
+            control.Invalidate();
+        }
+        #endregion
+
         #region Public Method
         public void SetPlay(bool isPlay)
         {
@@ -155,19 +174,9 @@ namespace GTMusicPlayer
             ErrorMessage = msg;
             metroLabel_title.Invoke((MethodInvoker) delegate ()
             {
-                if (!string.IsNullOrWhiteSpace(msg))
-                {
-                    metroLabel_title.BackColor = Color.Firebrick;
-                    metroLabel_title.ForeColor = Color.White;
-                    metroLabel_title.UseCustomBackColor = true;
-                    metroLabel_title.UseCustomForeColor = true;
-                }
-                else
-                {
-                    metroLabel_title.UseCustomBackColor = false;
-                    metroLabel_title.UseCustomForeColor = false;
-                }
-                metroLabel_title.Invalidate();
+                Color backColor = !string.IsNullOrWhiteSpace(msg) ? Color.Firebrick : Color.Empty;
+                Color foreColor = !string.IsNullOrWhiteSpace(msg) ? Color.White : Color.Empty;
+                SetCustomColor(metroLabel_title, backColor, foreColor);
             });
         }
 

@@ -44,7 +44,8 @@ namespace GTMusicPlayer
 
             musicListControl.OnAddedMusic += OnAddedMusic;
             musicListControl.OnDeletedMusic += OnDeletedMusic;
-            musicListControl.OnSelectedMusic += OnSelectedMusic;
+            musicListControl.OnClickedMusic += OnClickedMusic;
+            musicListControl.OnDoubleClickedMusic += OnDoubleClickedMusic;
             musicListControl.OnMovedMusic += OnMovedMusic;
 
             Width = 305;
@@ -85,6 +86,19 @@ namespace GTMusicPlayer
         private void MainForm_Activated(object sender, EventArgs e)
         {
             metroLabel_title.Focus();
+        }
+
+        private void MainForm_KeyUp(object sender, KeyEventArgs e)
+        {
+            // TODO : Ctrl, Shift 키 처리
+            if (e.KeyCode == Keys.ControlKey)
+            {
+
+            }
+            else if (e.KeyCode == Keys.ShiftKey)
+            {
+
+            }
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -359,7 +373,12 @@ namespace GTMusicPlayer
             if (_player.CurrentMusic == e.Music) _player.Next();
         }
 
-        private void OnSelectedMusic(object sender, MusicEventArgs e)
+        private void OnClickedMusic(object sender, MusicEventArgs e)
+        {
+            // TODO : 재생목록에서 노래 선택
+        }
+
+        private void OnDoubleClickedMusic(object sender, MusicEventArgs e)
         {
             if (e.Music.IsError) return;
 

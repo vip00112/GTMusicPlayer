@@ -16,10 +16,8 @@ namespace GTMusicPlayer
 
         private bool _isLoaded;
         private List<Control> _controls;
-        private bool _isNeedMove;
 
         private MusicListItemControl _movingControl;
-        private int _startIdx;
         private Point _movePoint;
         private Point _mouseDownPoint;
 
@@ -104,7 +102,6 @@ namespace GTMusicPlayer
             if (item == null) return;
 
             _movingControl = item;
-            _startIdx = _controls.IndexOf(item);
             _movePoint = item.Location;
             _mouseDownPoint = e.Location;
             item.BorderStyle = BorderStyle.FixedSingle;

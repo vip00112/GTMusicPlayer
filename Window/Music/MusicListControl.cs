@@ -16,7 +16,8 @@ namespace GTMusicPlayer
     {
         public EventHandler<MusicEventArgs> OnAddedMusic;
         public EventHandler<MusicEventArgs> OnDeletedMusic;
-        public EventHandler<MusicEventArgs> OnSelectedMusic;
+        public EventHandler<MusicEventArgs> OnClickedMusic;
+        public EventHandler<MusicEventArgs> OnDoubleClickedMusic;
         public EventHandler<MusicListEventArgs> OnMovedMusic;
 
         private List<MusicListItemControl> _items;
@@ -91,12 +92,20 @@ namespace GTMusicPlayer
         #endregion
 
         #region Event Handler
+        private void OnClickedItem(object sender, EventArgs e)
+        {
+            var item = sender as MusicListItemControl;
+            if (item == null) return;
+
+            OnClickedMusic?.Invoke(this, new MusicEventArgs(item.Music));
+        }
+
         private void OnDoubleClickedItem(object sender, EventArgs e)
         {
             var item = sender as MusicListItemControl;
             if (item == null) return;
 
-            OnSelectedMusic?.Invoke(this, new MusicEventArgs(item.Music));
+            OnDoubleClickedMusic?.Invoke(this, new MusicEventArgs(item.Music));
         }
 
         private void OnDeletedItem(object sender, EventArgs e)
@@ -105,6 +114,7 @@ namespace GTMusicPlayer
             if (item == null) return;
 
             item.OnDeleted -= OnDeletedItem;
+            item.OnClicked -= OnClickedItem;
             item.OnDoubleClicked -= OnDoubleClickedItem;
 
             _items.Remove(item);
@@ -202,6 +212,7 @@ namespace GTMusicPlayer
             item.StyleManager = StyleManager;
             item.SetStyleManager(StyleManager);
             item.OnDeleted += OnDeletedItem;
+            item.OnClicked += OnClickedItem;
             item.OnDoubleClicked += OnDoubleClickedItem;
 
             _items.Add(item);
@@ -222,6 +233,7 @@ namespace GTMusicPlayer
             foreach (var item in _items)
             {
                 item.OnDeleted -= OnDeletedItem;
+                item.OnClicked -= OnClickedItem;
                 item.OnDoubleClicked -= OnDoubleClickedItem;
                 stackPanel.Controls.Remove(item);
             }
@@ -248,7 +260,7 @@ namespace GTMusicPlayer
 
         public void SetErrorUI(Music music, string message)
         {
-            music.IsError = true;
+            if (music != null) music.IsError = true;
 
             var item = _items.FirstOrDefault(o => o.Music == music);
             if (item == null) return;
