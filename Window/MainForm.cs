@@ -29,10 +29,25 @@ namespace GTMusicPlayer
         }
         #endregion
 
+        #region Properties
+        new public int Width
+        {
+            get { return base.Width; }
+            set
+            {
+                MinimumSize = new Size(value, 425);
+                MaximumSize = new Size(value, Int32.MaxValue);
+                base.Width = value;
+            }
+        }
+        #endregion
+
         #region Control Event
         private void MainForm_Load(object sender, EventArgs e)
         {
             if (DesignMode) return;
+
+            Width = 305;
 
             metroLabel_title.Tag = metroLabel_title.Text;
             metroLabel_singer.Tag = metroLabel_singer.Text;
@@ -49,7 +64,6 @@ namespace GTMusicPlayer
             musicListControl.OnDoubleClickedMusic += OnDoubleClickedMusic;
             musicListControl.OnMovedMusic += OnMovedMusic;
 
-            Width = 305;
             lyricListControl.Visible = false;
             lyricListControl.OnClickedLyric += OnClickedLyric;
 
@@ -84,6 +98,11 @@ namespace GTMusicPlayer
             StyleManager = metroStyleManager;
         }
 
+        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Setting.Instance.Save();
+        }
+
         private void MainForm_Activated(object sender, EventArgs e)
         {
             metroLabel_title.Focus();
@@ -95,11 +114,6 @@ namespace GTMusicPlayer
             {
                 _selectType = SelectType.None;
             }
-        }
-
-        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            Setting.Instance.Save();
         }
 
         private void control_MouseDown(object sender, MouseEventArgs e)
@@ -283,7 +297,7 @@ namespace GTMusicPlayer
                     Width = 305;
                     lyricListControl.Visible = false;
                 }
-                
+
                 if (!FormUtil.HasFocusedForm(FormUtil.FindForm<LyricEditForm>()))
                 {
                     metroLabel_title.Focus();
