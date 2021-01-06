@@ -325,8 +325,15 @@ namespace GTMusicPlayer
             switch (selectType)
             {
                 case SelectType.None:
-                    _selectedItems.Clear();
-                    _selectedItems.Add(item);
+                    if (_selectedItems.Count == 1 && _selectedItems[0] == item)
+                    {
+                        _selectedItems.Clear();
+                    }
+                    else
+                    {
+                        _selectedItems.Clear();
+                        _selectedItems.Add(item);
+                    }
                     break;
                 case SelectType.Ctrl:
                     _selectedItems.Add(item);

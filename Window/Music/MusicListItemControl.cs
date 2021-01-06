@@ -11,6 +11,7 @@ using MetroFramework.Controls;
 using MetroFramework.Components;
 using MetroFramework.Interfaces;
 using MetroFramework;
+using System.Threading;
 
 namespace GTMusicPlayer
 {
@@ -22,7 +23,7 @@ namespace GTMusicPlayer
         public EventHandler<MouseEventArgs> OnMouseDowned;
         public EventHandler<MouseEventArgs> OnMouseMoved;
         public EventHandler<MouseEventArgs> OnMouseUped;
-
+        private Guid _lastState;
         private bool _isSelected;
 
         #region Constructor
@@ -55,15 +56,30 @@ namespace GTMusicPlayer
 
                 _isSelected = value;
 
-                Color backColor = Color.Empty;
-                Color foreColor = _isSelected ? Color.DarkGreen : Color.Empty;
+                UseStyleColors = _isSelected;
+                metroLabel_title.UseStyleColors = _isSelected;
+                metroLabel_singer.UseStyleColors = _isSelected;
+                metroLabel_durationTime.UseStyleColors = _isSelected;
+                metroLabel_delete.UseStyleColors = _isSelected;
+                metroLabel_move.UseStyleColors = _isSelected;
 
-                SetCustomColor(this, backColor, foreColor);
-                SetCustomColor(metroLabel_title, backColor, foreColor);
-                SetCustomColor(metroLabel_singer, backColor, foreColor);
-                SetCustomColor(metroLabel_durationTime, backColor, foreColor);
-                SetCustomColor(metroLabel_delete, backColor, foreColor);
-                SetCustomColor(metroLabel_move, backColor, foreColor);
+                Invalidate();
+                metroLabel_title.Invalidate();
+                metroLabel_singer.Invalidate();
+                metroLabel_durationTime.Invalidate();
+                metroLabel_delete.Invalidate();
+                metroLabel_move.Invalidate();
+
+                // Custom Color 방식
+                //Color backColor = Color.Empty;
+                //Color foreColor = _isSelected ? Color.DeepSkyBlue : Color.Empty;
+
+                //SetCustomColor(this, backColor, foreColor);
+                //SetCustomColor(metroLabel_title, backColor, foreColor);
+                //SetCustomColor(metroLabel_singer, backColor, foreColor);
+                //SetCustomColor(metroLabel_durationTime, backColor, foreColor);
+                //SetCustomColor(metroLabel_delete, backColor, foreColor);
+                //SetCustomColor(metroLabel_move, backColor, foreColor);
             }
         }
         #endregion
@@ -73,6 +89,7 @@ namespace GTMusicPlayer
         {
             if (e.Button != MouseButtons.Left) return;
 
+            IsSelected = false;
             OnDoubleClicked?.Invoke(this, EventArgs.Empty);
         }
 
@@ -83,19 +100,12 @@ namespace GTMusicPlayer
 
         private void metroLabel_title_MouseEnter(object sender, EventArgs e)
         {
-            if (string.IsNullOrWhiteSpace(ErrorMessage))
-            {
-                string msg = string.Format("{0}\r\n{1}", metroLabel_title.Text, metroLabel_singer.Text);
-                metroToolTip.Show(msg, metroTile_play, 3000);
-            }
-            else
-            {
-                metroToolTip.Show(ErrorMessage, metroTile_play, 3000);
-            }
+            StartToolTipTimer();
         }
 
         private void metroLabel_title_MouseLeave(object sender, EventArgs e)
         {
+            _lastState = Guid.Empty;
             metroToolTip.Hide(metroTile_play);
         }
 
@@ -152,6 +162,36 @@ namespace GTMusicPlayer
             }
 
             control.Invalidate();
+        }
+
+        private void StartToolTipTimer()
+        {
+            var bw = new BackgroundWorker();
+            bw.DoWork += delegate (object sender, DoWorkEventArgs e)
+            {
+                Thread.Sleep(1000);
+                e.Result = e.Argument;
+            };
+            bw.RunWorkerCompleted += delegate (object sender, RunWorkerCompletedEventArgs e)
+            {
+                if (IsDisposed) return;
+
+                var id = (Guid) e.Result;
+                if (_lastState != id) return;
+
+                if (string.IsNullOrWhiteSpace(ErrorMessage))
+                {
+                    string msg = string.Format("{0}\r\n{1}", metroLabel_title.Text, metroLabel_singer.Text);
+                    metroToolTip.Show(msg, metroTile_play, 3000);
+                }
+                else
+                {
+                    metroToolTip.Show(ErrorMessage, metroTile_play, 3000);
+                }
+            };
+
+            _lastState = Guid.NewGuid();
+            bw.RunWorkerAsync(_lastState);
         }
         #endregion
 
