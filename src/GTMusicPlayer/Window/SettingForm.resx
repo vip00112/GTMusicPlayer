@@ -117,215 +117,583 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;metroLabel1.Name" xml:space="preserve">
-    <value>metroLabel1</value>
-  </data>
-  <data name="metroComboBox_style.Items8" xml:space="preserve">
-    <value>Brown</value>
-  </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="metroComboBox_repeat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 29</value>
-  </data>
-  <data name="&gt;&gt;metroLabel2.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="metroComboBox_order.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_style.Name" xml:space="preserve">
-    <value>metroLabel_style</value>
-  </data>
-  <data name="metroLabel9.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="&gt;&gt;metroLabel4.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_order.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="metroLabel10.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="metroComboBox_order.ItemHeight" type="System.Int32, mscorlib">
+  <data name="metroComboBox_theme.ItemHeight" type="System.Int32, mscorlib">
     <value>23</value>
   </data>
-  <data name="metroComboBox_style.Items9" xml:space="preserve">
-    <value>Pink</value>
+  <data name="metroComboBox_theme.Items" xml:space="preserve">
+    <value>Light</value>
   </data>
-  <data name="&gt;&gt;metroComboBox_repeat.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="metroComboBox_theme.Items1" xml:space="preserve">
+    <value>Dark</value>
   </data>
-  <data name="metroLabel10.Text" xml:space="preserve">
-    <value>Prev music / Next music</value>
-  </data>
-  <data name="metroLabel_theme.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 142</value>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="metroComboBox_theme.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 142</value>
   </data>
   <data name="metroComboBox_theme.Size" type="System.Drawing.Size, System.Drawing">
     <value>148, 29</value>
   </data>
-  <data name="metroLabel_view.TabIndex" type="System.Int32, mscorlib">
+  <data name="metroComboBox_theme.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;metroLabel10.Parent" xml:space="preserve">
+  <data name="&gt;&gt;metroComboBox_theme.Name" xml:space="preserve">
+    <value>metroComboBox_theme</value>
+  </data>
+  <data name="&gt;&gt;metroComboBox_theme.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroComboBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;metroComboBox_theme.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;metroComboBox_order.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;metroComboBox_theme.ZOrder" xml:space="preserve">
+    <value>18</value>
   </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>20, 30, 20, 20</value>
-  </data>
-  <data name="&gt;&gt;metroLabel7.ZOrder" xml:space="preserve">
-    <value>16</value>
-  </data>
-  <data name="metroLabel_view.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 282</value>
-  </data>
-  <data name="metroLabel_order.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
+  <data name="metroLabel_theme.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 142</value>
   </data>
   <data name="metroLabel_theme.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 29</value>
   </data>
-  <data name="metroLabel_order.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 29</value>
+  <data name="metroLabel_theme.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="metroLabel_theme.Text" xml:space="preserve">
+    <value>Theme</value>
+  </data>
+  <data name="metroLabel_theme.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_theme.Name" xml:space="preserve">
+    <value>metroLabel_theme</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_theme.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_theme.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_theme.ZOrder" xml:space="preserve">
+    <value>17</value>
   </data>
   <data name="metroComboBox_style.ItemHeight" type="System.Int32, mscorlib">
     <value>23</value>
   </data>
-  <data name="metroLabel7.Text" xml:space="preserve">
-    <value>Keys help</value>
+  <data name="metroComboBox_style.Items" xml:space="preserve">
+    <value>Black</value>
   </data>
-  <data name="&gt;&gt;metroLabel2.Type" xml:space="preserve">
+  <data name="metroComboBox_style.Items1" xml:space="preserve">
+    <value>White</value>
+  </data>
+  <data name="metroComboBox_style.Items2" xml:space="preserve">
+    <value>Silver</value>
+  </data>
+  <data name="metroComboBox_style.Items3" xml:space="preserve">
+    <value>Blue</value>
+  </data>
+  <data name="metroComboBox_style.Items4" xml:space="preserve">
+    <value>Green</value>
+  </data>
+  <data name="metroComboBox_style.Items5" xml:space="preserve">
+    <value>Lime</value>
+  </data>
+  <data name="metroComboBox_style.Items6" xml:space="preserve">
+    <value>Teal</value>
+  </data>
+  <data name="metroComboBox_style.Items7" xml:space="preserve">
+    <value>Orange</value>
+  </data>
+  <data name="metroComboBox_style.Items8" xml:space="preserve">
+    <value>Brown</value>
+  </data>
+  <data name="metroComboBox_style.Items9" xml:space="preserve">
+    <value>Pink</value>
+  </data>
+  <data name="metroComboBox_style.Items10" xml:space="preserve">
+    <value>Magenta</value>
+  </data>
+  <data name="metroComboBox_style.Items11" xml:space="preserve">
+    <value>Purple</value>
+  </data>
+  <data name="metroComboBox_style.Items12" xml:space="preserve">
+    <value>Red</value>
+  </data>
+  <data name="metroComboBox_style.Items13" xml:space="preserve">
+    <value>Yellow</value>
+  </data>
+  <data name="metroComboBox_style.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 177</value>
+  </data>
+  <data name="metroComboBox_style.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 29</value>
+  </data>
+  <data name="metroComboBox_style.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;metroComboBox_style.Name" xml:space="preserve">
+    <value>metroComboBox_style</value>
+  </data>
+  <data name="&gt;&gt;metroComboBox_style.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroComboBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;metroComboBox_style.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;metroComboBox_style.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="metroLabel_style.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 177</value>
+  </data>
+  <data name="metroLabel_style.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 29</value>
+  </data>
+  <data name="metroLabel_style.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="metroLabel_style.Text" xml:space="preserve">
+    <value>Style</value>
+  </data>
+  <data name="metroLabel_style.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_style.Name" xml:space="preserve">
+    <value>metroLabel_style</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_style.Type" xml:space="preserve">
     <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
-  <data name="&gt;&gt;metroLabel2.Name" xml:space="preserve">
-    <value>metroLabel2</value>
+  <data name="&gt;&gt;metroLabel_style.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="metroLabel_view.Text" xml:space="preserve">
-    <value>View</value>
+  <data name="&gt;&gt;metroLabel_style.ZOrder" xml:space="preserve">
+    <value>3</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>300, 333</value>
+  <data name="metroLabel3.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 59</value>
   </data>
-  <data name="metroLabel10.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 89</value>
+  <data name="metroLabel3.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 15</value>
   </data>
-  <data name="metroLabel6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 74</value>
+  <data name="metroLabel3.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
-  <data name="metroLabel_repeat.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="metroLabel3.Text" xml:space="preserve">
+    <value>Up, Down</value>
+  </data>
+  <data name="metroLabel3.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;metroLabel3.Name" xml:space="preserve">
     <value>metroLabel3</value>
   </data>
-  <data name="metroComboBox_view.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 29</value>
-  </data>
-  <data name="metroComboBox_view.Items1" xml:space="preserve">
-    <value>FileName</value>
-  </data>
-  <data name="metroLabel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 15</value>
-  </data>
-  <data name="metroLabel3.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="metroLabel2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 15</value>
-  </data>
-  <data name="&gt;&gt;metroLabel10.Name" xml:space="preserve">
-    <value>metroLabel10</value>
-  </data>
-  <data name="metroLabel5.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="metroComboBox_view.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;metroLabel1.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
   <data name="&gt;&gt;metroLabel3.Type" xml:space="preserve">
     <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
-  <data name="&gt;&gt;metroLabel_repeat.Name" xml:space="preserve">
-    <value>metroLabel_repeat</value>
+  <data name="&gt;&gt;metroLabel3.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="metroLabel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 59</value>
+  <data name="&gt;&gt;metroLabel3.ZOrder" xml:space="preserve">
+    <value>15</value>
   </data>
-  <data name="metroLabel_theme.TabIndex" type="System.Int32, mscorlib">
+  <data name="metroLabel4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 59</value>
+  </data>
+  <data name="metroLabel4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 15</value>
+  </data>
+  <data name="metroLabel4.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="metroLabel1.Text" xml:space="preserve">
-    <value>Space</value>
+  <data name="metroLabel4.Text" xml:space="preserve">
+    <value>Volume control</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>7, 12</value>
-  </data>
-  <data name="metroComboBox_style.Items" xml:space="preserve">
-    <value>Black</value>
-  </data>
-  <data name="metroLabel7.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+  <data name="metroLabel4.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;metroLabel4.Name" xml:space="preserve">
     <value>metroLabel4</value>
   </data>
-  <data name="&gt;&gt;metroLabel_style.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="metroComboBox_theme.Items" xml:space="preserve">
-    <value>Light</value>
-  </data>
-  <data name="metroComboBox_repeat.Items" xml:space="preserve">
-    <value>All</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_order.Name" xml:space="preserve">
-    <value>metroLabel_order</value>
-  </data>
-  <data name="metroComboBox_order.Items" xml:space="preserve">
-    <value>Orderd</value>
-  </data>
-  <data name="metroComboBox_view.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 282</value>
-  </data>
-  <data name="&gt;&gt;metroLabel2.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
   <data name="&gt;&gt;metroLabel4.Type" xml:space="preserve">
     <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
-  <data name="metroLabel3.TabIndex" type="System.Int32, mscorlib">
+  <data name="&gt;&gt;metroLabel4.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;metroLabel4.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="metroLabel5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 74</value>
+  </data>
+  <data name="metroLabel5.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 15</value>
+  </data>
+  <data name="metroLabel5.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="metroLabel5.Text" xml:space="preserve">
+    <value>Left, Right</value>
+  </data>
+  <data name="metroLabel5.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;metroLabel5.Name" xml:space="preserve">
+    <value>metroLabel5</value>
+  </data>
+  <data name="&gt;&gt;metroLabel5.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;metroLabel5.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;metroLabel5.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="metroLabel6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 74</value>
+  </data>
+  <data name="metroLabel6.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 15</value>
+  </data>
+  <data name="metroLabel6.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="metroLabel6.Text" xml:space="preserve">
+    <value>Duration control</value>
+  </data>
+  <data name="metroLabel6.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;metroLabel6.Name" xml:space="preserve">
+    <value>metroLabel6</value>
+  </data>
+  <data name="&gt;&gt;metroLabel6.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;metroLabel6.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;metroLabel6.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="metroLabel7.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 30</value>
+  </data>
+  <data name="metroLabel7.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 29</value>
+  </data>
+  <data name="metroLabel7.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="metroLabel7.Text" xml:space="preserve">
+    <value>Keys help</value>
+  </data>
+  <data name="metroLabel7.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;metroLabel7.Name" xml:space="preserve">
+    <value>metroLabel7</value>
+  </data>
+  <data name="&gt;&gt;metroLabel7.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;metroLabel7.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;metroLabel7.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="metroLabel9.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 89</value>
+  </data>
+  <data name="metroLabel9.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 15</value>
+  </data>
+  <data name="metroLabel9.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
   <data name="metroLabel9.Text" xml:space="preserve">
     <value>Page Up/Down</value>
   </data>
-  <data name="&gt;&gt;metroComboBox_theme.Parent" xml:space="preserve">
+  <data name="metroLabel9.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;metroLabel9.Name" xml:space="preserve">
+    <value>metroLabel9</value>
+  </data>
+  <data name="&gt;&gt;metroLabel9.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;metroLabel9.Parent" xml:space="preserve">
     <value>$this</value>
+  </data>
+  <data name="&gt;&gt;metroLabel9.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="metroLabel10.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 89</value>
+  </data>
+  <data name="metroLabel10.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 15</value>
+  </data>
+  <data name="metroLabel10.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="metroLabel10.Text" xml:space="preserve">
+    <value>Prev music / Next music</value>
+  </data>
+  <data name="metroLabel10.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;metroLabel10.Name" xml:space="preserve">
+    <value>metroLabel10</value>
+  </data>
+  <data name="&gt;&gt;metroLabel10.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;metroLabel10.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;metroLabel10.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="metroComboBox_order.ItemHeight" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="metroComboBox_order.Items" xml:space="preserve">
+    <value>Orderd</value>
+  </data>
+  <data name="metroComboBox_order.Items1" xml:space="preserve">
+    <value>Random</value>
+  </data>
+  <data name="metroComboBox_order.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 212</value>
+  </data>
+  <data name="metroComboBox_order.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 29</value>
+  </data>
+  <data name="metroComboBox_order.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;metroComboBox_order.Name" xml:space="preserve">
+    <value>metroComboBox_order</value>
+  </data>
+  <data name="&gt;&gt;metroComboBox_order.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroComboBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;metroComboBox_order.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;metroComboBox_order.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="metroLabel_order.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 212</value>
+  </data>
+  <data name="metroLabel_order.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 29</value>
+  </data>
+  <data name="metroLabel_order.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="metroLabel_order.Text" xml:space="preserve">
+    <value>Order</value>
+  </data>
+  <data name="metroLabel_order.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_order.Name" xml:space="preserve">
+    <value>metroLabel_order</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_order.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_order.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_order.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="metroComboBox_repeat.ItemHeight" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="metroComboBox_repeat.Items" xml:space="preserve">
+    <value>All</value>
+  </data>
+  <data name="metroComboBox_repeat.Items1" xml:space="preserve">
+    <value>One</value>
+  </data>
+  <data name="metroComboBox_repeat.Items2" xml:space="preserve">
+    <value>None</value>
+  </data>
+  <data name="metroComboBox_repeat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 247</value>
+  </data>
+  <data name="metroComboBox_repeat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 29</value>
+  </data>
+  <data name="metroComboBox_repeat.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;metroComboBox_repeat.Name" xml:space="preserve">
+    <value>metroComboBox_repeat</value>
+  </data>
+  <data name="&gt;&gt;metroComboBox_repeat.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroComboBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;metroComboBox_repeat.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;metroComboBox_repeat.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="metroLabel_repeat.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 247</value>
+  </data>
+  <data name="metroLabel_repeat.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 29</value>
+  </data>
+  <data name="metroLabel_repeat.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="metroLabel_repeat.Text" xml:space="preserve">
+    <value>Repeat</value>
+  </data>
+  <data name="metroLabel_repeat.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_repeat.Name" xml:space="preserve">
+    <value>metroLabel_repeat</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_repeat.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_repeat.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_repeat.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="metroLabel1.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 104</value>
   </data>
-  <data name="metroLabel3.Text" xml:space="preserve">
-    <value>Up, Down</value>
+  <data name="metroLabel1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 15</value>
   </data>
-  <data name="&gt;&gt;metroLabel_theme.Type" xml:space="preserve">
+  <data name="metroLabel1.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="metroLabel1.Text" xml:space="preserve">
+    <value>Space</value>
+  </data>
+  <data name="metroLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;metroLabel1.Name" xml:space="preserve">
+    <value>metroLabel1</value>
+  </data>
+  <data name="&gt;&gt;metroLabel1.Type" xml:space="preserve">
     <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
-  <data name="metroComboBox_theme.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 142</value>
+  <data name="&gt;&gt;metroLabel1.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="metroLabel4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 59</value>
+  <data name="&gt;&gt;metroLabel1.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="metroLabel2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 104</value>
+  </data>
+  <data name="metroLabel2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 15</value>
+  </data>
+  <data name="metroLabel2.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="metroLabel2.Text" xml:space="preserve">
+    <value>Play / Pause</value>
+  </data>
+  <data name="metroLabel2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;metroLabel2.Name" xml:space="preserve">
+    <value>metroLabel2</value>
+  </data>
+  <data name="&gt;&gt;metroLabel2.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;metroLabel2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;metroLabel2.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="metroComboBox_view.ItemHeight" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="metroComboBox_view.Items" xml:space="preserve">
+    <value>TitleTag</value>
+  </data>
+  <data name="metroComboBox_view.Items1" xml:space="preserve">
+    <value>FileName</value>
+  </data>
+  <data name="metroComboBox_view.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 282</value>
+  </data>
+  <data name="metroComboBox_view.Size" type="System.Drawing.Size, System.Drawing">
+    <value>148, 29</value>
+  </data>
+  <data name="metroComboBox_view.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;metroComboBox_view.Name" xml:space="preserve">
+    <value>metroComboBox_view</value>
+  </data>
+  <data name="&gt;&gt;metroComboBox_view.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroComboBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;metroComboBox_view.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;metroComboBox_view.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="metroLabel_view.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 282</value>
+  </data>
+  <data name="metroLabel_view.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 29</value>
+  </data>
+  <data name="metroLabel_view.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="metroLabel_view.Text" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="metroLabel_view.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleLeft</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_view.Name" xml:space="preserve">
+    <value>metroLabel_view</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_view.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_view.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_view.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>7, 12</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>300, 333</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -348,385 +716,17 @@
         RK5CYII=
 </value>
   </data>
-  <data name="metroComboBox_style.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 177</value>
-  </data>
-  <data name="metroComboBox_style.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 29</value>
-  </data>
-  <data name="&gt;&gt;metroLabel3.ZOrder" xml:space="preserve">
-    <value>15</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_repeat.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="metroLabel2.Text" xml:space="preserve">
-    <value>Play / Pause</value>
-  </data>
-  <data name="metroComboBox_style.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;metroComboBox_style.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroComboBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroLabel9.ZOrder" xml:space="preserve">
-    <value>13</value>
-  </data>
-  <data name="&gt;&gt;metroLabel10.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroComboBox_order.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="metroComboBox_view.Items" xml:space="preserve">
-    <value>TitleTag</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_repeat.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;metroComboBox_style.Name" xml:space="preserve">
-    <value>metroComboBox_style</value>
-  </data>
-  <data name="&gt;&gt;metroLabel4.ZOrder" xml:space="preserve">
-    <value>12</value>
-  </data>
-  <data name="&gt;&gt;metroLabel9.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="metroLabel7.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;metroComboBox_theme.Name" xml:space="preserve">
-    <value>metroComboBox_theme</value>
-  </data>
-  <data name="metroLabel9.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 15</value>
-  </data>
-  <data name="&gt;&gt;metroLabel9.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="metroLabel5.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="metroLabel6.Text" xml:space="preserve">
-    <value>Duration control</value>
-  </data>
-  <data name="metroLabel6.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;metroComboBox_repeat.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="metroLabel4.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 15</value>
-  </data>
-  <data name="metroLabel_theme.Text" xml:space="preserve">
-    <value>Theme</value>
-  </data>
-  <data name="metroComboBox_style.Items10" xml:space="preserve">
-    <value>Magenta</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_view.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="metroLabel1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 15</value>
-  </data>
-  <data name="metroLabel_view.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="metroComboBox_style.Items12" xml:space="preserve">
-    <value>Red</value>
-  </data>
-  <data name="&gt;&gt;metroLabel5.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="metroComboBox_theme.ItemHeight" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="metroComboBox_order.Items1" xml:space="preserve">
-    <value>Random</value>
-  </data>
-  <data name="metroLabel_style.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 177</value>
-  </data>
-  <data name="metroLabel7.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 29</value>
-  </data>
-  <data name="metroComboBox_style.Items11" xml:space="preserve">
-    <value>Purple</value>
-  </data>
-  <data name="metroComboBox_repeat.ItemHeight" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_style.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;metroLabel9.Name" xml:space="preserve">
-    <value>metroLabel9</value>
-  </data>
-  <data name="metroComboBox_repeat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 247</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>20, 30, 20, 20</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>Setting</value>
   </data>
-  <data name="metroLabel6.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 15</value>
-  </data>
-  <data name="&gt;&gt;metroLabel6.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;metroComboBox_theme.ZOrder" xml:space="preserve">
-    <value>18</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_order.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="metroComboBox_style.Items1" xml:space="preserve">
-    <value>White</value>
-  </data>
-  <data name="metroLabel4.Text" xml:space="preserve">
-    <value>Volume control</value>
-  </data>
-  <data name="&gt;&gt;metroLabel7.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="metroLabel_style.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 29</value>
-  </data>
-  <data name="metroLabel_order.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 212</value>
-  </data>
-  <data name="metroLabel5.Text" xml:space="preserve">
-    <value>Left, Right</value>
-  </data>
-  <data name="&gt;&gt;metroLabel1.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="metroLabel2.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_theme.Name" xml:space="preserve">
-    <value>metroLabel_theme</value>
-  </data>
-  <data name="&gt;&gt;metroComboBox_view.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroComboBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_order.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;metroComboBox_view.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="metroComboBox_style.Items2" xml:space="preserve">
-    <value>Silver</value>
-  </data>
-  <data name="&gt;&gt;metroLabel6.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>SettingForm</value>
-  </data>
-  <data name="metroLabel_view.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 29</value>
-  </data>
-  <data name="&gt;&gt;metroComboBox_theme.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroComboBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="metroLabel4.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_repeat.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="metroLabel_style.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;metroLabel5.Name" xml:space="preserve">
-    <value>metroLabel5</value>
-  </data>
-  <data name="metroLabel2.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>MetroFramework.Forms.MetroForm, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
-  <data name="metroComboBox_style.Items3" xml:space="preserve">
-    <value>Blue</value>
-  </data>
-  <data name="&gt;&gt;metroLabel7.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;metroComboBox_order.Name" xml:space="preserve">
-    <value>metroComboBox_order</value>
-  </data>
-  <data name="&gt;&gt;metroComboBox_style.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_view.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="metroLabel_repeat.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="metroComboBox_repeat.Items2" xml:space="preserve">
-    <value>None</value>
-  </data>
-  <data name="&gt;&gt;metroLabel5.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="metroComboBox_style.Items13" xml:space="preserve">
-    <value>Yellow</value>
-  </data>
-  <data name="&gt;&gt;metroComboBox_view.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;metroLabel10.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="metroLabel6.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="metroLabel5.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 15</value>
-  </data>
-  <data name="metroComboBox_style.Items4" xml:space="preserve">
-    <value>Green</value>
-  </data>
-  <data name="&gt;&gt;metroLabel6.Name" xml:space="preserve">
-    <value>metroLabel6</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_theme.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="metroLabel5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 74</value>
-  </data>
-  <data name="metroComboBox_theme.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;metroLabel7.Name" xml:space="preserve">
-    <value>metroLabel7</value>
-  </data>
-  <data name="metroLabel_theme.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="metroComboBox_repeat.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;metroLabel1.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="metroComboBox_order.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 212</value>
-  </data>
-  <data name="metroComboBox_style.Items5" xml:space="preserve">
-    <value>Lime</value>
-  </data>
-  <data name="metroLabel_style.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="metroComboBox_theme.Items1" xml:space="preserve">
-    <value>Dark</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_view.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="metroLabel1.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="metroLabel_repeat.Text" xml:space="preserve">
-    <value>Repeat</value>
-  </data>
-  <data name="&gt;&gt;metroComboBox_repeat.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroComboBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="metroComboBox_style.Items6" xml:space="preserve">
-    <value>Teal</value>
-  </data>
-  <data name="&gt;&gt;metroLabel5.ZOrder" xml:space="preserve">
-    <value>14</value>
-  </data>
-  <data name="metroLabel9.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;metroComboBox_order.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroComboBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_theme.ZOrder" xml:space="preserve">
-    <value>17</value>
-  </data>
-  <data name="metroLabel10.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="metroLabel2.Location" type="System.Drawing.Point, System.Drawing">
-    <value>129, 104</value>
-  </data>
-  <data name="metroLabel_order.Text" xml:space="preserve">
-    <value>Order</value>
-  </data>
-  <data name="metroLabel_order.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="metroLabel4.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleLeft</value>
-  </data>
-  <data name="metroLabel10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 15</value>
-  </data>
-  <data name="&gt;&gt;metroComboBox_repeat.Name" xml:space="preserve">
-    <value>metroComboBox_repeat</value>
-  </data>
-  <data name="metroLabel_repeat.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 247</value>
-  </data>
-  <data name="&gt;&gt;metroComboBox_view.Name" xml:space="preserve">
-    <value>metroComboBox_view</value>
-  </data>
-  <data name="metroLabel7.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 30</value>
-  </data>
-  <data name="metroComboBox_view.ItemHeight" type="System.Int32, mscorlib">
-    <value>23</value>
-  </data>
-  <data name="metroComboBox_order.Size" type="System.Drawing.Size, System.Drawing">
-    <value>148, 29</value>
-  </data>
-  <data name="metroLabel9.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 89</value>
-  </data>
-  <data name="metroComboBox_style.Items7" xml:space="preserve">
-    <value>Orange</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_view.Name" xml:space="preserve">
-    <value>metroLabel_view</value>
-  </data>
-  <data name="metroLabel1.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;metroLabel3.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;metroLabel6.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="&gt;&gt;metroComboBox_style.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="metroLabel_repeat.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 29</value>
-  </data>
-  <data name="metroComboBox_repeat.Items1" xml:space="preserve">
-    <value>One</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_style.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="metroLabel_style.Text" xml:space="preserve">
-    <value>Style</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
 </root>

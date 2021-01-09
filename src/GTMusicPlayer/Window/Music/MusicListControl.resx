@@ -117,78 +117,18 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="&gt;&gt;metroLabel_delete.Name" xml:space="preserve">
-    <value>metroLabel_delete</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_delete.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_delete.Parent" xml:space="preserve">
-    <value>metroPanel_bottom</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_delete.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_add.Name" xml:space="preserve">
-    <value>metroLabel_add</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_add.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_add.Parent" xml:space="preserve">
-    <value>metroPanel_bottom</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_add.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_count.Name" xml:space="preserve">
-    <value>metroLabel_count</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_count.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_count.Parent" xml:space="preserve">
-    <value>metroPanel_bottom</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_count.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="metroPanel_bottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Top</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="metroPanel_bottom.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="metroPanel_bottom.Size" type="System.Drawing.Size, System.Drawing">
-    <value>259, 20</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="metroPanel_bottom.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;metroPanel_bottom.Name" xml:space="preserve">
-    <value>metroPanel_bottom</value>
-  </data>
-  <data name="&gt;&gt;metroPanel_bottom.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroPanel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroPanel_bottom.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;metroPanel_bottom.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
   <data name="metroLabel_delete.Location" type="System.Drawing.Point, System.Drawing">
     <value>244, 2</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="metroLabel_delete.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>0, 0, 0, 0</value>
   </data>
   <data name="metroLabel_delete.Size" type="System.Drawing.Size, System.Drawing">
     <value>15, 15</value>
   </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
   <data name="metroLabel_delete.TabIndex" type="System.Int32, mscorlib">
     <value>4</value>
   </data>
@@ -270,6 +210,30 @@
   <data name="&gt;&gt;metroLabel_count.ZOrder" xml:space="preserve">
     <value>4</value>
   </data>
+  <data name="metroPanel_bottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Top</value>
+  </data>
+  <data name="metroPanel_bottom.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="metroPanel_bottom.Size" type="System.Drawing.Size, System.Drawing">
+    <value>259, 20</value>
+  </data>
+  <data name="metroPanel_bottom.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;metroPanel_bottom.Name" xml:space="preserve">
+    <value>metroPanel_bottom</value>
+  </data>
+  <data name="&gt;&gt;metroPanel_bottom.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroPanel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;metroPanel_bottom.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;metroPanel_bottom.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
   <data name="stackPanel.AutoScroll" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
@@ -306,21 +270,6 @@
   <data name="menuItem_add.Text" xml:space="preserve">
     <value>Add</value>
   </data>
-  <data name="deleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
-  </data>
-  <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
-    <value>Delete</value>
-  </data>
-  <data name="metroContextMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 70</value>
-  </data>
-  <data name="&gt;&gt;metroContextMenu.Name" xml:space="preserve">
-    <value>metroContextMenu</value>
-  </data>
-  <data name="&gt;&gt;metroContextMenu.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroContextMenu, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
   <data name="menuItem_deleteSelected.Size" type="System.Drawing.Size, System.Drawing">
     <value>166, 22</value>
   </data>
@@ -338,6 +287,21 @@
   </data>
   <data name="menuItem_deleteAll.Text" xml:space="preserve">
     <value>All</value>
+  </data>
+  <data name="deleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="deleteToolStripMenuItem.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="metroContextMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>181, 70</value>
+  </data>
+  <data name="&gt;&gt;metroContextMenu.Name" xml:space="preserve">
+    <value>metroContextMenu</value>
+  </data>
+  <data name="&gt;&gt;metroContextMenu.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroContextMenu, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

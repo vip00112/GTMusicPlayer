@@ -32,7 +32,7 @@ namespace MetroFramework
         /// <param name="message"></param>
         /// <param name="height" optional=211></param>
         /// <returns></returns>
-        public static DialogResult Show(IWin32Window owner, String message,int height)
+        public static DialogResult Show(IWin32Window owner, String message, int height)
         { return Show(owner, message, "Notification", height); }
 
         /// <summary>
@@ -107,7 +107,7 @@ namespace MetroFramework
         public static DialogResult Show(IWin32Window owner, String message, String title, MessageBoxButtons buttons, MessageBoxIcon icon, int height)
         { return Show(owner, message, title, buttons, icon, MessageBoxDefaultButton.Button1, height); }
 
-           /// <summary>
+        /// <summary>
         /// Shows a metro-styles message notification into the specified owner window.
         /// </summary>
         /// <param name="owner"></param>
@@ -140,8 +140,8 @@ namespace MetroFramework
 
             if (owner != null)
             {
-                Form _owner = (owner as Form == null) ? ((UserControl)owner).ParentForm : (Form)owner;
-                
+                Form _owner = (owner as Form == null) ? ((UserControl) owner).ParentForm : (Form) owner;
+
                 //int _minWidth = 500;
                 //int _minHeight = 350;
 
@@ -216,7 +216,7 @@ namespace MetroFramework
                     while (!_asyncresult.IsCompleted)
                     { Thread.Sleep(1); Application.DoEvents(); }
                 }
-                catch 
+                catch
                 {
                     _cancelled = true;
 
@@ -235,7 +235,7 @@ namespace MetroFramework
                     //_owner.Controls.Remove(_control);
                     _control.Dispose(); _control = null;
                 }
-                 
+
             }
 
             return _result;

@@ -113,10 +113,12 @@
             this.Controls.Add(this.metroTextBox_description);
             this.Controls.Add(this.metroTextBox_name);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "AlbumCreateDialog";
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.DropShadow;
             this.ShowInTaskbar = false;
+            this.Load += new System.EventHandler(this.AlbumCreateDialog_Load);
             this.ResumeLayout(false);
 
         }

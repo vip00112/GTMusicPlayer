@@ -231,12 +231,20 @@ namespace MetroFramework.Drawing
 
         public sealed class BackColor
         {
+            //public static Color Form(MetroThemeStyle theme)
+            //{
+            //    if (theme == MetroThemeStyle.Dark)
+            //        return Color.FromArgb(17, 17, 17);
+
+            //    return Color.FromArgb(255, 255, 255);
+            //}
+
             public static Color Form(MetroThemeStyle theme)
             {
                 if (theme == MetroThemeStyle.Dark)
-                    return Color.FromArgb(17, 17, 17);
+                    return Color.FromArgb(33, 33, 33);
 
-                return Color.FromArgb(255, 255, 255);
+                return Color.FromArgb(238, 238, 238);
             }
 
             public sealed class Button
@@ -244,7 +252,7 @@ namespace MetroFramework.Drawing
                 public static Color Normal(MetroThemeStyle theme)
                 {
                     if (theme == MetroThemeStyle.Dark)
-                        return Color.FromArgb(34, 34, 34);
+                        return Color.FromArgb(33, 33, 33);
 
                     return Color.FromArgb(238, 238, 238);
                 }
@@ -389,7 +397,7 @@ namespace MetroFramework.Drawing
                     public static Color Normal(MetroThemeStyle theme)
                     {
                         if (theme == MetroThemeStyle.Dark)
-                            return Color.FromArgb(38, 38, 38);
+                            return Color.FromArgb(33, 33, 33);
 
                         return Color.FromArgb(234, 234, 234);
                     }
@@ -397,7 +405,7 @@ namespace MetroFramework.Drawing
                     public static Color Hover(MetroThemeStyle theme)
                     {
                         if (theme == MetroThemeStyle.Dark)
-                            return Color.FromArgb(38, 38, 38);
+                            return Color.FromArgb(33, 33, 33);
 
                         return Color.FromArgb(234, 234, 234);
                     }
@@ -405,7 +413,7 @@ namespace MetroFramework.Drawing
                     public static Color Press(MetroThemeStyle theme)
                     {
                         if (theme == MetroThemeStyle.Dark)
-                            return Color.FromArgb(38, 38, 38);
+                            return Color.FromArgb(33, 33, 33);
 
                         return Color.FromArgb(234, 234, 234);
                     }
@@ -413,7 +421,7 @@ namespace MetroFramework.Drawing
                     public static Color Disabled(MetroThemeStyle theme)
                     {
                         if (theme == MetroThemeStyle.Dark)
-                            return Color.FromArgb(38, 38, 38);
+                            return Color.FromArgb(33, 33, 33);
 
                         return Color.FromArgb(234, 234, 234);
                     }
@@ -427,7 +435,7 @@ namespace MetroFramework.Drawing
                     public static Color Normal(MetroThemeStyle theme)
                     {
                         if (theme == MetroThemeStyle.Dark)
-                            return Color.FromArgb(38, 38, 38);
+                            return Color.FromArgb(33, 33, 33);
 
                         return Color.FromArgb(234, 234, 234);
                     }
@@ -435,7 +443,7 @@ namespace MetroFramework.Drawing
                     public static Color Hover(MetroThemeStyle theme)
                     {
                         if (theme == MetroThemeStyle.Dark)
-                            return Color.FromArgb(38, 38, 38);
+                            return Color.FromArgb(33, 33, 33);
 
                         return Color.FromArgb(234, 234, 234);
                     }
@@ -443,7 +451,7 @@ namespace MetroFramework.Drawing
                     public static Color Press(MetroThemeStyle theme)
                     {
                         if (theme == MetroThemeStyle.Dark)
-                            return Color.FromArgb(38, 38, 38);
+                            return Color.FromArgb(33, 33, 33);
 
                         return Color.FromArgb(234, 234, 234);
                     }

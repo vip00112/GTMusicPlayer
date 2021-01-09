@@ -96,6 +96,7 @@ namespace GTMusicPlayer
                 Setting.Instance.Save();
             }
             StyleManager = metroStyleManager;
+            GlobalStyleManager.Instance.Init(StyleManager);
         }
 
         private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
@@ -155,10 +156,7 @@ namespace GTMusicPlayer
 
         private void menuItem_toolLyric_Click(object sender, EventArgs e)
         {
-            var form = FormUtil.FindForm<LyricEditForm>();
-            if (form == null) form = new LyricEditForm(metroStyleManager);
-
-            FormUtil.ActiveForm(form);
+            var form = FormUtil.ActiveForm<LyricEditForm>();
             if (_player.CurrentMusic != null)
             {
                 if (!form.InitMusic(_player.CurrentMusic)) form.SearchLyrics();
@@ -167,18 +165,12 @@ namespace GTMusicPlayer
 
         private void menuItem_setting_Click(object sender, EventArgs e)
         {
-            var form = FormUtil.FindForm<SettingForm>();
-            if (form == null) form = new SettingForm(metroStyleManager);
-
-            FormUtil.ActiveForm(form);
+            FormUtil.ActiveForm<SettingForm>();
         }
 
         private void menuItem_album_Click(object sender, EventArgs e)
         {
-            var form = FormUtil.FindForm<AlbumForm>();
-            if (form == null) form = new AlbumForm(metroStyleManager);
-
-            FormUtil.ActiveForm(form);
+            FormUtil.ActiveForm<AlbumForm>();
         }
 
         private void menuItem_mode_Click(object sender, EventArgs e)
@@ -189,7 +181,7 @@ namespace GTMusicPlayer
                 Hide();
                 ShowInTaskbar = false;
 
-                if (form == null) form = new MiniForm(metroStyleManager);
+                if (form == null) form = new MiniForm();
                 FormUtil.ActiveForm(form);
                 form.TopMost = true;
             }
@@ -218,8 +210,8 @@ namespace GTMusicPlayer
             }
             else
             {
-                var form = FormUtil.FindForm<MiniForm>();
-                if (form != null) FormUtil.ActiveForm(form);
+                var form = FormUtil.ActiveForm<MiniForm>();
+                form.TopMost = true;
             }
         }
 
@@ -328,7 +320,6 @@ namespace GTMusicPlayer
                     _player.Play(nextMusic);
                     return;
                 }
-
                 InitUI();
             });
         }
@@ -350,6 +341,7 @@ namespace GTMusicPlayer
                 int value = (int) e.CurrentTime.TotalSeconds;
                 if (value <= metroTrackBar_duration.Maximum)
                 {
+                    // TODO : 트랙바 수동 이동시 싱크 문제 있음
                     metroTrackBar_duration.Value = value;
                     metroLabel_currentTime.Text = e.CurrentTime.View();
                 }

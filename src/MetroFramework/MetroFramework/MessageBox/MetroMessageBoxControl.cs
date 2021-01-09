@@ -187,18 +187,18 @@ namespace MetroFramework
                     metroButton3.Tag = DialogResult.Ignore;
 
                     break;
-                default : break;
+                default: break;
             }
 
             switch (_properties.Icon)
             {
-                case  MessageBoxIcon.Error:
+                case MessageBoxIcon.Error:
                     panelbody.BackColor = _errorColor; break;
                 case MessageBoxIcon.Warning:
                     panelbody.BackColor = _warningColor; break;
                 case MessageBoxIcon.Information:
-                    panelbody.BackColor = _defaultColor;                    
-                     break;
+                    panelbody.BackColor = _defaultColor;
+                    break;
                 case MessageBoxIcon.Question:
                     panelbody.BackColor = _question; break;
                 default:
@@ -238,7 +238,7 @@ namespace MetroFramework
                     {
                         if (metroButton3.Enabled) metroButton3.Focus();
                     }
-                    break;  
+                    break;
                 default: break;
             }
         }
@@ -252,10 +252,10 @@ namespace MetroFramework
         }
 
         private void button_MouseEnter(object sender, EventArgs e)
-        { StylizeButton((MetroButton)sender, true); }
+        { StylizeButton((MetroButton) sender, true); }
 
         private void button_MouseLeave(object sender, EventArgs e)
-        { StylizeButton((MetroButton)sender); }
+        { StylizeButton((MetroButton) sender); }
 
         private void StylizeButton(MetroButton button)
         { StylizeButton(button, false); }
@@ -266,7 +266,7 @@ namespace MetroFramework
 
             button.MouseClick -= button_MouseClick;
             button.MouseClick += button_MouseClick;
-            
+
             button.MouseEnter -= button_MouseEnter;
             button.MouseEnter += button_MouseEnter;
 
@@ -290,11 +290,35 @@ namespace MetroFramework
 
         private void button_Click(object sender, EventArgs e)
         {
-            MetroButton button = (MetroButton)sender;
+            MetroButton button = (MetroButton) sender;
             if (!button.Enabled) return;
-            _result = (DialogResult)button.Tag;
-            Hide(); 
+            _result = (DialogResult) button.Tag;
+            Hide();
         }
 
+        #region Protected Method
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Escape)
+            {
+                switch (_properties.Buttons)
+                {
+                    case MessageBoxButtons.YesNo:
+                        _result = DialogResult.No;
+                        break;
+                    case MessageBoxButtons.AbortRetryIgnore:
+                        _result = DialogResult.Abort;
+                        break;
+                    default:
+                        _result = DialogResult.Cancel;
+                        break;
+                }
+                Hide();
+                return true;
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+        #endregion
     }
 }

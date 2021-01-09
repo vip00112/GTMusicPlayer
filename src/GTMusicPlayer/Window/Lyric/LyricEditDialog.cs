@@ -19,15 +19,9 @@ namespace GTMusicPlayer
         private Lyric _lyric;
 
         #region Constructor
-        private LyricEditDialog()
+        public LyricEditDialog()
         {
             InitializeComponent();
-        }
-
-        public LyricEditDialog(MetroStyleManager styleManager) : this()
-        {
-            StyleManager = styleManager;
-            this.SetStyleManager(StyleManager);
         }
         #endregion
 
@@ -52,6 +46,11 @@ namespace GTMusicPlayer
         #endregion
 
         #region Control Event
+        private void LyricEditDialog_Load(object sender, EventArgs e)
+        {
+            GlobalStyleManager.Instance.ApplyManagerToControl(this);
+        }
+
         private void metroButton_ok_Click(object sender, EventArgs e)
         {
             string text = metroTextBox_text.Text;

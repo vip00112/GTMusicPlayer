@@ -50,7 +50,7 @@ namespace GTMusicPlayer
 
         private void metroLabel_edit_Click(object sender, EventArgs e)
         {
-            using (var dialog = new AlbumCreateDialog(StyleManager))
+            using (var dialog = new AlbumCreateDialog())
             {
                 dialog.Album = Album;
                 if (dialog.ShowDialog() != DialogResult.OK) return;

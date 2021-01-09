@@ -59,8 +59,8 @@ namespace GTMusicPlayer
 
         private void metroContextMenu_Opening(object sender, CancelEventArgs e)
         {
-            metroContextMenu.StyleManager = StyleManager;
-            metroContextMenu.SetStyleManager(StyleManager);
+            menuItem_deleteSelected.Enabled = _selectedItems.Count > 0;
+            menuItem_deleteWithoutSelected.Enabled = _selectedItems.Count > 0;
         }
 
         private void menuItem_add_Click(object sender, EventArgs e)
@@ -75,17 +75,17 @@ namespace GTMusicPlayer
 
         private void metroLabel_delete_Click(object sender, EventArgs e)
         {
-            DeleteSelected();
+            if (_selectedItems.Count > 0) DeleteSelected();
         }
 
         private void menuItem_deleteSelected_Click(object sender, EventArgs e)
         {
-            DeleteSelected();
+            if (_selectedItems.Count > 0) DeleteSelected();
         }
 
         private void menuItem_deleteWithoutSelected_Click(object sender, EventArgs e)
         {
-            DeleteWithoutSelected();
+            if (_selectedItems.Count > 0) DeleteWithoutSelected();
         }
 
         private void menuItem_deleteAll_Click(object sender, EventArgs e)
@@ -157,7 +157,7 @@ namespace GTMusicPlayer
 
         private void AddMusic(string path)
         {
-            WaitDialog.Show(this, StyleManager);
+            WaitDialog.Process(this);
 
             if (Directory.Exists(path))
             {
@@ -252,14 +252,13 @@ namespace GTMusicPlayer
         #endregion
 
         #region Public Method
-        public void AddMusic(Music music)
+        public void AddMusic(Music music, bool useEvent = true)
         {
             var item = new MusicListItemControl(music);
-            item.StyleManager = StyleManager;
-            item.SetStyleManager(StyleManager);
             item.OnDeleted += OnDeletedItem;
             item.OnClicked += OnClickedItem;
             item.OnDoubleClicked += OnDoubleClickedItem;
+            GlobalStyleManager.Instance.ApplyManagerToControl(item);
 
             _items.Add(item);
             metroLabel_count.Text = string.Format("Total : {0}", _items.Count);
@@ -270,7 +269,7 @@ namespace GTMusicPlayer
                 SetErrorUI(music, "Load failed. file does not exist.");
             }
 
-            OnAddedMusic?.Invoke(this, new MusicEventArgs(music));
+            if (useEvent) OnAddedMusic?.Invoke(this, new MusicEventArgs(music));
         }
 
         public void ClearItems()
@@ -336,7 +335,14 @@ namespace GTMusicPlayer
                     }
                     break;
                 case SelectType.Ctrl:
-                    _selectedItems.Add(item);
+                    if (_selectedItems.Contains(item))
+                    {
+                        _selectedItems.Remove(item);
+                    }
+                    else
+                    {
+                        _selectedItems.Add(item);
+                    }
                     break;
                 case SelectType.Shift:
                     var firstItem = _selectedItems.FirstOrDefault();

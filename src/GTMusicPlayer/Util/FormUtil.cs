@@ -18,10 +18,10 @@ namespace GTMusicPlayer
             return default(TForm);
         }
 
-        public static void ActiveForm<TForm>() where TForm : Form
+        public static TForm ActiveForm<TForm>() where TForm : Form
         {
             var form = FindForm<TForm>();
-            if (form == null) return;
+            if (form == null) form = Activator.CreateInstance<TForm>();
 
             if (form.WindowState == FormWindowState.Minimized)
             {
@@ -29,6 +29,7 @@ namespace GTMusicPlayer
             }
             form.Show();
             form.Activate();
+            return form;
         }
 
         public static void ActiveForm(Form form)

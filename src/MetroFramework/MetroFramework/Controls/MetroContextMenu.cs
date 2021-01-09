@@ -148,7 +148,6 @@ namespace MetroFramework.Controls
 
         #endregion
 
-
         public MetroContextMenu(IContainer Container)
         {
             if (Container != null)
@@ -197,7 +196,8 @@ namespace MetroFramework.Controls
 
             public override Color MenuBorder
             {
-                get { return MetroPaint.BackColor.Form(_theme); }
+                //get { return MetroPaint.BackColor.Form(_theme); }
+                get { return MetroPaint.GetStyleColor(_style); }
             }
 
             public override Color ToolStripBorder

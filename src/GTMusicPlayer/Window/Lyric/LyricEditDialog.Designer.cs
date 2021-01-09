@@ -210,6 +210,7 @@
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.DropShadow;
             this.ShowInTaskbar = false;
+            this.Load += new System.EventHandler(this.LyricEditDialog_Load);
             this.ResumeLayout(false);
 
         }

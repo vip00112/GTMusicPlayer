@@ -35,7 +35,7 @@ namespace GTMusicPlayer
         #region Control Event
         private void metroLabel_create_Click(object sender, EventArgs e)
         {
-            using (var dialog = new AlbumCreateDialog(StyleManager))
+            using (var dialog = new AlbumCreateDialog())
             {
                 if (dialog.ShowDialog() != DialogResult.OK) return;
 
@@ -43,7 +43,6 @@ namespace GTMusicPlayer
                 AddAlbum(album);
 
                 OnCreatedAlbum?.Invoke(this, new AlbumEventArgs(album));
-                MessageBoxUtil.Info(this, "Create Completed.");
             }
         }
         #endregion
@@ -55,7 +54,6 @@ namespace GTMusicPlayer
             if (item == null) return;
 
             OnEditedAlbum?.Invoke(this, new AlbumEventArgs(item.Album));
-            MessageBoxUtil.Info(this, "Edit Completed.");
         }
 
         private void OnDeletedItem(object sender, EventArgs e)
@@ -71,7 +69,6 @@ namespace GTMusicPlayer
             stackPanel.Controls.Remove(item);
 
             OnDeletedAlbum?.Invoke(this, new AlbumEventArgs(item.Album));
-            MessageBoxUtil.Info(this, "Delete Completed.");
         }
 
         private void OnClickedItem(object sender, EventArgs e)
@@ -95,12 +92,11 @@ namespace GTMusicPlayer
         public void AddAlbum(Album album)
         {
             var item = new AlbumListItemControl(album);
-            item.StyleManager = StyleManager;
-            item.SetStyleManager(StyleManager);
             item.OnEdited += OnEditedItem;
             item.OnDeleted += OnDeletedItem;
             item.OnClicked += OnClickedItem;
             item.OnDoubleClicked += OnDoubleClickedItem;
+            GlobalStyleManager.Instance.ApplyManagerToControl(item);
 
             _items.Add(item);
             stackPanel.Controls.Add(item);

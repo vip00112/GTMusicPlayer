@@ -52,8 +52,8 @@
             // 
             // metroComboBox_theme
             // 
-            resources.ApplyResources(this.metroComboBox_theme, "metroComboBox_theme");
             this.metroComboBox_theme.FormattingEnabled = true;
+            resources.ApplyResources(this.metroComboBox_theme, "metroComboBox_theme");
             this.metroComboBox_theme.Items.AddRange(new object[] {
             resources.GetString("metroComboBox_theme.Items"),
             resources.GetString("metroComboBox_theme.Items1")});
@@ -64,15 +64,15 @@
             // 
             // metroLabel_theme
             // 
-            resources.ApplyResources(this.metroLabel_theme, "metroLabel_theme");
             this.metroLabel_theme.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            resources.ApplyResources(this.metroLabel_theme, "metroLabel_theme");
             this.metroLabel_theme.Name = "metroLabel_theme";
             this.metroLabel_theme.UseStyleColors = true;
             // 
             // metroComboBox_style
             // 
-            resources.ApplyResources(this.metroComboBox_style, "metroComboBox_style");
             this.metroComboBox_style.FormattingEnabled = true;
+            resources.ApplyResources(this.metroComboBox_style, "metroComboBox_style");
             this.metroComboBox_style.Items.AddRange(new object[] {
             resources.GetString("metroComboBox_style.Items"),
             resources.GetString("metroComboBox_style.Items1"),
@@ -95,70 +95,70 @@
             // 
             // metroLabel_style
             // 
-            resources.ApplyResources(this.metroLabel_style, "metroLabel_style");
             this.metroLabel_style.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            resources.ApplyResources(this.metroLabel_style, "metroLabel_style");
             this.metroLabel_style.Name = "metroLabel_style";
             this.metroLabel_style.UseStyleColors = true;
             // 
             // metroLabel3
             // 
-            resources.ApplyResources(this.metroLabel3, "metroLabel3");
             this.metroLabel3.FontSize = MetroFramework.MetroLabelSize.Small;
             this.metroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            resources.ApplyResources(this.metroLabel3, "metroLabel3");
             this.metroLabel3.Name = "metroLabel3";
             this.metroLabel3.UseStyleColors = true;
             // 
             // metroLabel4
             // 
-            resources.ApplyResources(this.metroLabel4, "metroLabel4");
             this.metroLabel4.FontSize = MetroFramework.MetroLabelSize.Small;
+            resources.ApplyResources(this.metroLabel4, "metroLabel4");
             this.metroLabel4.Name = "metroLabel4";
             this.metroLabel4.UseStyleColors = true;
             this.metroLabel4.WrapToLine = true;
             // 
             // metroLabel5
             // 
-            resources.ApplyResources(this.metroLabel5, "metroLabel5");
             this.metroLabel5.FontSize = MetroFramework.MetroLabelSize.Small;
             this.metroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            resources.ApplyResources(this.metroLabel5, "metroLabel5");
             this.metroLabel5.Name = "metroLabel5";
             this.metroLabel5.UseStyleColors = true;
             // 
             // metroLabel6
             // 
-            resources.ApplyResources(this.metroLabel6, "metroLabel6");
             this.metroLabel6.FontSize = MetroFramework.MetroLabelSize.Small;
+            resources.ApplyResources(this.metroLabel6, "metroLabel6");
             this.metroLabel6.Name = "metroLabel6";
             this.metroLabel6.UseStyleColors = true;
             this.metroLabel6.WrapToLine = true;
             // 
             // metroLabel7
             // 
-            resources.ApplyResources(this.metroLabel7, "metroLabel7");
             this.metroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            resources.ApplyResources(this.metroLabel7, "metroLabel7");
             this.metroLabel7.Name = "metroLabel7";
             this.metroLabel7.UseStyleColors = true;
             // 
             // metroLabel9
             // 
-            resources.ApplyResources(this.metroLabel9, "metroLabel9");
             this.metroLabel9.FontSize = MetroFramework.MetroLabelSize.Small;
             this.metroLabel9.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            resources.ApplyResources(this.metroLabel9, "metroLabel9");
             this.metroLabel9.Name = "metroLabel9";
             this.metroLabel9.UseStyleColors = true;
             // 
             // metroLabel10
             // 
-            resources.ApplyResources(this.metroLabel10, "metroLabel10");
             this.metroLabel10.FontSize = MetroFramework.MetroLabelSize.Small;
+            resources.ApplyResources(this.metroLabel10, "metroLabel10");
             this.metroLabel10.Name = "metroLabel10";
             this.metroLabel10.UseStyleColors = true;
             this.metroLabel10.WrapToLine = true;
             // 
             // metroComboBox_order
             // 
-            resources.ApplyResources(this.metroComboBox_order, "metroComboBox_order");
             this.metroComboBox_order.FormattingEnabled = true;
+            resources.ApplyResources(this.metroComboBox_order, "metroComboBox_order");
             this.metroComboBox_order.Items.AddRange(new object[] {
             resources.GetString("metroComboBox_order.Items"),
             resources.GetString("metroComboBox_order.Items1")});
@@ -169,15 +169,15 @@
             // 
             // metroLabel_order
             // 
-            resources.ApplyResources(this.metroLabel_order, "metroLabel_order");
             this.metroLabel_order.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            resources.ApplyResources(this.metroLabel_order, "metroLabel_order");
             this.metroLabel_order.Name = "metroLabel_order";
             this.metroLabel_order.UseStyleColors = true;
             // 
             // metroComboBox_repeat
             // 
-            resources.ApplyResources(this.metroComboBox_repeat, "metroComboBox_repeat");
             this.metroComboBox_repeat.FormattingEnabled = true;
+            resources.ApplyResources(this.metroComboBox_repeat, "metroComboBox_repeat");
             this.metroComboBox_repeat.Items.AddRange(new object[] {
             resources.GetString("metroComboBox_repeat.Items"),
             resources.GetString("metroComboBox_repeat.Items1"),
@@ -189,31 +189,31 @@
             // 
             // metroLabel_repeat
             // 
-            resources.ApplyResources(this.metroLabel_repeat, "metroLabel_repeat");
             this.metroLabel_repeat.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            resources.ApplyResources(this.metroLabel_repeat, "metroLabel_repeat");
             this.metroLabel_repeat.Name = "metroLabel_repeat";
             this.metroLabel_repeat.UseStyleColors = true;
             // 
             // metroLabel1
             // 
-            resources.ApplyResources(this.metroLabel1, "metroLabel1");
             this.metroLabel1.FontSize = MetroFramework.MetroLabelSize.Small;
             this.metroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Regular;
+            resources.ApplyResources(this.metroLabel1, "metroLabel1");
             this.metroLabel1.Name = "metroLabel1";
             this.metroLabel1.UseStyleColors = true;
             // 
             // metroLabel2
             // 
-            resources.ApplyResources(this.metroLabel2, "metroLabel2");
             this.metroLabel2.FontSize = MetroFramework.MetroLabelSize.Small;
+            resources.ApplyResources(this.metroLabel2, "metroLabel2");
             this.metroLabel2.Name = "metroLabel2";
             this.metroLabel2.UseStyleColors = true;
             this.metroLabel2.WrapToLine = true;
             // 
             // metroComboBox_view
             // 
-            resources.ApplyResources(this.metroComboBox_view, "metroComboBox_view");
             this.metroComboBox_view.FormattingEnabled = true;
+            resources.ApplyResources(this.metroComboBox_view, "metroComboBox_view");
             this.metroComboBox_view.Items.AddRange(new object[] {
             resources.GetString("metroComboBox_view.Items"),
             resources.GetString("metroComboBox_view.Items1")});
@@ -224,8 +224,8 @@
             // 
             // metroLabel_view
             // 
-            resources.ApplyResources(this.metroLabel_view, "metroLabel_view");
             this.metroLabel_view.FontWeight = MetroFramework.MetroLabelWeight.Bold;
+            resources.ApplyResources(this.metroLabel_view, "metroLabel_view");
             this.metroLabel_view.Name = "metroLabel_view";
             this.metroLabel_view.UseStyleColors = true;
             // 
@@ -257,6 +257,7 @@
             this.Name = "SettingForm";
             this.Resizable = false;
             this.ShadowType = MetroFramework.Forms.MetroFormShadowType.DropShadow;
+            this.Load += new System.EventHandler(this.SettingForm_Load);
             this.ResumeLayout(false);
 
         }

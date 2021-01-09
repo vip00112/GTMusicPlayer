@@ -17,15 +17,14 @@ namespace GTMusicPlayer
         private Album _album;
 
         #region Constructor
-        private AlbumCreateDialog()
+        public AlbumCreateDialog()
         {
             InitializeComponent();
         }
 
-        public AlbumCreateDialog(MetroStyleManager styleManager) : this()
+        private void AlbumCreateDialog_Load(object sender, EventArgs e)
         {
-            StyleManager = styleManager;
-            this.SetStyleManager(StyleManager);
+            GlobalStyleManager.Instance.ApplyManagerToControl(this);
         }
         #endregion
 

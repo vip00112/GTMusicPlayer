@@ -27,8 +27,8 @@ namespace MetroFramework
 {
     internal static class MetroDefaults
     {
-        public const MetroColorStyle Style = MetroColorStyle.Blue;
-        public const MetroThemeStyle Theme = MetroThemeStyle.Light;
+        public const MetroColorStyle Style = MetroColorStyle.Red;
+        public const MetroThemeStyle Theme = MetroThemeStyle.Dark;
 
         public static class PropertyCategory
         {

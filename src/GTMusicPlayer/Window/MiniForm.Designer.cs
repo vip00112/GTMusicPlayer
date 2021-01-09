@@ -120,6 +120,7 @@
             this.Text = "GTMusicPlayer";
             this.TopMost = true;
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MiniForm_FormClosing);
+            this.Load += new System.EventHandler(this.MiniForm_Load);
             this.ResumeLayout(false);
 
         }

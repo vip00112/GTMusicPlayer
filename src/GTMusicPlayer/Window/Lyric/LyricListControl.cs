@@ -41,7 +41,7 @@ namespace GTMusicPlayer
         {
             if (lyrics == null || lyrics.Count == 0) return false;
 
-            WaitDialog.Show(this, StyleManager);
+            WaitDialog.Process(this);
 
             stackPanel.SuspendLayout();
             stackPanel.IsNotMove = true;
@@ -55,8 +55,8 @@ namespace GTMusicPlayer
             foreach (var lyric in lyrics)
             {
                 var item = new LyricListItemControl(lyric);
-                item.SetStyleManager(StyleManager);
                 item.OnClicked += OnClicked;
+                GlobalStyleManager.Instance.ApplyManagerToControl(item);
 
                 item.Font = new Font(item.Font.Name, item.Font.Size, FontStyle.Bold);
                 _items.Add(item);

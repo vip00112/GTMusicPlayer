@@ -23,13 +23,12 @@ namespace GTMusicPlayer
             InitializeComponent();
         }
 
-        public static void Show(Control control, MetroStyleManager styleManager)
+        public static void Process(Control control)
         {
             if (_dialog != null && !_dialog.IsDisposed) return;
 
             _dialog = new WaitDialog();
-            _dialog.StyleManager = styleManager;
-            _dialog.SetStyleManager(styleManager);
+            GlobalStyleManager.Instance.ApplyManagerToControl(_dialog);
             _dialog.OwnerForm = FindOwnerForm(control);
             _dialog.TopMost = true;
             _dialog.Show(control);

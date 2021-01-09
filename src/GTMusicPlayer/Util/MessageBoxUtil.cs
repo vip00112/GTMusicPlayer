@@ -25,8 +25,7 @@ namespace GTMusicPlayer
         public static bool Confirm(IWin32Window owner, string msg)
         {
             WaitDialog.Hide();
-            var result = MetroMessageBox.Show(owner, msg, "GTMusicPlayer", MessageBoxButtons.YesNoCancel, MessageBoxIcon.Question);
-            //var result = MessageBox.Show(owner, msg, "GTMusicPlayer", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            var result = MetroMessageBox.Show(owner, msg, "GTMusicPlayer", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             return result == DialogResult.OK;
         }
     }

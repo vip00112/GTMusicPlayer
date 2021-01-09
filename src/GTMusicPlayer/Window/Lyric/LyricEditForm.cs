@@ -19,26 +19,22 @@ namespace GTMusicPlayer
         private List<ALSongLyricHeaderControl> _items;
         private ALSongLyricHeaderControl _selectedItem;
         private string _musicFilePath;
+        private string _lyricFilePath;
 
         #region Constructor
-        private LyricEditForm()
+        public LyricEditForm()
         {
             InitializeComponent();
-            _items = new List<ALSongLyricHeaderControl>();
-        }
 
-        public LyricEditForm(MetroStyleManager styleManager) : this()
-        {
-            StyleManager = styleManager;
-            this.SetStyleManager(StyleManager);
+            _items = new List<ALSongLyricHeaderControl>();
         }
         #endregion
 
         #region Control Event
         private void LyricEditForm_Load(object sender, EventArgs e)
         {
-            lyricListControl.StyleManager = StyleManager;
-            lyricListControl.SetStyleManager(StyleManager);
+            GlobalStyleManager.Instance.ApplyManagerToControl(this);
+
             lyricListControl.OnClickedLyric += OnClickedLyric;
         }
 
@@ -55,7 +51,13 @@ namespace GTMusicPlayer
 
             var sf = new SaveFileDialog();
             sf.Filter = "Lyric File|*.lyric;";
-            if (!string.IsNullOrWhiteSpace(_musicFilePath))
+
+            if (!string.IsNullOrWhiteSpace(_lyricFilePath))
+            {
+                sf.InitialDirectory = Path.GetDirectoryName(_lyricFilePath);
+                sf.FileName = Path.GetFileNameWithoutExtension(_lyricFilePath);
+            }
+            else if (!string.IsNullOrWhiteSpace(_musicFilePath))
             {
                 sf.InitialDirectory = Path.GetDirectoryName(_musicFilePath);
                 sf.FileName = Path.GetFileNameWithoutExtension(_musicFilePath);
@@ -74,6 +76,7 @@ namespace GTMusicPlayer
             string content = File.ReadAllText(of.FileName);
             var lyrics = LyricParser.Convert(content);
 
+            _lyricFilePath = of.FileName;
             LoadLyrics(lyrics);
         }
         #endregion
@@ -84,7 +87,7 @@ namespace GTMusicPlayer
             var item = sender as ALSongLyricHeaderControl;
             if (item == null) return;
 
-            WaitDialog.Show(this, StyleManager);
+            WaitDialog.Process(this);
 
             var lyrics = LyricParser.GetALSongLyrics(item.Header);
             if (lyricListControl.InitUI(lyrics))
@@ -92,10 +95,12 @@ namespace GTMusicPlayer
                 if (_selectedItem != null) _selectedItem.IsSelected = false;
                 item.IsSelected = true;
                 _selectedItem = item;
+                _lyricFilePath = null;
             }
             else
             {
-                _selectedItem.IsSelected = true;
+                if (_selectedItem != null) _selectedItem.IsSelected = true;
+                MessageBoxUtil.Error(this, "Can not laod lyrics from this header.");
             }
             lyricListControl.Focus();
             lyricListControl.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -103,7 +108,7 @@ namespace GTMusicPlayer
 
         private void OnClickedLyric(object sender, LyricEventArgs e)
         {
-            using (var dialog = new LyricEditDialog(StyleManager))
+            using (var dialog = new LyricEditDialog())
             {
                 dialog.Lyric = e.Lyric;
                 if (dialog.ShowDialog() != DialogResult.OK) return;
@@ -173,8 +178,8 @@ namespace GTMusicPlayer
             {
                 var item = new ALSongLyricHeaderControl(header);
                 item.StyleManager = StyleManager;
-                item.SetStyleManager(StyleManager);
                 item.OnClicked += OnClickedHeader;
+                GlobalStyleManager.Instance.ApplyManagerToControl(item);
 
                 _items.Add(item);
                 stackPanel_header.Controls.Add(item);

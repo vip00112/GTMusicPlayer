@@ -21,14 +21,6 @@ namespace GTMusicPlayer
             InitializeComponent();
         }
 
-        public MiniForm(MetroStyleManager styleManager) : this()
-        {
-            StyleManager = styleManager;
-            this.SetStyleManager(StyleManager);
-
-            lyricListControl.StyleManager = StyleManager;
-        }
-
         public Music Music
         {
             get { return _music; }
@@ -39,6 +31,11 @@ namespace GTMusicPlayer
                 _music = value;
                 metroLabel_title.Text = _music.Title;
             }
+        }
+
+        private void MiniForm_Load(object sender, EventArgs e)
+        {
+            GlobalStyleManager.Instance.ApplyManagerToControl(this);
         }
 
         private void MiniForm_FormClosing(object sender, FormClosingEventArgs e)

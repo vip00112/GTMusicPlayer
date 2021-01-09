@@ -21,20 +21,11 @@ namespace GTMusicPlayer
         private SelectType _selectType;
 
         #region Constructor
-        private AlbumForm()
+        public AlbumForm()
         {
             InitializeComponent();
 
             _albums = new List<Album>();
-        }
-
-        public AlbumForm(MetroStyleManager styleManager) : this()
-        {
-            StyleManager = styleManager;
-            this.SetStyleManager(StyleManager);
-
-            albumListControl.StyleManager = StyleManager;
-            musicListControl.StyleManager = StyleManager;
         }
         #endregion
 
@@ -48,12 +39,12 @@ namespace GTMusicPlayer
 
                 _album = value;
 
-                WaitDialog.Show(this, StyleManager);
+                WaitDialog.Process(this);
 
                 musicListControl.ClearItems();
                 foreach (var music in _album.Musics)
                 {
-                    musicListControl.AddMusic(music);
+                    musicListControl.AddMusic(music, false);
                 }
 
                 albumListControl.SelectAlbum(_album);
@@ -73,6 +64,8 @@ namespace GTMusicPlayer
         #region Control Event
         private void AlbumForm_Load(object sender, EventArgs e)
         {
+            GlobalStyleManager.Instance.ApplyManagerToControl(this);
+
             _albums.AddRange(Setting.Instance.Albums);
             _albums.ForEach(o => albumListControl.AddAlbum(o));
             if (_albums.Count > 0) CurrentAlbum = _albums[0];
@@ -83,6 +76,7 @@ namespace GTMusicPlayer
             albumListControl.OnFocusedAlbum += OnFocusedAlbum;
             albumListControl.OnSelectedAlbum += OnSelectedAlbum;
 
+            musicListControl.OnAddedMusic += OnAddedMusic;
             musicListControl.OnDeletedMusic += OnDeletedMusic;
             musicListControl.OnClickedMusic += OnClickedMusic;
             musicListControl.OnMovedMusic += OnMovedMusic;
@@ -138,6 +132,7 @@ namespace GTMusicPlayer
             if (e.Music == null) return;
 
             CurrentAlbum.Musics.Add(e.Music);
+            Setting.Instance.Save();
         }
 
         private void OnDeletedMusic(object sender, MusicEventArgs e)
