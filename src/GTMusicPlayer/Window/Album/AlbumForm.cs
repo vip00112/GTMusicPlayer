@@ -130,6 +130,7 @@ namespace GTMusicPlayer
         private void OnAddedMusic(object sender, MusicEventArgs e)
         {
             if (e.Music == null) return;
+            if (CurrentAlbum == null) return;
 
             CurrentAlbum.Musics.Add(e.Music);
             Setting.Instance.Save();
@@ -152,6 +153,8 @@ namespace GTMusicPlayer
 
         private void OnMovedMusic(object sender, MusicListEventArgs e)
         {
+            if (CurrentAlbum == null) return;
+
             CurrentAlbum.Musics.Clear();
             CurrentAlbum.Musics.AddRange(e.Musics);
             Setting.Instance.Save();

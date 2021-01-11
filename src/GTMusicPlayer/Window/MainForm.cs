@@ -159,7 +159,7 @@ namespace GTMusicPlayer
             var form = FormUtil.ActiveForm<LyricEditForm>();
             if (_player.CurrentMusic != null)
             {
-                if (!form.InitMusic(_player.CurrentMusic)) form.SearchLyrics();
+                form.InitSearch(_player.CurrentMusic);
             }
         }
 

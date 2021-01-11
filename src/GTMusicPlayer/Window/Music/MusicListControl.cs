@@ -22,6 +22,7 @@ namespace GTMusicPlayer
 
         private List<MusicListItemControl> _items;
         private List<MusicListItemControl> _selectedItems;
+        private MusicListItemControl _itemByContextMenu;
 
         #region Constructor
         public MusicListControl()
@@ -59,8 +60,15 @@ namespace GTMusicPlayer
 
         private void metroContextMenu_Opening(object sender, CancelEventArgs e)
         {
+            _itemByContextMenu = FindItemByLocation(stackPanel.PointToClient(Cursor.Position));
+            if (_itemByContextMenu != null && !_itemByContextMenu.IsSelected)
+            {
+                OnClickedMusic?.Invoke(this, new MusicEventArgs(_itemByContextMenu.Music));
+            }
+
             menuItem_deleteSelected.Enabled = _selectedItems.Count > 0;
             menuItem_deleteWithoutSelected.Enabled = _selectedItems.Count > 0;
+            menuItem_editLyric.Enabled = _itemByContextMenu != null;
         }
 
         private void menuItem_add_Click(object sender, EventArgs e)
@@ -91,6 +99,17 @@ namespace GTMusicPlayer
         private void menuItem_deleteAll_Click(object sender, EventArgs e)
         {
             DeleteAll();
+        }
+
+        private void menuItem_editLyric_Click(object sender, EventArgs e)
+        {
+            if (_itemByContextMenu == null) return;
+
+            var form = FormUtil.ActiveForm<LyricEditForm>();
+            if (_itemByContextMenu.Music != null)
+            {
+                if (!form.InitEdit(_itemByContextMenu.Music)) form.SearchLyrics();
+            }
         }
         #endregion
 
@@ -248,6 +267,17 @@ namespace GTMusicPlayer
 
             _selectedItems.Clear();
             metroLabel_count.Text = string.Format("Total : {0}", _items.Count);
+        }
+
+        private MusicListItemControl FindItemByLocation(Point loc)
+        {
+            foreach (var item in _items)
+            {
+                int startY = item.Location.Y;
+                int endY = item.Location.Y + item.Height;
+                if (loc.Y >= startY && loc.Y <= endY) return item;
+            }
+            return null;
         }
         #endregion
 

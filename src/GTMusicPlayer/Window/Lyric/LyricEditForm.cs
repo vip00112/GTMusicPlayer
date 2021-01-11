@@ -16,10 +16,13 @@ namespace GTMusicPlayer
 {
     public partial class LyricEditForm : MetroForm
     {
+        enum Mode { Edit, Search }
+
         private List<ALSongLyricHeaderControl> _items;
         private ALSongLyricHeaderControl _selectedItem;
         private string _musicFilePath;
         private string _lyricFilePath;
+        private Mode _mode;
 
         #region Constructor
         public LyricEditForm()
@@ -49,22 +52,27 @@ namespace GTMusicPlayer
             string content = LyricParser.Convert(lyrics);
             if (string.IsNullOrWhiteSpace(content)) return;
 
-            var sf = new SaveFileDialog();
-            sf.Filter = "Lyric File|*.lyric;";
-
-            if (!string.IsNullOrWhiteSpace(_lyricFilePath))
+            if (_mode == Mode.Edit)
             {
-                sf.InitialDirectory = Path.GetDirectoryName(_lyricFilePath);
-                sf.FileName = Path.GetFileNameWithoutExtension(_lyricFilePath);
+                string dirPath = Path.GetDirectoryName(_musicFilePath);
+                string fileName = Path.GetFileNameWithoutExtension(_musicFilePath) + ".lyric";
+                string filePath = Path.Combine(dirPath, fileName);
+                File.WriteAllText(filePath, content);
             }
-            else if (!string.IsNullOrWhiteSpace(_musicFilePath))
+            else if (_mode == Mode.Search)
             {
-                sf.InitialDirectory = Path.GetDirectoryName(_musicFilePath);
-                sf.FileName = Path.GetFileNameWithoutExtension(_musicFilePath);
-            }
-            if (sf.ShowDialog() != DialogResult.OK) return;
+                if (!string.IsNullOrWhiteSpace(_lyricFilePath))
+                {
+                    File.WriteAllText(_lyricFilePath, content);
+                    return;
+                }
 
-            File.WriteAllText(sf.FileName, content);
+                var sf = new SaveFileDialog();
+                sf.Filter = "Lyric File|*.lyric;";
+                if (sf.ShowDialog() != DialogResult.OK) return;
+
+                File.WriteAllText(sf.FileName, content);
+            }
         }
 
         private void metroButton_load_Click(object sender, EventArgs e)
@@ -131,30 +139,59 @@ namespace GTMusicPlayer
             }
             return false;
         }
+
+        private void ClearUI()
+        {
+            stackPanel_header.SuspendLayout();
+            stackPanel_header.IsNotMove = true;
+            foreach (var item in _items)
+            {
+                item.OnClicked -= OnClickedHeader;
+                stackPanel_header.Controls.Remove(item);
+            }
+            _items.Clear();
+            stackPanel_header.IsNotMove = false;
+            stackPanel_header.ResumeLayout();
+
+            lyricListControl.ClearUI();
+        }
         #endregion
 
         #region Public Method
-        public bool InitMusic(Music music)
+        public bool InitEdit(Music music)
         {
+            ClearUI();
+
             metroTextBox_title.Text = music.Title;
             metroTextBox_singer.Text = music.ViewSinger;
             _musicFilePath = music.FilePath;
+            _mode = Mode.Edit;
+
+            Text = Path.GetFileNameWithoutExtension(_musicFilePath) + ".lyric";
+            Invalidate();
             return LoadLyrics(music.Lyrics);
+        }
+
+        public void InitSearch(Music music)
+        {
+            ClearUI();
+
+            metroTextBox_title.Text = music.Title;
+            metroTextBox_singer.Text = music.ViewSinger;
+            _mode = Mode.Search;
+
+            Text = "Search Lyric";
+            Invalidate();
+            SearchLyrics();
         }
 
         public void SearchLyrics()
         {
             string title = metroTextBox_title.Text;
-            if (string.IsNullOrWhiteSpace(title))
-            {
-                MessageBoxUtil.Error(this, "Please input title.");
-                return;
-            }
-
             string singer = metroTextBox_singer.Text;
-            if (string.IsNullOrWhiteSpace(singer))
+            if (string.IsNullOrWhiteSpace(title) && string.IsNullOrWhiteSpace(singer))
             {
-                MessageBoxUtil.Error(this, "Please input singer.");
+                MessageBoxUtil.Error(this, "Please input title or singer.");
                 return;
             }
 

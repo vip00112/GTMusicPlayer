@@ -87,6 +87,20 @@ namespace GTMusicPlayer
             stackPanel.ScrollMove(_oldItem);
         }
 
+        public void ClearUI()
+        {
+            stackPanel.SuspendLayout();
+            stackPanel.IsNotMove = true;
+            foreach (var item in _items)
+            {
+                item.OnClicked -= OnClicked;
+                stackPanel.Controls.Remove(item);
+            }
+            _items.Clear();
+            stackPanel.IsNotMove = false;
+            stackPanel.ResumeLayout();
+        }
+
         public void ReorderUI()
         {
             var lyrics = _items.Select(o => o.Lyric).OrderBy(o => o.Time).ToList();

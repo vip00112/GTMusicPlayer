@@ -117,401 +117,278 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="metroStyleManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>22, 19</value>
-  </metadata>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>7, 12</value>
-  </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>576, 425</value>
-  </data>
-  <metadata name="metroContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>184, 19</value>
-  </metadata>
-  <data name="menuItem_toolLyric.Size" type="System.Drawing.Size, System.Drawing">
-    <value>99, 22</value>
-  </data>
-  <data name="menuItem_toolLyric.Text" xml:space="preserve">
-    <value>Lyric</value>
-  </data>
-  <data name="toolToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 22</value>
-  </data>
-  <data name="toolToolStripMenuItem.Text" xml:space="preserve">
-    <value>Tool</value>
-  </data>
-  <data name="menuItem_album.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 22</value>
-  </data>
-  <data name="menuItem_album.Text" xml:space="preserve">
-    <value>Album</value>
-  </data>
-  <data name="menuItem_setting.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 22</value>
-  </data>
-  <data name="menuItem_setting.Text" xml:space="preserve">
-    <value>Setting</value>
-  </data>
-  <data name="menuItem_mode.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 22</value>
-  </data>
-  <data name="menuItem_mode.Text" xml:space="preserve">
-    <value>Mode</value>
-  </data>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="menuItem_mode.Visible" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="menuItem_exit.Size" type="System.Drawing.Size, System.Drawing">
-    <value>112, 22</value>
-  </data>
-  <data name="menuItem_exit.Text" xml:space="preserve">
-    <value>Exit</value>
-  </data>
-  <data name="metroContextMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>113, 114</value>
-  </data>
-  <data name="&gt;&gt;metroContextMenu.Name" xml:space="preserve">
-    <value>metroContextMenu</value>
-  </data>
-  <data name="&gt;&gt;metroContextMenu.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroContextMenu, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="lyricListControl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left</value>
-  </data>
-  <data name="lyricListControl.Location" type="System.Drawing.Point, System.Drawing">
-    <value>288, 37</value>
-  </data>
-  <data name="lyricListControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>265, 365</value>
-  </data>
-  <data name="lyricListControl.TabIndex" type="System.Int32, mscorlib">
-    <value>8</value>
-  </data>
-  <data name="&gt;&gt;lyricListControl.Name" xml:space="preserve">
-    <value>lyricListControl</value>
-  </data>
-  <data name="&gt;&gt;lyricListControl.Type" xml:space="preserve">
-    <value>GTMusicPlayer.LyricListControl, GTMusicPlayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;lyricListControl.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lyricListControl.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="musicListControl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>Top, Bottom, Left</value>
-  </data>
   <data name="musicListControl.Location" type="System.Drawing.Point, System.Drawing">
     <value>23, 152</value>
   </data>
-  <data name="musicListControl.Size" type="System.Drawing.Size, System.Drawing">
-    <value>259, 250</value>
-  </data>
-  <data name="musicListControl.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;musicListControl.Name" xml:space="preserve">
-    <value>musicListControl</value>
-  </data>
-  <data name="&gt;&gt;musicListControl.Type" xml:space="preserve">
-    <value>GTMusicPlayer.MusicListControl, GTMusicPlayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;musicListControl.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;musicListControl.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="metroLabel_next.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="metroLabel_next.Location" type="System.Drawing.Point, System.Drawing">
-    <value>262, 102</value>
-  </data>
-  <data name="metroLabel_next.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="metroLabel_next.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 19</value>
-  </data>
-  <data name="metroLabel_next.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="metroLabel_next.Text" xml:space="preserve">
-    <value>▶I</value>
-  </data>
-  <data name="metroLabel_next.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_next.Name" xml:space="preserve">
-    <value>metroLabel_next</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_next.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_next.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_next.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="metroLabel_prev.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="metroLabel_prev.Location" type="System.Drawing.Point, System.Drawing">
-    <value>20, 102</value>
-  </data>
-  <data name="metroLabel_prev.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>0, 0, 0, 0</value>
-  </data>
-  <data name="metroLabel_prev.Size" type="System.Drawing.Size, System.Drawing">
-    <value>20, 19</value>
-  </data>
-  <data name="metroLabel_prev.TabIndex" type="System.Int32, mscorlib">
-    <value>7</value>
-  </data>
-  <data name="metroLabel_prev.Text" xml:space="preserve">
-    <value>I◀</value>
-  </data>
-  <data name="metroLabel_prev.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_prev.Name" xml:space="preserve">
-    <value>metroLabel_prev</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_prev.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_prev.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_prev.ZOrder" xml:space="preserve">
-    <value>4</value>
-  </data>
-  <data name="metroCheckBox_mute.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <data name="metroCheckBox_mute.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 127</value>
-  </data>
-  <data name="metroCheckBox_mute.Size" type="System.Drawing.Size, System.Drawing">
-    <value>51, 15</value>
-  </data>
-  <data name="metroCheckBox_mute.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="metroCheckBox_mute.Text" xml:space="preserve">
-    <value>Mute</value>
-  </data>
-  <data name="&gt;&gt;metroCheckBox_mute.Name" xml:space="preserve">
-    <value>metroCheckBox_mute</value>
-  </data>
-  <data name="&gt;&gt;metroCheckBox_mute.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroCheckBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroCheckBox_mute.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;metroCheckBox_mute.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="metroButton_play.Enabled" type="System.Boolean, mscorlib">
-    <value>False</value>
-  </data>
-  <data name="metroButton_play.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 37</value>
-  </data>
-  <data name="metroButton_play.Size" type="System.Drawing.Size, System.Drawing">
-    <value>34, 34</value>
-  </data>
-  <data name="metroButton_play.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
-  </data>
-  <data name="metroButton_play.Text" xml:space="preserve">
-    <value>▶</value>
-  </data>
-  <data name="&gt;&gt;metroButton_play.Name" xml:space="preserve">
-    <value>metroButton_play</value>
-  </data>
-  <data name="&gt;&gt;metroButton_play.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroButton_play.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;metroButton_play.ZOrder" xml:space="preserve">
-    <value>6</value>
-  </data>
-  <data name="metroLabel_totalTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>207, 74</value>
-  </data>
-  <data name="metroLabel_totalTime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 25</value>
-  </data>
-  <data name="metroLabel_totalTime.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="metroLabel_totalTime.Text" xml:space="preserve">
-    <value>00:00</value>
-  </data>
-  <data name="metroLabel_totalTime.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomRight</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_totalTime.Name" xml:space="preserve">
-    <value>metroLabel_totalTime</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_totalTime.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_totalTime.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_totalTime.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="metroLabel_currentTime.Location" type="System.Drawing.Point, System.Drawing">
-    <value>23, 74</value>
-  </data>
-  <data name="metroLabel_currentTime.Size" type="System.Drawing.Size, System.Drawing">
-    <value>70, 25</value>
-  </data>
-  <data name="metroLabel_currentTime.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="metroLabel_currentTime.Text" xml:space="preserve">
-    <value>00:00</value>
-  </data>
-  <data name="metroLabel_currentTime.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>BottomLeft</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_currentTime.Name" xml:space="preserve">
-    <value>metroLabel_currentTime</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_currentTime.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_currentTime.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_currentTime.ZOrder" xml:space="preserve">
-    <value>8</value>
-  </data>
-  <data name="metroLabel_singer.Location" type="System.Drawing.Point, System.Drawing">
-    <value>63, 56</value>
-  </data>
-  <data name="metroLabel_singer.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 15</value>
-  </data>
-  <data name="metroLabel_singer.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="&gt;&gt;menuItem_toolLyric.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="metroLabel_singer.Text" xml:space="preserve">
     <value>Singer</value>
   </data>
-  <data name="&gt;&gt;metroLabel_singer.Name" xml:space="preserve">
-    <value>metroLabel_singer</value>
+  <data name="menuItem_album.Text" xml:space="preserve">
+    <value>Album</value>
   </data>
-  <data name="&gt;&gt;metroLabel_singer.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_singer.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_singer.ZOrder" xml:space="preserve">
-    <value>9</value>
-  </data>
-  <data name="metroLabel_title.Location" type="System.Drawing.Point, System.Drawing">
-    <value>63, 37</value>
-  </data>
-  <data name="metroLabel_title.Size" type="System.Drawing.Size, System.Drawing">
-    <value>214, 19</value>
-  </data>
-  <data name="metroLabel_title.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="metroLabel_title.Text" xml:space="preserve">
-    <value>Title</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_title.Name" xml:space="preserve">
-    <value>metroLabel_title</value>
+  <data name="&gt;&gt;metroCheckBox_mute.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroCheckBox, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
   <data name="&gt;&gt;metroLabel_title.Type" xml:space="preserve">
     <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
-  <data name="&gt;&gt;metroLabel_title.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_title.ZOrder" xml:space="preserve">
-    <value>10</value>
-  </data>
-  <data name="metroLabel_volume.Location" type="System.Drawing.Point, System.Drawing">
-    <value>93, 127</value>
-  </data>
   <data name="metroLabel_volume.Size" type="System.Drawing.Size, System.Drawing">
     <value>78, 19</value>
   </data>
-  <data name="metroLabel_volume.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+  <data name="metroLabel_singer.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 15</value>
   </data>
-  <data name="metroLabel_volume.Text" xml:space="preserve">
-    <value>Volume. 100</value>
-  </data>
-  <data name="metroLabel_volume.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleRight</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_volume.Name" xml:space="preserve">
-    <value>metroLabel_volume</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_volume.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_volume.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;metroLabel_volume.ZOrder" xml:space="preserve">
-    <value>11</value>
-  </data>
-  <data name="metroTrackBar_volume.Location" type="System.Drawing.Point, System.Drawing">
-    <value>177, 127</value>
-  </data>
-  <data name="metroTrackBar_volume.Size" type="System.Drawing.Size, System.Drawing">
-    <value>100, 19</value>
-  </data>
-  <data name="metroTrackBar_volume.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="metroTrackBar_volume.Text" xml:space="preserve">
-    <value>metroTrackBar</value>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="metroButton_play.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
   <data name="&gt;&gt;metroTrackBar_volume.Name" xml:space="preserve">
     <value>metroTrackBar_volume</value>
   </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>20, 30, 20, 20</value>
+  </data>
+  <data name="menuItem_album.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 22</value>
+  </data>
+  <data name="lyricListControl.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;menuItem_mode.Name" xml:space="preserve">
+    <value>menuItem_mode</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_singer.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="metroTrackBar_volume.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="metroLabel_title.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;metroCheckBox_mute.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
   <data name="&gt;&gt;metroTrackBar_volume.Type" xml:space="preserve">
     <value>MetroFramework.Controls.MetroTrackBar, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
-  <data name="&gt;&gt;metroTrackBar_volume.Parent" xml:space="preserve">
+  <data name="menuItem_toolLyric.Text" xml:space="preserve">
+    <value>Search Lyric</value>
+  </data>
+  <data name="lyricListControl.Location" type="System.Drawing.Point, System.Drawing">
+    <value>288, 37</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_next.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;metroTrackBar_volume.ZOrder" xml:space="preserve">
-    <value>12</value>
+  <data name="&gt;&gt;metroContextMenu.Name" xml:space="preserve">
+    <value>metroContextMenu</value>
+  </data>
+  <data name="metroLabel_prev.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="&gt;&gt;menuItem_exit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="menuItem_mode.Visible" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="notifyIcon.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAAAAAAAEAIACvAwAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAEAAAABAAgEAAAA9ntg7QAAAAFv
+        ck5UAc+id5oAAANpSURBVHja7d1RahtLEIbRefNqvNrYWY53Ya8k9ptw5IdAArFiVE2qf9U5erlcaFL0
+        fCCjHmaOAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4Kvuj2/Hy/F6/ryc/+ve/JPcHd+P0/H+2+d0/j93
+        5p9y+Z/+2Lxfn6eQLUyfv93jX7fv4/No/gnf/adPN/AU8F2aPn+7h0+37+PzYP5b93xxA5/Nf+veLm7g
+        m/lv3fs/PuYXgPkFYH4BmF8A5heA+QVgfgGYXwDmF4D5BWB+AZhfAOYXgPkFYH4BmF8A17r2vn4B3EAA
+        lfv6BRAfQO2+fgHEB1C7r18A4QFU7+sXQHgA1fv6BRAeQPW+fgGEB1C9r18A4QFU/30BCEAAAhCAAAQg
+        AAEIQAACEIAAJgaQep4ugAWSz9MFsODyJ5+nC6As+zxdAOXv/uzzdAEUpZ+nC6Ao/TxdAEXp5+kCGL6B
+        AhCAAAQgAAEIQAACEIAABCAAAUwMoOs8f9UGTp1/ic7z/BUbOHn+JZe/8zy/voGz51+g9zy/voGz51/w
+        3d97nl9dP33+su7z/Or66fOXdZ/nV9dPn7+s+zy/un76/PE/hFjf/EOSCyAAF0AALoAAXAABuAACcAEE
+        4AIIwAUQgAsgABdAAC6AAKwXgPUCsF4A1gvAegFYLwDrBWC9AKwXgPUCsF4A1gvAegFYLwDrBWC9AKwX
+        gPUCsF4A1kcE8Hrxn/+x/QZMn7/MI2KGPyLGQ6KGPyTKY+KGPybOgyKz51/Ao2KT51+UgIdFp86/8G8B
+        j4tPnL9d+g8h8T/kCEAAAhCAAAQgAAEIQAACEIAABPAfdZ/HC6BZ93m8AJp1n8cLoFn3ebwA2vWexwug
+        Xe95vAC2SKDvPF4A2/wt0HMeL4DhPyQJQAACEIAABCAAAQhAAAIQgAAEIAABfFX6/QwCKEq/n0EARen3
+        MwigKP1+BgGUZd/PIICy7PsZBLAkgdz7GQSw7G+BzPsZBGB+AZhfAOYXgPkFYH4BmF8A5heA+QVgfgGY
+        XwDmt4Hmt4Hmt4Hmt4Hmt4Hm3077e/OGz9+u/b15w+dv1/7evOHzt9vgvXmj599A+3vzhs/fboP35o2e
+        f4st3OC9eYPn3+S7NPS9eTcyPwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcLWfuU9UmepeoEcAAAAASUVO
+        RK5CYII=
+</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_title.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;metroTrackBar_duration.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="metroTrackBar_volume.Location" type="System.Drawing.Point, System.Drawing">
+    <value>177, 127</value>
+  </data>
+  <data name="metroLabel_volume.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_currentTime.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;menuItem_mode.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lyricListControl.Type" xml:space="preserve">
+    <value>GTMusicPlayer.LyricListControl, GTMusicPlayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="metroLabel_currentTime.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomLeft</value>
+  </data>
+  <data name="metroCheckBox_mute.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="menuItem_exit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 22</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_totalTime.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_totalTime.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;metroStyleManager.Name" xml:space="preserve">
+    <value>metroStyleManager</value>
+  </data>
+  <data name="metroLabel_totalTime.Text" xml:space="preserve">
+    <value>00:00</value>
+  </data>
+  <data name="&gt;&gt;menuItem_setting.Name" xml:space="preserve">
+    <value>menuItem_setting</value>
+  </data>
+  <data name="metroLabel_singer.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;metroTrackBar_duration.Name" xml:space="preserve">
+    <value>metroTrackBar_duration</value>
+  </data>
+  <data name="metroLabel_volume.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleRight</value>
+  </data>
+  <data name="metroLabel_title.Text" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_next.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_singer.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_currentTime.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_title.Name" xml:space="preserve">
+    <value>metroLabel_title</value>
+  </data>
+  <data name="&gt;&gt;lyricListControl.Name" xml:space="preserve">
+    <value>lyricListControl</value>
+  </data>
+  <data name="metroLabel_totalTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 25</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_title.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="musicListControl.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;notifyIcon.Name" xml:space="preserve">
+    <value>notifyIcon</value>
+  </data>
+  <data name="&gt;&gt;metroCheckBox_mute.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="metroLabel_next.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
+  </data>
+  <data name="metroTrackBar_volume.Text" xml:space="preserve">
+    <value>metroTrackBar</value>
+  </data>
+  <data name="&gt;&gt;menuItem_album.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;metroButton_play.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroButton, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>MainForm</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_volume.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="notifyIcon.Visible" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="metroLabel_volume.Text" xml:space="preserve">
+    <value>Volume. 100</value>
+  </data>
+  <data name="metroLabel_totalTime.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;metroStyleManager.Type" xml:space="preserve">
+    <value>MetroFramework.Components.MetroStyleManager, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_prev.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;toolToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;metroTrackBar_duration.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="metroLabel_next.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_next.Name" xml:space="preserve">
+    <value>metroLabel_next</value>
+  </data>
+  <data name="&gt;&gt;metroButton_play.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="metroCheckBox_mute.Text" xml:space="preserve">
+    <value>Mute</value>
+  </data>
+  <data name="&gt;&gt;metroButton_play.Name" xml:space="preserve">
+    <value>metroButton_play</value>
+  </data>
+  <data name="metroLabel_currentTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 74</value>
   </data>
   <data name="metroTrackBar_duration.Enabled" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="metroTrackBar_duration.Location" type="System.Drawing.Point, System.Drawing">
-    <value>43, 102</value>
+  <data name="&gt;&gt;lyricListControl.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
-  <data name="metroTrackBar_duration.Size" type="System.Drawing.Size, System.Drawing">
-    <value>216, 19</value>
+  <data name="metroButton_play.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 37</value>
+  </data>
+  <data name="metroLabel_prev.Location" type="System.Drawing.Point, System.Drawing">
+    <value>20, 102</value>
+  </data>
+  <data name="&gt;&gt;metroTrackBar_volume.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="metroLabel_currentTime.Text" xml:space="preserve">
+    <value>00:00</value>
+  </data>
+  <data name="&gt;&gt;metroButton_play.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;musicListControl.Type" xml:space="preserve">
+    <value>GTMusicPlayer.MusicListControl, GTMusicPlayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
+  </data>
+  <data name="metroCheckBox_mute.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
   </data>
   <data name="metroTrackBar_duration.TabIndex" type="System.Int32, mscorlib">
     <value>0</value>
@@ -519,17 +396,128 @@
   <data name="metroTrackBar_duration.Text" xml:space="preserve">
     <value>metroTrackBar</value>
   </data>
-  <data name="&gt;&gt;metroTrackBar_duration.Name" xml:space="preserve">
-    <value>metroTrackBar_duration</value>
+  <data name="metroTrackBar_duration.Location" type="System.Drawing.Point, System.Drawing">
+    <value>43, 102</value>
   </data>
-  <data name="&gt;&gt;metroTrackBar_duration.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroTrackBar, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  <data name="metroButton_play.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
-  <data name="&gt;&gt;metroTrackBar_duration.Parent" xml:space="preserve">
+  <data name="musicListControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>259, 250</value>
+  </data>
+  <data name="metroContextMenu.Size" type="System.Drawing.Size, System.Drawing">
+    <value>113, 114</value>
+  </data>
+  <data name="metroLabel_currentTime.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_singer.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="metroLabel_title.Location" type="System.Drawing.Point, System.Drawing">
+    <value>63, 37</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>GTMusicPlayer</value>
+  </data>
+  <data name="metroLabel_prev.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="metroLabel_next.Text" xml:space="preserve">
+    <value>▶I</value>
+  </data>
+  <data name="metroButton_play.Text" xml:space="preserve">
+    <value>▶</value>
+  </data>
+  <data name="menuItem_setting.Text" xml:space="preserve">
+    <value>Setting</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_currentTime.Name" xml:space="preserve">
+    <value>metroLabel_currentTime</value>
+  </data>
+  <data name="metroCheckBox_mute.Size" type="System.Drawing.Size, System.Drawing">
+    <value>51, 15</value>
+  </data>
+  <data name="&gt;&gt;menuItem_album.Name" xml:space="preserve">
+    <value>menuItem_album</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_totalTime.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;metroTrackBar_duration.ZOrder" xml:space="preserve">
-    <value>13</value>
+  <data name="menuItem_mode.Text" xml:space="preserve">
+    <value>Mode</value>
+  </data>
+  <data name="metroLabel_currentTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 25</value>
+  </data>
+  <data name="metroLabel_prev.Enabled" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
+  <data name="metroCheckBox_mute.Location" type="System.Drawing.Point, System.Drawing">
+    <value>23, 127</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_currentTime.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_totalTime.Name" xml:space="preserve">
+    <value>metroLabel_totalTime</value>
+  </data>
+  <data name="metroTrackBar_duration.Size" type="System.Drawing.Size, System.Drawing">
+    <value>216, 19</value>
+  </data>
+  <data name="&gt;&gt;metroCheckBox_mute.Name" xml:space="preserve">
+    <value>metroCheckBox_mute</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_singer.Name" xml:space="preserve">
+    <value>metroLabel_singer</value>
+  </data>
+  <data name="&gt;&gt;musicListControl.Name" xml:space="preserve">
+    <value>musicListControl</value>
+  </data>
+  <data name="musicListControl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>MetroFramework.Forms.MetroForm, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="metroLabel_next.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 19</value>
+  </data>
+  <data name="&gt;&gt;lyricListControl.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="metroLabel_totalTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>207, 74</value>
+  </data>
+  <data name="&gt;&gt;toolToolStripMenuItem.Name" xml:space="preserve">
+    <value>toolToolStripMenuItem</value>
+  </data>
+  <data name="metroLabel_prev.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 19</value>
+  </data>
+  <data name="metroLabel_totalTime.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>BottomRight</value>
+  </data>
+  <data name="metroLabel_next.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>0, 0, 0, 0</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_volume.Name" xml:space="preserve">
+    <value>metroLabel_volume</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_volume.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_volume.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="metroLabel_singer.Location" type="System.Drawing.Point, System.Drawing">
+    <value>63, 56</value>
+  </data>
+  <data name="notifyIcon.Text" xml:space="preserve">
+    <value>GTMusicPlayer</value>
+  </data>
+  <data name="metroLabel_next.Location" type="System.Drawing.Point, System.Drawing">
+    <value>262, 102</value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -552,94 +540,106 @@
         RK5CYII=
 </value>
   </data>
-  <data name="$this.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>20, 30, 20, 20</value>
+  <data name="metroLabel_prev.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>GTMusicPlayer</value>
+  <data name="&gt;&gt;metroLabel_prev.ZOrder" xml:space="preserve">
+    <value>4</value>
   </data>
-  <data name="&gt;&gt;metroStyleManager.Name" xml:space="preserve">
-    <value>metroStyleManager</value>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>7, 12</value>
   </data>
-  <data name="&gt;&gt;metroStyleManager.Type" xml:space="preserve">
-    <value>MetroFramework.Components.MetroStyleManager, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  <data name="&gt;&gt;metroContextMenu.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroContextMenu, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
-  <data name="&gt;&gt;toolToolStripMenuItem.Name" xml:space="preserve">
-    <value>toolToolStripMenuItem</value>
-  </data>
-  <data name="&gt;&gt;toolToolStripMenuItem.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;metroLabel_prev.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
   <data name="&gt;&gt;menuItem_toolLyric.Name" xml:space="preserve">
     <value>menuItem_toolLyric</value>
   </data>
-  <data name="&gt;&gt;menuItem_toolLyric.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;metroTrackBar_volume.ZOrder" xml:space="preserve">
+    <value>12</value>
   </data>
-  <data name="&gt;&gt;menuItem_album.Name" xml:space="preserve">
-    <value>menuItem_album</value>
+  <data name="metroButton_play.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 34</value>
   </data>
-  <data name="&gt;&gt;menuItem_album.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;metroLabel_prev.Name" xml:space="preserve">
+    <value>metroLabel_prev</value>
   </data>
-  <data name="&gt;&gt;menuItem_setting.Name" xml:space="preserve">
-    <value>menuItem_setting</value>
+  <data name="lyricListControl.Size" type="System.Drawing.Size, System.Drawing">
+    <value>265, 365</value>
   </data>
-  <data name="&gt;&gt;menuItem_setting.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;menuItem_mode.Name" xml:space="preserve">
-    <value>menuItem_mode</value>
-  </data>
-  <data name="&gt;&gt;menuItem_mode.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>576, 425</value>
   </data>
   <data name="&gt;&gt;menuItem_exit.Name" xml:space="preserve">
     <value>menuItem_exit</value>
   </data>
-  <data name="&gt;&gt;menuItem_exit.Type" xml:space="preserve">
+  <data name="toolToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 22</value>
+  </data>
+  <data name="&gt;&gt;menuItem_setting.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;notifyIcon.Name" xml:space="preserve">
-    <value>notifyIcon</value>
+  <data name="menuItem_setting.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 22</value>
+  </data>
+  <data name="metroLabel_title.Size" type="System.Drawing.Size, System.Drawing">
+    <value>214, 19</value>
+  </data>
+  <data name="menuItem_exit.Text" xml:space="preserve">
+    <value>Exit</value>
+  </data>
+  <data name="metroLabel_prev.Text" xml:space="preserve">
+    <value>I◀</value>
+  </data>
+  <data name="toolToolStripMenuItem.Text" xml:space="preserve">
+    <value>Tool</value>
+  </data>
+  <data name="&gt;&gt;metroTrackBar_duration.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroTrackBar, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <data name="metroLabel_volume.Location" type="System.Drawing.Point, System.Drawing">
+    <value>93, 127</value>
+  </data>
+  <data name="metroLabel_next.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
   </data>
   <data name="&gt;&gt;notifyIcon.Type" xml:space="preserve">
     <value>System.Windows.Forms.NotifyIcon, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>MainForm</value>
+  <data name="lyricListControl.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>Top, Bottom, Left</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>MetroFramework.Forms.MetroForm, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  <data name="menuItem_mode.Size" type="System.Drawing.Size, System.Drawing">
+    <value>112, 22</value>
   </data>
+  <data name="menuItem_toolLyric.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
+  </data>
+  <data name="&gt;&gt;musicListControl.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="metroTrackBar_volume.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 19</value>
+  </data>
+  <data name="&gt;&gt;musicListControl.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;metroLabel_next.Type" xml:space="preserve">
+    <value>MetroFramework.Controls.MetroLabel, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="notifyIcon.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>345, 19</value>
   </metadata>
-  <data name="notifyIcon.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        AAABAAEAAAAAAAEAIACvAwAAFgAAAIlQTkcNChoKAAAADUlIRFIAAAEAAAABAAgEAAAA9ntg7QAAAAFv
-        ck5UAc+id5oAAANpSURBVHja7d1RahtLEIbRefNqvNrYWY53Ya8k9ptw5IdAArFiVE2qf9U5erlcaFL0
-        fCCjHmaOAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4Kvuj2/Hy/F6/ryc/+ve/JPcHd+P0/H+2+d0/j93
-        5p9y+Z/+2Lxfn6eQLUyfv93jX7fv4/No/gnf/adPN/AU8F2aPn+7h0+37+PzYP5b93xxA5/Nf+veLm7g
-        m/lv3fs/PuYXgPkFYH4BmF8A5heA+QVgfgGYXwDmF4D5BWB+AZhfAOYXgPkFYH4BmF8A17r2vn4B3EAA
-        lfv6BRAfQO2+fgHEB1C7r18A4QFU7+sXQHgA1fv6BRAeQPW+fgGEB1C9r18A4QFU/30BCEAAAhCAAAQg
-        AAEIQAACEIAAJgaQep4ugAWSz9MFsODyJ5+nC6As+zxdAOXv/uzzdAEUpZ+nC6Ao/TxdAEXp5+kCGL6B
-        AhCAAAQgAAEIQAACEIAABCAAAUwMoOs8f9UGTp1/ic7z/BUbOHn+JZe/8zy/voGz51+g9zy/voGz51/w
-        3d97nl9dP33+su7z/Or66fOXdZ/nV9dPn7+s+zy/un76/PE/hFjf/EOSCyAAF0AALoAAXAABuAACcAEE
-        4AIIwAUQgAsgABdAAC6AAKwXgPUCsF4A1gvAegFYLwDrBWC9AKwXgPUCsF4A1gvAegFYLwDrBWC9AKwX
-        gPUCsF4A1kcE8Hrxn/+x/QZMn7/MI2KGPyLGQ6KGPyTKY+KGPybOgyKz51/Ao2KT51+UgIdFp86/8G8B
-        j4tPnL9d+g8h8T/kCEAAAhCAAAQgAAEIQAACEIAABPAfdZ/HC6BZ93m8AJp1n8cLoFn3ebwA2vWexwug
-        Xe95vAC2SKDvPF4A2/wt0HMeL4DhPyQJQAACEIAABCAAAQhAAAIQgAAEIAABfFX6/QwCKEq/n0EARen3
-        MwigKP1+BgGUZd/PIICy7PsZBLAkgdz7GQSw7G+BzPsZBGB+AZhfAOYXgPkFYH4BmF8A5heA+QVgfgGY
-        XwDmt4Hmt4Hmt4Hmt4Hmt4Hm3077e/OGz9+u/b15w+dv1/7evOHzt9vgvXmj599A+3vzhs/fboP35o2e
-        f4st3OC9eYPn3+S7NPS9eTcyPwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAcLWfuU9UmepeoEcAAAAASUVO
-        RK5CYII=
-</value>
-  </data>
-  <data name="notifyIcon.Text" xml:space="preserve">
-    <value>GTMusicPlayer</value>
-  </data>
-  <data name="notifyIcon.Visible" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
+  <metadata name="metroStyleManager.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>22, 19</value>
+  </metadata>
+  <metadata name="metroContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>184, 19</value>
+  </metadata>
 </root>

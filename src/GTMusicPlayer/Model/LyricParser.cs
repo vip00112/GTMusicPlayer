@@ -21,8 +21,7 @@ namespace GTMusicPlayer
         /// <returns></returns>
         public static List<ALSongLyricHeader> GetALSongLyricHeaders(string title, string singer, int max = 0)
         {
-            if (string.IsNullOrWhiteSpace(title)) return null;
-            if (string.IsNullOrWhiteSpace(singer)) return null;
+            if (string.IsNullOrWhiteSpace(title) && string.IsNullOrWhiteSpace(singer)) return null;
 
             string url = "http://lyrics.alsong.co.kr/alsongwebservice/service1.asmx";
             string param = string.Format(Properties.Resources.ALSongLyricList, title, singer);

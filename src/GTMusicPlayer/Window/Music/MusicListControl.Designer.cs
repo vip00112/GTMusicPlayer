@@ -34,23 +34,24 @@
             this.metroLabel_delete = new MetroFramework.Controls.MetroLabel();
             this.metroLabel_add = new MetroFramework.Controls.MetroLabel();
             this.metroLabel_count = new MetroFramework.Controls.MetroLabel();
-            this.stackPanel = new GTMusicPlayer.StackPanel();
             this.metroContextMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
             this.menuItem_add = new System.Windows.Forms.ToolStripMenuItem();
             this.deleteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItem_deleteSelected = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItem_deleteWithoutSelected = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItem_deleteAll = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItem_editLyric = new System.Windows.Forms.ToolStripMenuItem();
+            this.stackPanel = new GTMusicPlayer.StackPanel();
             this.metroPanel_bottom.SuspendLayout();
             this.metroContextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // metroPanel_bottom
             // 
+            resources.ApplyResources(this.metroPanel_bottom, "metroPanel_bottom");
             this.metroPanel_bottom.Controls.Add(this.metroLabel_delete);
             this.metroPanel_bottom.Controls.Add(this.metroLabel_add);
             this.metroPanel_bottom.Controls.Add(this.metroLabel_count);
-            resources.ApplyResources(this.metroPanel_bottom, "metroPanel_bottom");
             this.metroPanel_bottom.HorizontalScrollbarBarColor = true;
             this.metroPanel_bottom.HorizontalScrollbarHighlightOnWheel = false;
             this.metroPanel_bottom.HorizontalScrollbarSize = 10;
@@ -61,19 +62,19 @@
             // 
             // metroLabel_delete
             // 
+            resources.ApplyResources(this.metroLabel_delete, "metroLabel_delete");
             this.metroLabel_delete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.metroLabel_delete.FontSize = MetroFramework.MetroLabelSize.Small;
             this.metroLabel_delete.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            resources.ApplyResources(this.metroLabel_delete, "metroLabel_delete");
             this.metroLabel_delete.Name = "metroLabel_delete";
             this.metroLabel_delete.Click += new System.EventHandler(this.metroLabel_delete_Click);
             // 
             // metroLabel_add
             // 
+            resources.ApplyResources(this.metroLabel_add, "metroLabel_add");
             this.metroLabel_add.Cursor = System.Windows.Forms.Cursors.Hand;
             this.metroLabel_add.FontSize = MetroFramework.MetroLabelSize.Small;
             this.metroLabel_add.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            resources.ApplyResources(this.metroLabel_add, "metroLabel_add");
             this.metroLabel_add.Name = "metroLabel_add";
             this.metroLabel_add.Click += new System.EventHandler(this.metroLabel_add_Click);
             // 
@@ -85,10 +86,60 @@
             this.metroLabel_count.FontWeight = MetroFramework.MetroLabelWeight.Regular;
             this.metroLabel_count.Name = "metroLabel_count";
             // 
+            // metroContextMenu
+            // 
+            resources.ApplyResources(this.metroContextMenu, "metroContextMenu");
+            this.metroContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuItem_add,
+            this.deleteToolStripMenuItem,
+            this.menuItem_editLyric});
+            this.metroContextMenu.Name = "metroContextMenu";
+            this.metroContextMenu.UseStyleColors = true;
+            this.metroContextMenu.Opening += new System.ComponentModel.CancelEventHandler(this.metroContextMenu_Opening);
+            // 
+            // menuItem_add
+            // 
+            resources.ApplyResources(this.menuItem_add, "menuItem_add");
+            this.menuItem_add.Name = "menuItem_add";
+            this.menuItem_add.Click += new System.EventHandler(this.menuItem_add_Click);
+            // 
+            // deleteToolStripMenuItem
+            // 
+            resources.ApplyResources(this.deleteToolStripMenuItem, "deleteToolStripMenuItem");
+            this.deleteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuItem_deleteSelected,
+            this.menuItem_deleteWithoutSelected,
+            this.menuItem_deleteAll});
+            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
+            // 
+            // menuItem_deleteSelected
+            // 
+            resources.ApplyResources(this.menuItem_deleteSelected, "menuItem_deleteSelected");
+            this.menuItem_deleteSelected.Name = "menuItem_deleteSelected";
+            this.menuItem_deleteSelected.Click += new System.EventHandler(this.menuItem_deleteSelected_Click);
+            // 
+            // menuItem_deleteWithoutSelected
+            // 
+            resources.ApplyResources(this.menuItem_deleteWithoutSelected, "menuItem_deleteWithoutSelected");
+            this.menuItem_deleteWithoutSelected.Name = "menuItem_deleteWithoutSelected";
+            this.menuItem_deleteWithoutSelected.Click += new System.EventHandler(this.menuItem_deleteWithoutSelected_Click);
+            // 
+            // menuItem_deleteAll
+            // 
+            resources.ApplyResources(this.menuItem_deleteAll, "menuItem_deleteAll");
+            this.menuItem_deleteAll.Name = "menuItem_deleteAll";
+            this.menuItem_deleteAll.Click += new System.EventHandler(this.menuItem_deleteAll_Click);
+            // 
+            // menuItem_editLyric
+            // 
+            resources.ApplyResources(this.menuItem_editLyric, "menuItem_editLyric");
+            this.menuItem_editLyric.Name = "menuItem_editLyric";
+            this.menuItem_editLyric.Click += new System.EventHandler(this.menuItem_editLyric_Click);
+            // 
             // stackPanel
             // 
-            this.stackPanel.AllowDrop = true;
             resources.ApplyResources(this.stackPanel, "stackPanel");
+            this.stackPanel.AllowDrop = true;
             this.stackPanel.EmptySpaceBetween = 15;
             this.stackPanel.EmptySpaceLeft = 5;
             this.stackPanel.EmptySpaceTop = 5;
@@ -106,49 +157,6 @@
             this.stackPanel.VerticalScrollbarSize = 5;
             this.stackPanel.DragDrop += new System.Windows.Forms.DragEventHandler(this.stackPanel_DragDrop);
             this.stackPanel.DragEnter += new System.Windows.Forms.DragEventHandler(this.stackPanel_DragEnter);
-            // 
-            // metroContextMenu
-            // 
-            this.metroContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuItem_add,
-            this.deleteToolStripMenuItem});
-            this.metroContextMenu.Name = "metroContextMenu";
-            resources.ApplyResources(this.metroContextMenu, "metroContextMenu");
-            this.metroContextMenu.UseStyleColors = true;
-            this.metroContextMenu.Opening += new System.ComponentModel.CancelEventHandler(this.metroContextMenu_Opening);
-            // 
-            // menuItem_add
-            // 
-            this.menuItem_add.Name = "menuItem_add";
-            resources.ApplyResources(this.menuItem_add, "menuItem_add");
-            this.menuItem_add.Click += new System.EventHandler(this.menuItem_add_Click);
-            // 
-            // deleteToolStripMenuItem
-            // 
-            this.deleteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuItem_deleteSelected,
-            this.menuItem_deleteWithoutSelected,
-            this.menuItem_deleteAll});
-            this.deleteToolStripMenuItem.Name = "deleteToolStripMenuItem";
-            resources.ApplyResources(this.deleteToolStripMenuItem, "deleteToolStripMenuItem");
-            // 
-            // menuItem_deleteSelected
-            // 
-            this.menuItem_deleteSelected.Name = "menuItem_deleteSelected";
-            resources.ApplyResources(this.menuItem_deleteSelected, "menuItem_deleteSelected");
-            this.menuItem_deleteSelected.Click += new System.EventHandler(this.menuItem_deleteSelected_Click);
-            // 
-            // menuItem_deleteWithoutSelected
-            // 
-            this.menuItem_deleteWithoutSelected.Name = "menuItem_deleteWithoutSelected";
-            resources.ApplyResources(this.menuItem_deleteWithoutSelected, "menuItem_deleteWithoutSelected");
-            this.menuItem_deleteWithoutSelected.Click += new System.EventHandler(this.menuItem_deleteWithoutSelected_Click);
-            // 
-            // menuItem_deleteAll
-            // 
-            this.menuItem_deleteAll.Name = "menuItem_deleteAll";
-            resources.ApplyResources(this.menuItem_deleteAll, "menuItem_deleteAll");
-            this.menuItem_deleteAll.Click += new System.EventHandler(this.menuItem_deleteAll_Click);
             // 
             // MusicListControl
             // 
@@ -177,5 +185,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuItem_deleteSelected;
         private System.Windows.Forms.ToolStripMenuItem menuItem_deleteWithoutSelected;
         private System.Windows.Forms.ToolStripMenuItem menuItem_deleteAll;
+        private System.Windows.Forms.ToolStripMenuItem menuItem_editLyric;
     }
 }

@@ -32,10 +32,10 @@
             this.metroTextBox_title = new MetroFramework.Controls.MetroTextBox();
             this.metroTextBox_singer = new MetroFramework.Controls.MetroTextBox();
             this.metroButton_search = new MetroFramework.Controls.MetroButton();
-            this.lyricListControl = new GTMusicPlayer.LyricListControl();
             this.stackPanel_header = new GTMusicPlayer.StackPanel();
             this.metroButton_save = new MetroFramework.Controls.MetroButton();
             this.metroButton_load = new MetroFramework.Controls.MetroButton();
+            this.lyricListControl = new GTMusicPlayer.LyricListControl();
             this.SuspendLayout();
             // 
             // metroTextBox_title
@@ -109,13 +109,6 @@
             this.metroButton_search.UseSelectable = true;
             this.metroButton_search.Click += new System.EventHandler(this.metroButton_search_Click);
             // 
-            // lyricListControl
-            // 
-            this.lyricListControl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            resources.ApplyResources(this.lyricListControl, "lyricListControl");
-            this.lyricListControl.Name = "lyricListControl";
-            this.lyricListControl.UseSelectable = true;
-            // 
             // stackPanel_header
             // 
             resources.ApplyResources(this.stackPanel_header, "stackPanel_header");
@@ -126,7 +119,9 @@
             this.stackPanel_header.HorizontalScrollbarBarColor = true;
             this.stackPanel_header.HorizontalScrollbarHighlightOnWheel = false;
             this.stackPanel_header.HorizontalScrollbarSize = 5;
+            this.stackPanel_header.IsNotMove = false;
             this.stackPanel_header.Name = "stackPanel_header";
+            this.stackPanel_header.ScrollMoveControlCount = 0;
             this.stackPanel_header.UseStyleColors = true;
             this.stackPanel_header.VerticalScrollbar = true;
             this.stackPanel_header.VerticalScrollbarBarColor = true;
@@ -147,6 +142,13 @@
             this.metroButton_load.UseSelectable = true;
             this.metroButton_load.Click += new System.EventHandler(this.metroButton_load_Click);
             // 
+            // lyricListControl
+            // 
+            this.lyricListControl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            resources.ApplyResources(this.lyricListControl, "lyricListControl");
+            this.lyricListControl.Name = "lyricListControl";
+            this.lyricListControl.UseSelectable = true;
+            // 
             // LyricEditForm
             // 
             resources.ApplyResources(this, "$this");
@@ -158,7 +160,6 @@
             this.Controls.Add(this.stackPanel_header);
             this.Controls.Add(this.metroTextBox_singer);
             this.Controls.Add(this.metroTextBox_title);
-            this.DisplayHeader = false;
             this.MaximizeBox = false;
             this.Name = "LyricEditForm";
             this.Resizable = false;
