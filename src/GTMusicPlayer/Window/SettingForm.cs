@@ -61,6 +61,15 @@ namespace GTMusicPlayer
         {
             Setting.Instance.ViewType = metroComboBox_view.SelectedIndex;
         }
+
+        private void metroButton_default_Click(object sender, EventArgs e)
+        {
+            metroComboBox_theme.SelectedIndex = (int) MetroThemeStyle.Dark - 1;
+            metroComboBox_style.SelectedIndex = (int) MetroColorStyle.Red - 1;
+            metroComboBox_repeat.SelectedIndex = (int) RepeatType.All;
+            metroComboBox_order.SelectedIndex = (int) OrderType.Orderd;
+            metroComboBox_view.SelectedIndex = (int) ViewType.TitleTag;
+        }
         #endregion
     }
 }

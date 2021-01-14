@@ -10,7 +10,7 @@ namespace GTMusicPlayer
     {
         private static Random _ran = new Random();
 
-        public static void Shuffle<T>(this IList<T> list)
+        public static void Shuffle<T>(this List<T> list)
         {
             int n = list.Count;
             while (n > 1)
@@ -21,6 +21,13 @@ namespace GTMusicPlayer
                 list[k] = list[n];
                 list[n] = value;
             }
+        }
+
+        public static void Swap<T>(this List<T> list, int from, int to)
+        {
+            T tmp = list[from];
+            list[from] = list[to];
+            list[to] = tmp;
         }
     }
 }

@@ -144,6 +144,9 @@
   <data name="metroLabel_view.Text" xml:space="preserve">
     <value>보기</value>
   </data>
+  <data name="metroButton_default.Text" xml:space="preserve">
+    <value>기본 설정으로 돌아가기</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

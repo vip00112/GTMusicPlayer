@@ -124,19 +124,21 @@ namespace GTMusicPlayer
                 int oldIdx = _controls.IndexOf(item);
                 int newIdx = _controls.IndexOf(target);
 
-                _controls.Remove(item);
-                _controls.Remove(target);
+                bool toLeft = oldIdx - newIdx > 0;
+                int gap = Math.Abs(oldIdx - newIdx);
+                while (gap > 0)
+                {
+                    if (toLeft)
+                    {
+                        _controls.Swap(oldIdx, oldIdx - 1);
+                    }
+                    else
+                    {
+                        _controls.Swap(oldIdx, oldIdx + 1);
+                    }
+                    gap--;
+                }
 
-                if (oldIdx < newIdx)
-                {
-                    _controls.Insert(oldIdx, target);
-                    _controls.Insert(newIdx, item);
-                }
-                else
-                {
-                    _controls.Insert(newIdx, item);
-                    _controls.Insert(oldIdx, target);
-                }
                 _movePoint = target.Location;
                 MoveControls();
             }
@@ -189,8 +191,8 @@ namespace GTMusicPlayer
             (control as IStackItem).FixedY = y - AutoScrollPosition.Y;
             control.Invalidate();
         }
-        
-        private MusicListItemControl FindItem(int y)
+
+        private MusicListItemControl FindItem(int top)
         {
             foreach (var control in _controls)
             {
@@ -199,29 +201,9 @@ namespace GTMusicPlayer
                 int value = control.Height / 4;
                 int startY = control.Location.Y + value;
                 int endY = control.Location.Y + control.Height - value;
-                if (y >= startY && y <= endY) return control as MusicListItemControl;
+                if (top >= startY && top <= endY) return control as MusicListItemControl;
             }
             return null;
-        }
-
-        private int GetCountInScreen()
-        {
-            var item = _controls.FirstOrDefault();
-            if (item == null) return 0;
-
-            int panelHeight = Height - EmptySpaceTop;
-            int countInScreen = 0;
-            int value = 0;
-            while (value < panelHeight)
-            {
-                if (countInScreen > 0)
-                {
-                    value += EmptySpaceBetween;
-                }
-                value += item.Height;
-                countInScreen++;
-            }
-            return countInScreen - 1;
         }
         #endregion
 
@@ -230,6 +212,8 @@ namespace GTMusicPlayer
         {
             foreach (var control in _controls)
             {
+                if (control == _movingControl) continue;
+
                 MoveControl(control);
             }
         }
@@ -252,7 +236,7 @@ namespace GTMusicPlayer
             if (!_controls.Contains(targetControl)) return;
 
             int y = (targetControl as IStackItem).FixedY;
-            AutoScrollPosition = new Point(AutoScrollPosition.X, y);
+            VerticalMetroScrollbar.Value = y;
         }
         #endregion
     }
