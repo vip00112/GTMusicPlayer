@@ -30,7 +30,6 @@ namespace GTMusicPlayer
             _dialog = new WaitDialog();
             GlobalStyleManager.Instance.ApplyManagerToControl(_dialog);
             _dialog.OwnerForm = FindOwnerForm(control);
-            _dialog.TopMost = true;
             _dialog.Show(control);
             _dialog.Refresh();
 
@@ -58,7 +57,7 @@ namespace GTMusicPlayer
             }
             if (ownerForm != null)
             {
-                ownerForm.Activate();
+                ownerForm.Focus();
             }
         }
 

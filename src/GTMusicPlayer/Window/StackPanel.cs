@@ -92,6 +92,17 @@ namespace GTMusicPlayer
                 item.OnMouseMoved -= OnMouseMoved;
                 item.OnMouseUped -= OnMouseUped;
             }
+
+            var lastItem = _controls.LastOrDefault();
+            if (lastItem == null)
+            {
+                VerticalMetroScrollbar.Value = 0;
+            }
+            else if (VerticalMetroScrollbar.Value > (lastItem as IStackItem).FixedY)
+            {
+                VerticalMetroScrollbar.Value = 0;
+                VerticalMetroScrollbar.Value = (lastItem as IStackItem).FixedY;
+            }
         }
         #endregion
 
@@ -130,11 +141,11 @@ namespace GTMusicPlayer
                 {
                     if (toLeft)
                     {
-                        _controls.Swap(oldIdx, oldIdx - 1);
+                        _controls.Swap(oldIdx, --oldIdx);
                     }
                     else
                     {
-                        _controls.Swap(oldIdx, oldIdx + 1);
+                        _controls.Swap(oldIdx, ++oldIdx);
                     }
                     gap--;
                 }

@@ -63,6 +63,7 @@ namespace GTMusicPlayer
             musicListControl.OnClickedMusic += OnClickedMusic;
             musicListControl.OnDoubleClickedMusic += OnDoubleClickedMusic;
             musicListControl.OnMovedMusic += OnMovedMusic;
+            musicListControl.OnOpeningContextMenu += OnOpeningMusicListContextMenu;
 
             lyricListControl.Visible = false;
             lyricListControl.OnClickedLyric += OnClickedLyric;
@@ -401,6 +402,11 @@ namespace GTMusicPlayer
         private void OnMovedMusic(object sender, MusicListEventArgs e)
         {
             Playlist.Instance.RefreshOrder(e.Musics);
+        }
+
+        private void OnOpeningMusicListContextMenu(object sender, EventArgs e)
+        {
+            _selectType = SelectType.None;
         }
 
         private void OnChangedViewType(object sender, EventArgs e)

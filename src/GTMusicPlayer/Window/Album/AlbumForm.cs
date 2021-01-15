@@ -80,6 +80,7 @@ namespace GTMusicPlayer
             musicListControl.OnDeletedMusic += OnDeletedMusic;
             musicListControl.OnClickedMusic += OnClickedMusic;
             musicListControl.OnMovedMusic += OnMovedMusic;
+            musicListControl.OnOpeningContextMenu += OnOpeningMusicListContextMenu;
         }
 
         private void AlbumForm_KeyUp(object sender, KeyEventArgs e)
@@ -158,6 +159,11 @@ namespace GTMusicPlayer
             CurrentAlbum.Musics.Clear();
             CurrentAlbum.Musics.AddRange(e.Musics);
             Setting.Instance.Save();
+        }
+
+        private void OnOpeningMusicListContextMenu(object sender, EventArgs e)
+        {
+            _selectType = SelectType.None;
         }
         #endregion
 

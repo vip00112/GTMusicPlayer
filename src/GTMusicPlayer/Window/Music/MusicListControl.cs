@@ -19,6 +19,7 @@ namespace GTMusicPlayer
         public EventHandler<MusicEventArgs> OnClickedMusic;
         public EventHandler<MusicEventArgs> OnDoubleClickedMusic;
         public EventHandler<MusicListEventArgs> OnMovedMusic;
+        public EventHandler OnOpeningContextMenu;
 
         private List<MusicListItemControl> _items;
         private List<MusicListItemControl> _selectedItems;
@@ -69,6 +70,8 @@ namespace GTMusicPlayer
             menuItem_deleteSelected.Enabled = _selectedItems.Count > 0;
             menuItem_deleteWithoutSelected.Enabled = _selectedItems.Count > 0;
             menuItem_editLyric.Enabled = _itemByContextMenu != null;
+
+            OnOpeningContextMenu?.Invoke(this, EventArgs.Empty);
         }
 
         private void menuItem_add_Click(object sender, EventArgs e)
