@@ -69,6 +69,7 @@
             this.metroTextBox_title.WaterMark = "Title";
             this.metroTextBox_title.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox_title.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.metroTextBox_title.KeyDown += new System.Windows.Forms.KeyEventHandler(this.metroTextBox_title_KeyDown);
             // 
             // metroTextBox_singer
             // 
@@ -101,6 +102,7 @@
             this.metroTextBox_singer.WaterMark = "Singer";
             this.metroTextBox_singer.WaterMarkColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
             this.metroTextBox_singer.WaterMarkFont = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel);
+            this.metroTextBox_singer.KeyDown += new System.Windows.Forms.KeyEventHandler(this.metroTextBox_singer_KeyDown);
             // 
             // metroButton_search
             // 

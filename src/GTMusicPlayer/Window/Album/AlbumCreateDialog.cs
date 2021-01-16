@@ -73,5 +73,19 @@ namespace GTMusicPlayer
             DialogResult = DialogResult.OK;
         }
         #endregion
+
+        #region Protected Method
+        // 전역 키 설정
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == Keys.Escape)
+            {
+                DialogResult = DialogResult.Cancel;
+                return true;
+            }
+
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+        #endregion
     }
 }

@@ -36,7 +36,6 @@
             // 
             // musicListControl
             // 
-            this.musicListControl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             resources.ApplyResources(this.musicListControl, "musicListControl");
             this.musicListControl.Name = "musicListControl";
             this.musicListControl.TabStop = false;

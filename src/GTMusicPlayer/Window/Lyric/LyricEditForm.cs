@@ -41,6 +41,22 @@ namespace GTMusicPlayer
             lyricListControl.OnClickedLyric += OnClickedLyric;
         }
 
+        private void metroTextBox_title_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                metroTextBox_singer.Focus();
+            }
+        }
+
+        private void metroTextBox_singer_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyData == Keys.Enter)
+            {
+                SearchLyrics();
+            }
+        }
+
         private void metroButton_search_Click(object sender, EventArgs e)
         {
             SearchLyrics();
@@ -189,9 +205,9 @@ namespace GTMusicPlayer
         {
             string title = metroTextBox_title.Text;
             string singer = metroTextBox_singer.Text;
-            if (string.IsNullOrWhiteSpace(title) && string.IsNullOrWhiteSpace(singer))
+            if (string.IsNullOrWhiteSpace(title))
             {
-                MessageBoxUtil.Error(this, "Please input title or singer.");
+                MessageBoxUtil.Error(this, "Please input title.");
                 return;
             }
 

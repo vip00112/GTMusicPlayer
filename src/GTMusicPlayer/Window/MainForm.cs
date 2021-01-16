@@ -81,7 +81,7 @@ namespace GTMusicPlayer
                 musicListControl.ClearItems();
                 foreach (var music in Setting.Instance.RecentPlaylist)
                 {
-                    musicListControl.AddMusic(music);
+                    musicListControl.AddItem(music);
                 }
 
                 Playlist.Instance.RefreshOrder(null);
@@ -290,11 +290,6 @@ namespace GTMusicPlayer
                     Width = 305;
                     lyricListControl.Visible = false;
                 }
-
-                if (!FormUtil.HasFocusedForm(FormUtil.FindForm<LyricEditForm>()))
-                {
-                    metroLabel_title.Focus();
-                }
             });
         }
 
@@ -423,7 +418,7 @@ namespace GTMusicPlayer
             musicListControl.ClearItems();
             foreach (var music in e.Album.Musics)
             {
-                musicListControl.AddMusic(music);
+                musicListControl.AddItem(music);
             }
         }
 

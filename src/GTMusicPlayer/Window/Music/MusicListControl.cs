@@ -138,15 +138,7 @@ namespace GTMusicPlayer
             var item = sender as MusicListItemControl;
             if (item == null) return;
 
-            item.OnDeleted -= OnDeletedItem;
-            item.OnClicked -= OnClickedItem;
-            item.OnDoubleClicked -= OnDoubleClickedItem;
-
-            _items.Remove(item);
-            metroLabel_count.Text = string.Format("Total : {0}", _items.Count);
-            stackPanel.Controls.Remove(item);
-
-            OnDeletedMusic?.Invoke(this, new MusicEventArgs(item.Music));
+            RemoveItem(item);
         }
 
         private void OnMovedItem(object sender, MusicItemListEventArgs e)
@@ -155,6 +147,8 @@ namespace GTMusicPlayer
             if (item == null) return;
 
             _items.Clear();
+            _selectedItems.Clear();
+
             _items.AddRange(e.Items);
 
             var musics = _items.Select(o => o.Music).ToList();
@@ -210,7 +204,7 @@ namespace GTMusicPlayer
                 }
                 if (music == null) return;
 
-                AddMusic(music);
+                AddItem(music);
             }
         }
 
@@ -218,18 +212,8 @@ namespace GTMusicPlayer
         {
             if (!MessageBoxUtil.Confirm(this, "Are you sure you want to delete selected musics?")) return;
 
-            foreach (var item in _selectedItems)
-            {
-                item.OnDeleted -= OnDeletedItem;
-                item.OnClicked -= OnClickedItem;
-                item.OnDoubleClicked -= OnDoubleClickedItem;
-
-                _items.Remove(item);
-                stackPanel.Controls.Remove(item);
-
-                OnDeletedMusic?.Invoke(this, new MusicEventArgs(item.Music));
-            }
-            metroLabel_count.Text = string.Format("Total : {0}", _items.Count);
+            var selectedItems = _selectedItems.ToList();
+            RemoveItems(selectedItems);
         }
 
         private void DeleteWithoutSelected()
@@ -237,39 +221,14 @@ namespace GTMusicPlayer
             if (!MessageBoxUtil.Confirm(this, "Are you sure you want to delete unselected musics?")) return;
 
             var unselectedItems = _items.Where(o => !_selectedItems.Contains(o)).ToList();
-            foreach (var item in unselectedItems)
-            {
-                item.OnDeleted -= OnDeletedItem;
-                item.OnClicked -= OnClickedItem;
-                item.OnDoubleClicked -= OnDoubleClickedItem;
-
-                _items.Remove(item);
-                stackPanel.Controls.Remove(item);
-
-                OnDeletedMusic?.Invoke(this, new MusicEventArgs(item.Music));
-            }
-            metroLabel_count.Text = string.Format("Total : {0}", _items.Count);
+            RemoveItems(unselectedItems);
         }
 
         private void DeleteAll()
         {
             if (!MessageBoxUtil.Confirm(this, "Are you sure you want to delete all musics?")) return;
 
-            var allItems = _items.ToList();
-            foreach (var item in allItems)
-            {
-                item.OnDeleted -= OnDeletedItem;
-                item.OnClicked -= OnClickedItem;
-                item.OnDoubleClicked -= OnDoubleClickedItem;
-
-                _items.Remove(item);
-                stackPanel.Controls.Remove(item);
-
-                OnDeletedMusic?.Invoke(this, new MusicEventArgs(item.Music));
-            }
-
-            _selectedItems.Clear();
-            metroLabel_count.Text = string.Format("Total : {0}", _items.Count);
+            ClearItems();
         }
 
         private MusicListItemControl FindItemByLocation(Point loc)
@@ -285,7 +244,7 @@ namespace GTMusicPlayer
         #endregion
 
         #region Public Method
-        public void AddMusic(Music music, bool useEvent = true)
+        public void AddItem(Music music, bool useEvent = true)
         {
             var item = new MusicListItemControl(music);
             item.OnDeleted += OnDeletedItem;
@@ -294,8 +253,9 @@ namespace GTMusicPlayer
             GlobalStyleManager.Instance.ApplyManagerToControl(item);
 
             _items.Add(item);
-            metroLabel_count.Text = string.Format("Total : {0}", _items.Count);
             stackPanel.Controls.Add(item);
+
+            metroLabel_count.Text = string.Format("Total : {0}", _items.Count);
 
             if (!music.Load())
             {
@@ -305,19 +265,35 @@ namespace GTMusicPlayer
             if (useEvent) OnAddedMusic?.Invoke(this, new MusicEventArgs(music));
         }
 
-        public void ClearItems()
+        public void RemoveItem(MusicListItemControl item)
+        {
+            item.OnDeleted -= OnDeletedItem;
+            item.OnClicked -= OnClickedItem;
+            item.OnDoubleClicked -= OnDoubleClickedItem;
+
+            _items.Remove(item);
+            _selectedItems.Remove(item);
+            stackPanel.Controls.Remove(item);
+
+            metroLabel_count.Text = string.Format("Total : {0}", _items.Count);
+
+            OnDeletedMusic?.Invoke(this, new MusicEventArgs(item.Music));
+        }
+
+        public void RemoveItems(List<MusicListItemControl> items)
         {
             stackPanel.SuspendLayout();
-            foreach (var item in _items)
+            foreach (var item in items)
             {
-                item.OnDeleted -= OnDeletedItem;
-                item.OnClicked -= OnClickedItem;
-                item.OnDoubleClicked -= OnDoubleClickedItem;
-                stackPanel.Controls.Remove(item);
+                RemoveItem(item);
             }
             stackPanel.ResumeLayout();
-            _items.Clear();
-            metroLabel_count.Text = string.Format("Total : {0}", _items.Count);
+        }
+
+        public void ClearItems()
+        {
+            var items = _items.ToList();
+            RemoveItems(items);
         }
 
         public void ChangeViewType()

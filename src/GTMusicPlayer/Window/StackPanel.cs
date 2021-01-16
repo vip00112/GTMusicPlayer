@@ -130,7 +130,7 @@ namespace GTMusicPlayer
             item.Invalidate();
 
             var target = FindItem(item.Location.Y);
-            if (target != null)
+            if (target != null && target != item)
             {
                 int oldIdx = _controls.IndexOf(item);
                 int newIdx = _controls.IndexOf(target);
@@ -166,6 +166,10 @@ namespace GTMusicPlayer
             item.Location = _movePoint;
             item.BorderStyle = BorderStyle.None;
             item.Invalidate();
+
+            MoveControls();
+            VerticalMetroScrollbar.Value = 0;
+            VerticalMetroScrollbar.Value = (item as IStackItem).FixedY;
 
             var items = _controls.Where(o => o is MusicListItemControl)
                                  .Select(o => o as MusicListItemControl).ToList();

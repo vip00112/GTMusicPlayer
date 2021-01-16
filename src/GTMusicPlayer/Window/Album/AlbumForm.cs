@@ -44,19 +44,10 @@ namespace GTMusicPlayer
                 musicListControl.ClearItems();
                 foreach (var music in _album.Musics)
                 {
-                    musicListControl.AddMusic(music, false);
+                    musicListControl.AddItem(music, false);
                 }
 
                 albumListControl.SelectAlbum(_album);
-
-                if (_album.Musics.Count > 0)
-                {
-                    musicListControl.BorderStyle = System.Windows.Forms.BorderStyle.None;
-                }
-                else
-                {
-                    musicListControl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-                }
             }
         }
         #endregion
@@ -114,6 +105,9 @@ namespace GTMusicPlayer
         private void OnDeletedAlbum(object sender, AlbumEventArgs e)
         {
             _albums.Remove(e.Album);
+
+            musicListControl.ClearItems();
+
             Setting.Instance.Albums.Remove(e.Album);
             Setting.Instance.Save();
         }
@@ -139,6 +133,7 @@ namespace GTMusicPlayer
 
         private void OnDeletedMusic(object sender, MusicEventArgs e)
         {
+            if (e.Music == null) return;
             if (CurrentAlbum == null) return;
 
             CurrentAlbum.Musics.Remove(e.Music);

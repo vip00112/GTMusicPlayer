@@ -234,6 +234,9 @@ namespace MetroFramework
                     _result = _control.Result;
                     //_owner.Controls.Remove(_control);
                     _control.Dispose(); _control = null;
+
+                    var ownerControl = owner as Control;
+                    if (ownerControl != null) ownerControl.Focus();
                 }
 
             }
