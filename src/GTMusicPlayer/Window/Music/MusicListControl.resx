@@ -128,6 +128,9 @@
   <data name="metroPanel_bottom.Location" type="System.Drawing.Point, System.Drawing">
     <value>0, 0</value>
   </data>
+  <data name="&gt;&gt;menuItem_editTag.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;metroPanel_bottom.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
@@ -136,6 +139,9 @@
   </data>
   <data name="metroLabel_count.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
+  </data>
+  <data name="&gt;&gt;stackPanel.Name" xml:space="preserve">
+    <value>stackPanel</value>
   </data>
   <data name="metroLabel_count.Size" type="System.Drawing.Size, System.Drawing">
     <value>47, 15</value>
@@ -171,11 +177,11 @@
   <data name="metroLabel_delete.Text" xml:space="preserve">
     <value>-</value>
   </data>
-  <data name="&gt;&gt;menuItem_editLyric.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="metroLabel_delete.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
+    <value>MiddleCenter</value>
   </data>
   <data name="menuItem_add.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 22</value>
+    <value>180, 22</value>
   </data>
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>7, 12</value>
@@ -198,6 +204,12 @@
   <data name="&gt;&gt;metroLabel_delete.Name" xml:space="preserve">
     <value>metroLabel_delete</value>
   </data>
+  <data name="menuItem_editTag.Text" xml:space="preserve">
+    <value>Edit Tag</value>
+  </data>
+  <data name="&gt;&gt;menuItem_editTag.Name" xml:space="preserve">
+    <value>menuItem_editTag</value>
+  </data>
   <data name="&gt;&gt;metroContextMenu.Name" xml:space="preserve">
     <value>metroContextMenu</value>
   </data>
@@ -207,8 +219,8 @@
   <data name="metroLabel_delete.Location" type="System.Drawing.Point, System.Drawing">
     <value>244, 2</value>
   </data>
-  <data name="&gt;&gt;stackPanel.Name" xml:space="preserve">
-    <value>stackPanel</value>
+  <data name="&gt;&gt;menuItem_editLyric.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="metroLabel_delete.Size" type="System.Drawing.Size, System.Drawing">
     <value>15, 15</value>
@@ -239,6 +251,9 @@
   </data>
   <data name="metroPanel_bottom.Size" type="System.Drawing.Size, System.Drawing">
     <value>259, 20</value>
+  </data>
+  <data name="menuItem_editTag.Size" type="System.Drawing.Size, System.Drawing">
+    <value>180, 22</value>
   </data>
   <data name="&gt;&gt;deleteToolStripMenuItem.Name" xml:space="preserve">
     <value>deleteToolStripMenuItem</value>
@@ -277,7 +292,7 @@
     <value>metroPanel_bottom</value>
   </data>
   <data name="metroContextMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>124, 70</value>
+    <value>124, 92</value>
   </data>
   <data name="&gt;&gt;metroLabel_count.Name" xml:space="preserve">
     <value>metroLabel_count</value>
@@ -307,10 +322,7 @@
     <value>166, 22</value>
   </data>
   <data name="menuItem_editLyric.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 22</value>
-  </data>
-  <data name="metroLabel_add.Location" type="System.Drawing.Point, System.Drawing">
-    <value>229, 2</value>
+    <value>180, 22</value>
   </data>
   <data name="metroPanel_bottom.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Top</value>
@@ -336,8 +348,8 @@
   <data name="&gt;&gt;menuItem_deleteWithoutSelected.Name" xml:space="preserve">
     <value>menuItem_deleteWithoutSelected</value>
   </data>
-  <data name="metroLabel_delete.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
-    <value>MiddleCenter</value>
+  <data name="metroLabel_add.Location" type="System.Drawing.Point, System.Drawing">
+    <value>229, 2</value>
   </data>
   <data name="&gt;&gt;menuItem_add.Name" xml:space="preserve">
     <value>menuItem_add</value>
@@ -352,7 +364,7 @@
     <value>MetroFramework.Controls.MetroUserControl, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
   </data>
   <data name="deleteToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>123, 22</value>
+    <value>180, 22</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

@@ -114,6 +114,23 @@ namespace GTMusicPlayer
                 if (!form.InitEdit(_itemByContextMenu.Music)) form.SearchLyrics();
             }
         }
+
+        private void menuItem_editTag_Click(object sender, EventArgs e)
+        {
+            if (_itemByContextMenu == null) return;
+
+            using (var dialog = new MusicTagEditDialog())
+            {
+                dialog.InitEdit(_itemByContextMenu.Music);
+                if (dialog.ShowDialog() != DialogResult.OK) return;
+
+                // 편집 결과 UI에 반영
+                _itemByContextMenu.Music.Title = dialog.Title;
+                _itemByContextMenu.Music.Singers = dialog.Singer;
+                _itemByContextMenu.Music.Album = dialog.Album;
+                _itemByContextMenu.ViewMusicInfo();
+            }
+        }
         #endregion
 
         #region Event Handler

@@ -41,6 +41,7 @@
             this.menuItem_deleteWithoutSelected = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItem_deleteAll = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItem_editLyric = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItem_editTag = new System.Windows.Forms.ToolStripMenuItem();
             this.stackPanel = new GTMusicPlayer.StackPanel();
             this.metroPanel_bottom.SuspendLayout();
             this.metroContextMenu.SuspendLayout();
@@ -92,7 +93,8 @@
             this.metroContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.menuItem_add,
             this.deleteToolStripMenuItem,
-            this.menuItem_editLyric});
+            this.menuItem_editLyric,
+            this.menuItem_editTag});
             this.metroContextMenu.Name = "metroContextMenu";
             this.metroContextMenu.UseStyleColors = true;
             this.metroContextMenu.Opening += new System.ComponentModel.CancelEventHandler(this.metroContextMenu_Opening);
@@ -135,6 +137,12 @@
             resources.ApplyResources(this.menuItem_editLyric, "menuItem_editLyric");
             this.menuItem_editLyric.Name = "menuItem_editLyric";
             this.menuItem_editLyric.Click += new System.EventHandler(this.menuItem_editLyric_Click);
+            // 
+            // menuItem_editTag
+            // 
+            resources.ApplyResources(this.menuItem_editTag, "menuItem_editTag");
+            this.menuItem_editTag.Name = "menuItem_editTag";
+            this.menuItem_editTag.Click += new System.EventHandler(this.menuItem_editTag_Click);
             // 
             // stackPanel
             // 
@@ -186,5 +194,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuItem_deleteWithoutSelected;
         private System.Windows.Forms.ToolStripMenuItem menuItem_deleteAll;
         private System.Windows.Forms.ToolStripMenuItem menuItem_editLyric;
+        private System.Windows.Forms.ToolStripMenuItem menuItem_editTag;
     }
 }

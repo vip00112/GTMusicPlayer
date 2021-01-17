@@ -77,6 +77,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Enums.cs" />
+    <Compile Include="MusicTagEditDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MusicTagEditDialog.Designer.cs">
+      <DependentUpon>MusicTagEditDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Util\FormUtil.cs" />
     <Compile Include="Model\GlobalStyleManager.cs" />
     <Compile Include="Window\MiniForm.cs">
@@ -184,6 +190,9 @@
     <Compile Include="Window\SettingForm.Designer.cs">
       <DependentUpon>SettingForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="MusicTagEditDialog.resx">
+      <DependentUpon>MusicTagEditDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Window\Lyric\LyricEditDialog.ko.resx">
       <DependentUpon>LyricEditDialog.cs</DependentUpon>
     </EmbeddedResource>
