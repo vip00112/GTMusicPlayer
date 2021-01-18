@@ -144,6 +144,16 @@ namespace GTMusicPlayer
         }
         #endregion
 
+        #region Protected Method
+        // 전역 키 설정
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (lyricListControl.DoShortcutCommand(keyData)) return true;
+
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+        #endregion
+
         #region Private Method
         private bool LoadLyrics(List<Lyric> lyrics)
         {

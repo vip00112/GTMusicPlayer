@@ -117,181 +117,50 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="stackPanel.AutoScroll" type="System.Boolean, mscorlib">
-    <value>True</value>
-  </data>
-  <metadata name="metroContextMenu.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="menuItem_minus01.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Ctrl + &lt;</value>
-  </data>
-  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="menuItem_minus01.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Oemcomma</value>
-  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="menuItem_minus01.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
+    <value>214, 22</value>
   </data>
   <data name="menuItem_minus01.Text" xml:space="preserve">
-    <value>0.1 sec forward</value>
-  </data>
-  <data name="menuItem_plus01.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Ctrl + &gt;</value>
-  </data>
-  <data name="menuItem_plus01.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+OemPeriod</value>
+    <value>0.1초 앞으로</value>
   </data>
   <data name="menuItem_plus01.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
+    <value>214, 22</value>
   </data>
   <data name="menuItem_plus01.Text" xml:space="preserve">
-    <value>0.1 sec back</value>
-  </data>
-  <data name="menuItem_minus05.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Alt + &lt;</value>
-  </data>
-  <data name="menuItem_minus05.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Alt+Oemcomma</value>
+    <value>0.1초 뒤로</value>
   </data>
   <data name="menuItem_minus05.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
+    <value>214, 22</value>
   </data>
   <data name="menuItem_minus05.Text" xml:space="preserve">
-    <value>0.5 sec forward</value>
-  </data>
-  <data name="menuItem_plus05.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Alt + &gt;</value>
-  </data>
-  <data name="menuItem_plus05.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Alt+OemPeriod</value>
+    <value>0.5초 앞으로</value>
   </data>
   <data name="menuItem_plus05.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
+    <value>214, 22</value>
   </data>
   <data name="menuItem_plus05.Text" xml:space="preserve">
-    <value>0.5 sec back</value>
-  </data>
-  <data name="menuItem_minus10.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Ctrl + Alt + &lt;</value>
-  </data>
-  <data name="menuItem_minus10.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Alt+Oemcomma</value>
+    <value>0.5초 뒤로</value>
   </data>
   <data name="menuItem_minus10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
+    <value>214, 22</value>
   </data>
   <data name="menuItem_minus10.Text" xml:space="preserve">
-    <value>1 sec forward</value>
-  </data>
-  <data name="menuItem_plus10.ShortcutKeyDisplayString" xml:space="preserve">
-    <value>Ctrl + Alt + &gt;</value>
-  </data>
-  <data name="menuItem_plus10.ShortcutKeys" type="System.Windows.Forms.Keys, System.Windows.Forms">
-    <value>Ctrl+Alt+OemPeriod</value>
+    <value>1초 앞으로</value>
   </data>
   <data name="menuItem_plus10.Size" type="System.Drawing.Size, System.Drawing">
-    <value>228, 22</value>
+    <value>214, 22</value>
   </data>
   <data name="menuItem_plus10.Text" xml:space="preserve">
-    <value>1 sec back</value>
+    <value>1초 뒤로</value>
   </data>
   <data name="menuItem_sync.Size" type="System.Drawing.Size, System.Drawing">
-    <value>180, 22</value>
+    <value>154, 22</value>
   </data>
   <data name="menuItem_sync.Text" xml:space="preserve">
-    <value>Change Sync Batch</value>
+    <value>싱크 일괄 변경</value>
   </data>
   <data name="metroContextMenu.Size" type="System.Drawing.Size, System.Drawing">
-    <value>181, 48</value>
-  </data>
-  <data name="&gt;&gt;metroContextMenu.Name" xml:space="preserve">
-    <value>metroContextMenu</value>
-  </data>
-  <data name="&gt;&gt;metroContextMenu.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroContextMenu, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
-  </data>
-  <data name="stackPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="stackPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="stackPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>265, 365</value>
-  </data>
-  <data name="stackPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;stackPanel.Name" xml:space="preserve">
-    <value>stackPanel</value>
-  </data>
-  <data name="&gt;&gt;stackPanel.Type" xml:space="preserve">
-    <value>GTMusicPlayer.StackPanel, GTMusicPlayer, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</value>
-  </data>
-  <data name="&gt;&gt;stackPanel.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;stackPanel.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>7, 12</value>
-  </data>
-  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
-    <value>265, 365</value>
-  </data>
-  <data name="&gt;&gt;menuItem_sync.Name" xml:space="preserve">
-    <value>menuItem_sync</value>
-  </data>
-  <data name="&gt;&gt;menuItem_sync.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;menuItem_minus01.Name" xml:space="preserve">
-    <value>menuItem_minus01</value>
-  </data>
-  <data name="&gt;&gt;menuItem_minus01.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;menuItem_plus01.Name" xml:space="preserve">
-    <value>menuItem_plus01</value>
-  </data>
-  <data name="&gt;&gt;menuItem_plus01.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;menuItem_minus05.Name" xml:space="preserve">
-    <value>menuItem_minus05</value>
-  </data>
-  <data name="&gt;&gt;menuItem_minus05.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;menuItem_plus05.Name" xml:space="preserve">
-    <value>menuItem_plus05</value>
-  </data>
-  <data name="&gt;&gt;menuItem_plus05.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;menuItem_minus10.Name" xml:space="preserve">
-    <value>menuItem_minus10</value>
-  </data>
-  <data name="&gt;&gt;menuItem_minus10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;menuItem_plus10.Name" xml:space="preserve">
-    <value>menuItem_plus10</value>
-  </data>
-  <data name="&gt;&gt;menuItem_plus10.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>LyricListControl</value>
-  </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>MetroFramework.Controls.MetroUserControl, MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a</value>
+    <value>155, 26</value>
   </data>
 </root>

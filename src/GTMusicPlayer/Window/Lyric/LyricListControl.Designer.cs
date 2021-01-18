@@ -28,13 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(LyricListControl));
             this.stackPanel = new GTMusicPlayer.StackPanel();
+            this.metroContextMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
+            this.menuItem_sync = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItem_minus01 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItem_plus01 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItem_minus05 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItem_plus05 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItem_minus10 = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuItem_plus10 = new System.Windows.Forms.ToolStripMenuItem();
+            this.metroContextMenu.SuspendLayout();
             this.SuspendLayout();
             // 
             // stackPanel
             // 
-            this.stackPanel.AutoScroll = true;
-            this.stackPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            resources.ApplyResources(this.stackPanel, "stackPanel");
+            this.stackPanel.ContextMenuStrip = this.metroContextMenu;
             this.stackPanel.EmptySpaceBetween = 15;
             this.stackPanel.EmptySpaceLeft = 5;
             this.stackPanel.EmptySpaceTop = 5;
@@ -42,23 +53,78 @@
             this.stackPanel.HorizontalScrollbarBarColor = false;
             this.stackPanel.HorizontalScrollbarHighlightOnWheel = false;
             this.stackPanel.HorizontalScrollbarSize = 5;
-            this.stackPanel.Location = new System.Drawing.Point(0, 0);
+            this.stackPanel.IsNotMove = false;
             this.stackPanel.Name = "stackPanel";
-            this.stackPanel.Size = new System.Drawing.Size(265, 365);
-            this.stackPanel.TabIndex = 0;
+            this.stackPanel.ScrollMoveControlCount = 0;
             this.stackPanel.UseStyleColors = true;
             this.stackPanel.VerticalScrollbar = true;
             this.stackPanel.VerticalScrollbarBarColor = true;
             this.stackPanel.VerticalScrollbarHighlightOnWheel = false;
             this.stackPanel.VerticalScrollbarSize = 5;
             // 
+            // metroContextMenu
+            // 
+            this.metroContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuItem_sync});
+            this.metroContextMenu.Name = "metroContextMenu";
+            resources.ApplyResources(this.metroContextMenu, "metroContextMenu");
+            this.metroContextMenu.Opening += new System.ComponentModel.CancelEventHandler(this.metroContextMenu_Opening);
+            // 
+            // menuItem_sync
+            // 
+            this.menuItem_sync.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.menuItem_minus01,
+            this.menuItem_plus01,
+            this.menuItem_minus05,
+            this.menuItem_plus05,
+            this.menuItem_minus10,
+            this.menuItem_plus10});
+            this.menuItem_sync.Name = "menuItem_sync";
+            resources.ApplyResources(this.menuItem_sync, "menuItem_sync");
+            // 
+            // menuItem_minus01
+            // 
+            this.menuItem_minus01.Name = "menuItem_minus01";
+            resources.ApplyResources(this.menuItem_minus01, "menuItem_minus01");
+            this.menuItem_minus01.Click += new System.EventHandler(this.menuItem_minus01_Click);
+            // 
+            // menuItem_plus01
+            // 
+            this.menuItem_plus01.Name = "menuItem_plus01";
+            resources.ApplyResources(this.menuItem_plus01, "menuItem_plus01");
+            this.menuItem_plus01.Click += new System.EventHandler(this.menuItem_plus01_Click);
+            // 
+            // menuItem_minus05
+            // 
+            this.menuItem_minus05.Name = "menuItem_minus05";
+            resources.ApplyResources(this.menuItem_minus05, "menuItem_minus05");
+            this.menuItem_minus05.Click += new System.EventHandler(this.menuItem_minus05_Click);
+            // 
+            // menuItem_plus05
+            // 
+            this.menuItem_plus05.Name = "menuItem_plus05";
+            resources.ApplyResources(this.menuItem_plus05, "menuItem_plus05");
+            this.menuItem_plus05.Click += new System.EventHandler(this.menuItem_plus05_Click);
+            // 
+            // menuItem_minus10
+            // 
+            this.menuItem_minus10.Name = "menuItem_minus10";
+            resources.ApplyResources(this.menuItem_minus10, "menuItem_minus10");
+            this.menuItem_minus10.Click += new System.EventHandler(this.menuItem_minus10_Click);
+            // 
+            // menuItem_plus10
+            // 
+            this.menuItem_plus10.Name = "menuItem_plus10";
+            resources.ApplyResources(this.menuItem_plus10, "menuItem_plus10");
+            this.menuItem_plus10.Click += new System.EventHandler(this.menuItem_plus10_Click);
+            // 
             // LyricListControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.stackPanel);
             this.Name = "LyricListControl";
-            this.Size = new System.Drawing.Size(265, 365);
+            this.metroContextMenu.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -66,5 +132,13 @@
         #endregion
 
         private StackPanel stackPanel;
+        private MetroFramework.Controls.MetroContextMenu metroContextMenu;
+        private System.Windows.Forms.ToolStripMenuItem menuItem_sync;
+        private System.Windows.Forms.ToolStripMenuItem menuItem_minus01;
+        private System.Windows.Forms.ToolStripMenuItem menuItem_plus01;
+        private System.Windows.Forms.ToolStripMenuItem menuItem_minus05;
+        private System.Windows.Forms.ToolStripMenuItem menuItem_plus05;
+        private System.Windows.Forms.ToolStripMenuItem menuItem_minus10;
+        private System.Windows.Forms.ToolStripMenuItem menuItem_plus10;
     }
 }

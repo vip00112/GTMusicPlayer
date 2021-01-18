@@ -208,6 +208,9 @@
     <EmbeddedResource Include="Window\Lyric\LyricEditForm.resx">
       <DependentUpon>LyricEditForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Window\Lyric\LyricListControl.ko.resx">
+      <DependentUpon>LyricListControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Window\Lyric\LyricListControl.resx">
       <DependentUpon>LyricListControl.cs</DependentUpon>
     </EmbeddedResource>

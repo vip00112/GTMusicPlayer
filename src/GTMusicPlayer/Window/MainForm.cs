@@ -436,6 +436,10 @@ namespace GTMusicPlayer
         {
             if (keyData == Keys.Tab) return true;
 
+            #region Lyric
+            if (lyricListControl.DoShortcutCommand(keyData)) return true;
+            #endregion
+
             #region Play/Pause
             if (keyData == Keys.Space)
             {

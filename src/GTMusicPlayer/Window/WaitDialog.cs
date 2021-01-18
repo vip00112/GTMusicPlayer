@@ -30,7 +30,7 @@ namespace GTMusicPlayer
             _dialog = new WaitDialog();
             GlobalStyleManager.Instance.ApplyManagerToControl(_dialog);
             _dialog.OwnerForm = FindOwnerForm(control);
-            _dialog.Show(control);
+            _dialog.Show();
             _dialog.Refresh();
 
             Application.Idle += Idle;
