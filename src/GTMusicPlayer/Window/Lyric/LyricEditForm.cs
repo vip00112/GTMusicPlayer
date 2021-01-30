@@ -111,8 +111,6 @@ namespace GTMusicPlayer
             var item = sender as ALSongLyricHeaderControl;
             if (item == null) return;
 
-            WaitDialog.Process(this);
-
             var lyrics = LyricParser.GetALSongLyrics(item.Header);
             if (lyricListControl.InitUI(lyrics))
             {

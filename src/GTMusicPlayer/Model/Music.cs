@@ -62,9 +62,6 @@ namespace GTMusicPlayer
         #region Public Method
         public bool Load()
         {
-            // TODO : 테스트 코드 (삭제할것)
-            if (Title.Contains("영원")) return false;
-
             // 파일 존재 여부 확인
             if (!File.Exists(FilePath)) return false;
 

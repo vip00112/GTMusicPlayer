@@ -97,8 +97,6 @@ namespace GTMusicPlayer
         {
             if (lyrics == null || lyrics.Count == 0) return false;
 
-            WaitDialog.Process(this);
-
             stackPanel.SuspendLayout();
             stackPanel.IsNotMove = true;
             foreach (var item in _items)
@@ -165,8 +163,6 @@ namespace GTMusicPlayer
 
         public bool DoShortcutCommand(Keys keyData)
         {
-            // TODO : 단축키로 일괄 싱크 변경시 ReorderUI 후 OwnerForm에 포커스가 안가있음.
-
             if (!_menuItemShortcuts.ContainsKey(keyData)) return false;
             _menuItemShortcuts[keyData].PerformClick();
 

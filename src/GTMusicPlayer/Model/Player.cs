@@ -17,6 +17,7 @@ namespace GTMusicPlayer
         public EventHandler<MusicEventArgs> OnError;
         public EventHandler<ChangedDurationEventArgs> OnChangedDuration;
 
+        private object _playSync;
         private BackgroundWorker _bw;
         private IWavePlayer _player;
         private WaveStream _reader;
@@ -26,6 +27,8 @@ namespace GTMusicPlayer
         #region Constructor
         public Player()
         {
+            _playSync = new object();
+
             _bw = new BackgroundWorker();
             _bw.DoWork += PlayThread;
             _bw.RunWorkerCompleted += PlayCompleted;
@@ -94,7 +97,7 @@ namespace GTMusicPlayer
 
             try
             {
-                _player.Play();
+                StartPlayer();
             }
             catch (Exception e)
             {
@@ -109,7 +112,10 @@ namespace GTMusicPlayer
             if (_player.PlaybackState != PlaybackState.Playing) return false;
             if (!_bw.IsBusy) return false;
 
-            _player.Pause();
+            lock (_playSync)
+            {
+                _player.Pause();
+            }
             return true;
         }
 
@@ -122,17 +128,23 @@ namespace GTMusicPlayer
         public void Skip(int sec)
         {
             if (!_bw.IsBusy) return;
-            if (_reader == null) return;
 
-            _reader.Skip(sec);
+            lock (_playSync)
+            {
+                if (_reader == null) return;
+                _reader.Skip(sec);
+            }
         }
 
         public void Next()
         {
             if (!_bw.IsBusy) return;
-            if (_reader == null) return;
 
-            _reader.Position = _reader.Length;
+            lock (_playSync)
+            {
+                if (_reader == null) return;
+                _reader.Position = _reader.Length;
+            }
         }
 
         public void SetCurrentMusic(Music music)
@@ -160,7 +172,7 @@ namespace GTMusicPlayer
                 _player = new WaveOut(WaveCallbackInfo.FunctionCallback());
                 _player.Init(_reader);
                 _player.Volume = _volume;
-                _player.Play();
+                StartPlayer();
                 OnStarted?.Invoke(this, new MusicEventArgs(CurrentMusic));
 
                 while (true)
@@ -179,12 +191,7 @@ namespace GTMusicPlayer
             }
             finally
             {
-                _player.Stop();
-                if (_reader != null)
-                {
-                    _reader.Dispose();
-                    _reader = null;
-                }
+                StopPlayer();
             }
         }
 
@@ -206,6 +213,28 @@ namespace GTMusicPlayer
             else
             {
                 return new AudioFileReader(filePath);
+            }
+        }
+
+        private void StartPlayer()
+        {
+            lock (_playSync)
+            {
+                if (_player != null) _player.Play();
+            }
+        }
+
+        private void StopPlayer()
+        {
+            lock (_playSync)
+            {
+                if (_player != null) _player.Stop();
+
+                if (_reader != null)
+                {
+                    _reader.Dispose();
+                    _reader = null;
+                }
             }
         }
         #endregion

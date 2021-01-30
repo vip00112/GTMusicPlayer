@@ -2,7 +2,7 @@
  * A Professional HTML Renderer You Will Use
  * 
  * The BSD License (BSD)
- * Copyright (c) 2011 Jose Menendez Póo, http://www.codeproject.com/Articles/32376/A-Professional-HTML-Renderer-You-Will-Use
+ * Copyright (c) 2011 Jose Menendez P?, http://www.codeproject.com/Articles/32376/A-Professional-HTML-Renderer-You-Will-Use
  * 
  * Redistribution and use in source and binary forms, with or without modification, are 
  * permitted provided that the following conditions are met:
@@ -70,7 +70,7 @@ namespace MetroFramework.Drawing.Html
         /// <summary>
         /// Extracts css percentages from the string; e.g. 100% .5% 5.4%
         /// </summary>
-        public const string CssPercentage = @"([0-9]+|[0-9]*\.[0-9]+)\%"; //TODO: Check if works fine
+        public const string CssPercentage = @"([0-9]+|[0-9]*\.[0-9]+)\%";
 
         /// <summary>
         /// Extracts CSS lengths; e.g. 9px 3pt .89em

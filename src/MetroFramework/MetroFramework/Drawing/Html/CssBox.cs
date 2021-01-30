@@ -2,7 +2,7 @@
  * A Professional HTML Renderer You Will Use
  * 
  * The BSD License (BSD)
- * Copyright (c) 2011 Jose Menendez Póo, http://www.codeproject.com/Articles/32376/A-Professional-HTML-Renderer-You-Will-Use
+ * Copyright (c) 2011 Jose Menendez P?, http://www.codeproject.com/Articles/32376/A-Professional-HTML-Renderer-You-Will-Use
  * 
  * Redistribution and use in source and binary forms, with or without modification, are 
  * permitted provided that the following conditions are met:
@@ -1112,7 +1112,6 @@ namespace MetroFramework.Drawing.Html
                 else
                 {
                     // Check for: caption | icon | menu | message-box | small-caption | status-bar
-                    //TODO: Interpret font values of: caption | icon | menu | message-box | small-caption | status-bar
                 }
             }
         }
@@ -1125,11 +1124,6 @@ namespace MetroFramework.Drawing.Html
             get { return _fontFamily; }
             set 
             {
-
-                ///HACK: Because of performance, generic font families
-                ///      will be checked when only the generic font 
-                ///      family is given.
-
                 switch (value)
                 {
                     case CssConstants.Serif:
@@ -1924,7 +1918,7 @@ namespace MetroFramework.Drawing.Html
         #region Properties
 
         /// <summary>
-        /// Gets the ï¿½ box
+        /// Gets the ï¿?box
         /// </summary>
         public CssBox ListItemBox
         {
@@ -2845,7 +2839,7 @@ namespace MetroFramework.Drawing.Html
 
                         if (b.IsTab)
                         {
-                            b.Width = ActualWordSpacing * 4; //TODO: Configure tab size
+                            b.Width = ActualWordSpacing * 4;
                         }
                         else if (b.IsLineBreak)
                         {
@@ -2931,7 +2925,6 @@ namespace MetroFramework.Drawing.Html
             {
                 b.OffsetTop(amount);
             }
-            //TODO: Aquï¿½ me quede: no se mueve bien todo (probar con las tablas rojas)
             Location = new PointF(Location.X, Location.Y + amount);
         }
 
@@ -2976,7 +2969,6 @@ namespace MetroFramework.Drawing.Html
                 RectangleF r = Words[0].Bounds; r.Offset(offset);
                 r.Height -= ActualBorderTopWidth + ActualBorderBottomWidth + ActualPaddingTop + ActualPaddingBottom;
                 r.Y += ActualBorderTopWidth + ActualPaddingTop;
-                //HACK: round rectangle only when necessary
                 g.DrawImage(Words[0].Image, Rectangle.Round(r));
             }
             else
@@ -3082,7 +3074,6 @@ namespace MetroFramework.Drawing.Html
         /// <param name="g"></param>
         private void PaintBackground(Graphics g, RectangleF rectangle)
         {
-            //HACK: Background rectangles are being deactivated when justifying text.
             if (ContainingBlock.TextAlign == CssConstants.Justify) return;
 
             GraphicsPath roundrect = null;

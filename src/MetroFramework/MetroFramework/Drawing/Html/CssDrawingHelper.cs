@@ -2,7 +2,7 @@
  * A Professional HTML Renderer You Will Use
  * 
  * The BSD License (BSD)
- * Copyright (c) 2011 Jose Menendez Póo, http://www.codeproject.com/Articles/32376/A-Professional-HTML-Renderer-You-Will-Use
+ * Copyright (c) 2011 Jose Menendez P?, http://www.codeproject.com/Articles/32376/A-Professional-HTML-Renderer-You-Will-Use
  * 
  * Redistribution and use in source and binary forms, with or without modification, are 
  * permitted provided that the following conditions are met:
@@ -53,7 +53,6 @@ namespace MetroFramework.Drawing.Html
         /// <returns></returns>
         private static PointF RoundP(PointF p, CssBox b)
         {
-            //HACK: Don't round if in printing mode
             //return Point.Round(p);
             return p;
         }
@@ -66,7 +65,6 @@ namespace MetroFramework.Drawing.Html
         /// <returns></returns>
         private static RectangleF RoundR(RectangleF r, CssBox b)
         {
-            //HACK: Don't round if in printing mode
             return Rectangle.Round(r);
         }
 

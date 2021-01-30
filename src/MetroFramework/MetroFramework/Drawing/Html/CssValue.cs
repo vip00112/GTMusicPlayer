@@ -2,7 +2,7 @@
  * A Professional HTML Renderer You Will Use
  * 
  * The BSD License (BSD)
- * Copyright (c) 2011 Jose Menendez Póo, http://www.codeproject.com/Articles/32376/A-Professional-HTML-Renderer-You-Will-Use
+ * Copyright (c) 2011 Jose Menendez P?, http://www.codeproject.com/Articles/32376/A-Professional-HTML-Renderer-You-Will-Use
  * 
  * Redistribution and use in source and binary forms, with or without modification, are 
  * permitted provided that the following conditions are met:
@@ -112,7 +112,6 @@ namespace MetroFramework.Drawing.Html
             //Number of the length
             string number = length.Substring(0, length.Length - 2);
 
-            //TODO: Units behave different in paper and in screen!
             switch (unit)
             {
                 case CssConstants.Em:
@@ -318,9 +317,6 @@ namespace MetroFramework.Drawing.Html
         /// <returns>Splitted and trimmed values</returns>
         public static string[] SplitValues(string value, char separator)
         {
-            //TODO: CRITICAL! Don't split values on parenthesis (like rgb(0, 0, 0)) or quotes ("strings")
-
-
             if (string.IsNullOrEmpty(value)) return new string[] { };
 
             string[] values = value.Split(separator);
@@ -445,7 +441,7 @@ namespace MetroFramework.Drawing.Html
             }
             catch
             {
-                return new Bitmap(50, 50); //TODO: Return error image
+                return new Bitmap(50, 50);
             }
         }
 

@@ -12,14 +12,12 @@ namespace GTMusicPlayer
 
         public static void Shuffle<T>(this List<T> list)
         {
-            int n = list.Count;
-            while (n > 1)
+            int to = list.Count;
+            while (to > 1)
             {
-                n--;
-                int k = _ran.Next(n + 1);
-                T value = list[k];
-                list[k] = list[n];
-                list[n] = value;
+                to--;
+                int from = _ran.Next(to + 1);
+                list.Swap(from, to);
             }
         }
 

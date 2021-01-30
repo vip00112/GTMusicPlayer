@@ -190,8 +190,6 @@ namespace GTMusicPlayer
 
         private void AddMusic(string path)
         {
-            WaitDialog.Process(this);
-
             if (Directory.Exists(path))
             {
                 var root = new DirectoryInfo(path);

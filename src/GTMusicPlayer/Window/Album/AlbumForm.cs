@@ -39,8 +39,6 @@ namespace GTMusicPlayer
 
                 _album = value;
 
-                WaitDialog.Process(this);
-
                 musicListControl.ClearItems();
                 foreach (var music in _album.Musics)
                 {

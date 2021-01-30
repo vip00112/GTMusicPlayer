@@ -2,7 +2,7 @@
  * A Professional HTML Renderer You Will Use
  * 
  * The BSD License (BSD)
- * Copyright (c) 2011 Jose Menendez Póo, http://www.codeproject.com/Articles/32376/A-Professional-HTML-Renderer-You-Will-Use
+ * Copyright (c) 2011 Jose Menendez P?, http://www.codeproject.com/Articles/32376/A-Professional-HTML-Renderer-You-Will-Use
  * 
  * Redistribution and use in source and binary forms, with or without modification, are 
  * permitted provided that the following conditions are met:
@@ -59,7 +59,7 @@ namespace MetroFramework.Drawing.Html
             float maxRight = blockBox.ActualRight - blockBox.ActualPaddingRight - blockBox.ActualBorderRightWidth;
 
             //Get the start x and y of the blockBox
-            float startx = blockBox.Location.X + blockBox.ActualPaddingLeft - 0 + blockBox.ActualBorderLeftWidth; //TODO: Check for floats
+            float startx = blockBox.Location.X + blockBox.ActualPaddingLeft - 0 + blockBox.ActualBorderLeftWidth;
             float starty = blockBox.Location.Y + blockBox.ActualPaddingTop - 0 + blockBox.ActualBorderTopWidth;
             float curx = startx + blockBox.ActualTextIndent;
             float cury = starty;
@@ -464,8 +464,6 @@ namespace MetroFramework.Drawing.Html
                 {
                     word.Left = lineBox.OwnerBox.ClientRight - word.Width;
                 }
-
-                //TODO: Background rectangles are being deactivated when justifying text.
             }
 
             
