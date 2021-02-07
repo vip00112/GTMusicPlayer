@@ -89,6 +89,7 @@ namespace GTMusicPlayer
 
                 File.WriteAllText(sf.FileName, content);
             }
+            metroTextBox_title.Focus();
         }
 
         private void metroButton_load_Click(object sender, EventArgs e)

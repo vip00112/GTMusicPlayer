@@ -160,6 +160,13 @@ namespace GTMusicPlayer
         }
         #endregion
 
+        #region Public Method
+        public void ChangeViewType()
+        {
+            musicListControl.ChangeViewType();
+        }
+        #endregion
+
         #region Protected Method
         // 전역 키 설정
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)

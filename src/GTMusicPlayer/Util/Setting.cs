@@ -105,7 +105,12 @@ namespace GTMusicPlayer
                 if (IsLoaded)
                 {
                     Save();
-                    Playlist.Instance.RefreshName();
+
+                    var mainForm = FormUtil.FindForm<MainForm>();
+                    if (mainForm != null) mainForm.ChangeViewType();
+
+                    var albumForm = FormUtil.FindForm<AlbumForm>();
+                    if (albumForm != null) albumForm.ChangeViewType();
                 }
             }
         }

@@ -60,14 +60,12 @@ namespace GTMusicPlayer
                 metroLabel_title.UseStyleColors = _isSelected;
                 metroLabel_singer.UseStyleColors = _isSelected;
                 metroLabel_durationTime.UseStyleColors = _isSelected;
-                metroLabel_delete.UseStyleColors = _isSelected;
                 metroLabel_move.UseStyleColors = _isSelected;
 
                 Invalidate();
                 metroLabel_title.Invalidate();
                 metroLabel_singer.Invalidate();
                 metroLabel_durationTime.Invalidate();
-                metroLabel_delete.Invalidate();
                 metroLabel_move.Invalidate();
 
                 // Custom Color 방식
@@ -89,7 +87,6 @@ namespace GTMusicPlayer
         {
             if (e.Button != MouseButtons.Left) return;
 
-            IsSelected = false;
             OnDoubleClicked?.Invoke(this, EventArgs.Empty);
         }
 
@@ -107,13 +104,6 @@ namespace GTMusicPlayer
         {
             _lastState = Guid.Empty;
             metroToolTip.Hide(metroTile_play);
-        }
-
-        private void metroLabel_delete_Click(object sender, EventArgs e)
-        {
-            if (!MessageBoxUtil.Confirm(this, "Are you sure you want to delete it?")) return;
-
-            OnDeleted?.Invoke(this, EventArgs.Empty);
         }
 
         private void metroLabel_move_MouseDown(object sender, MouseEventArgs e)
@@ -202,6 +192,9 @@ namespace GTMusicPlayer
 
             metroLabel_title.Invoke((MethodInvoker) delegate ()
             {
+                ErrorMessage = null;
+                SetCustomColor(metroLabel_title, Color.Empty, Color.Empty);
+
                 metroTile_play.Visible = isPlay;
                 Invalidate();
             });
@@ -211,7 +204,7 @@ namespace GTMusicPlayer
         {
             if (Disposing || IsDisposed) return;
 
-            ErrorMessage = msg;
+            ErrorMessage = "Error : " + msg;
             metroLabel_title.Invoke((MethodInvoker) delegate ()
             {
                 Color backColor = !string.IsNullOrWhiteSpace(msg) ? Color.Firebrick : Color.Empty;

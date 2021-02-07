@@ -33,7 +33,6 @@
             this.metroTile_play = new MetroFramework.Controls.MetroTile();
             this.metroLabel_durationTime = new MetroFramework.Controls.MetroLabel();
             this.metroToolTip = new MetroFramework.Components.MetroToolTip();
-            this.metroLabel_delete = new MetroFramework.Controls.MetroLabel();
             this.metroLabel_move = new MetroFramework.Controls.MetroLabel();
             this.SuspendLayout();
             // 
@@ -45,7 +44,7 @@
             this.metroLabel_title.ForeColor = System.Drawing.Color.White;
             this.metroLabel_title.Location = new System.Drawing.Point(8, 0);
             this.metroLabel_title.Name = "metroLabel_title";
-            this.metroLabel_title.Size = new System.Drawing.Size(203, 15);
+            this.metroLabel_title.Size = new System.Drawing.Size(221, 15);
             this.metroLabel_title.TabIndex = 0;
             this.metroLabel_title.Text = "Title";
             this.metroLabel_title.Click += new System.EventHandler(this.control_Click);
@@ -102,22 +101,6 @@
             this.metroToolTip.StyleManager = null;
             this.metroToolTip.Theme = MetroFramework.MetroThemeStyle.Light;
             // 
-            // metroLabel_delete
-            // 
-            this.metroLabel_delete.BackColor = System.Drawing.Color.Firebrick;
-            this.metroLabel_delete.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.metroLabel_delete.FontSize = MetroFramework.MetroLabelSize.Small;
-            this.metroLabel_delete.FontWeight = MetroFramework.MetroLabelWeight.Bold;
-            this.metroLabel_delete.ForeColor = System.Drawing.Color.White;
-            this.metroLabel_delete.Location = new System.Drawing.Point(214, 0);
-            this.metroLabel_delete.Margin = new System.Windows.Forms.Padding(0);
-            this.metroLabel_delete.Name = "metroLabel_delete";
-            this.metroLabel_delete.Size = new System.Drawing.Size(15, 15);
-            this.metroLabel_delete.TabIndex = 0;
-            this.metroLabel_delete.Text = "x";
-            this.metroLabel_delete.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.metroLabel_delete.Click += new System.EventHandler(this.metroLabel_delete_Click);
-            // 
             // metroLabel_move
             // 
             this.metroLabel_move.BackColor = System.Drawing.Color.Firebrick;
@@ -142,7 +125,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.metroTile_play);
             this.Controls.Add(this.metroLabel_move);
-            this.Controls.Add(this.metroLabel_delete);
             this.Controls.Add(this.metroLabel_durationTime);
             this.Controls.Add(this.metroLabel_singer);
             this.Controls.Add(this.metroLabel_title);
@@ -161,7 +143,6 @@
         private MetroFramework.Controls.MetroTile metroTile_play;
         private MetroFramework.Controls.MetroLabel metroLabel_durationTime;
         private MetroFramework.Components.MetroToolTip metroToolTip;
-        private MetroFramework.Controls.MetroLabel metroLabel_delete;
         private MetroFramework.Controls.MetroLabel metroLabel_move;
     }
 }

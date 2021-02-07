@@ -147,15 +147,10 @@ namespace GTMusicPlayer
             var item = sender as MusicListItemControl;
             if (item == null) return;
 
+            item.IsSelected = false;
+            _selectedItems.Remove(item);
+
             OnDoubleClickedMusic?.Invoke(this, new MusicEventArgs(item.Music));
-        }
-
-        private void OnDeletedItem(object sender, EventArgs e)
-        {
-            var item = sender as MusicListItemControl;
-            if (item == null) return;
-
-            RemoveItem(item);
         }
 
         private void OnMovedItem(object sender, MusicItemListEventArgs e)
@@ -262,7 +257,6 @@ namespace GTMusicPlayer
         public void AddItem(Music music, bool useEvent = true)
         {
             var item = new MusicListItemControl(music);
-            item.OnDeleted += OnDeletedItem;
             item.OnClicked += OnClickedItem;
             item.OnDoubleClicked += OnDoubleClickedItem;
             GlobalStyleManager.Instance.ApplyManagerToControl(item);
@@ -282,7 +276,6 @@ namespace GTMusicPlayer
 
         public void RemoveItem(MusicListItemControl item)
         {
-            item.OnDeleted -= OnDeletedItem;
             item.OnClicked -= OnClickedItem;
             item.OnDoubleClicked -= OnDoubleClickedItem;
 

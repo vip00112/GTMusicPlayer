@@ -13,16 +13,15 @@ namespace GTMusicPlayer
     public class Player
     {
         public EventHandler<MusicEventArgs> OnStarted;
-        public EventHandler<MusicEventArgs> OnStoped;
+        public EventHandler OnStoped;
         public EventHandler<MusicEventArgs> OnError;
         public EventHandler<ChangedDurationEventArgs> OnChangedDuration;
 
         private object _playSync;
         private BackgroundWorker _bw;
-        private IWavePlayer _player;
+        private IWavePlayer _wavePlayer;
         private WaveStream _reader;
         private float _volume;
-        private Music _currentMusic;
 
         #region Constructor
         public Player()
@@ -33,25 +32,12 @@ namespace GTMusicPlayer
             _bw.DoWork += PlayThread;
             _bw.RunWorkerCompleted += PlayCompleted;
 
-            _player = new WaveOut(WaveCallbackInfo.FunctionCallback());
             _volume = 1.0F;
         }
         #endregion
 
         #region Properties
         public bool IsPlaying { get { return _bw != null && _bw.IsBusy; } }
-
-        public Music CurrentMusic
-        {
-            get { return _currentMusic; }
-            set
-            {
-                if (_currentMusic == value) return;
-
-                _currentMusic = value;
-                Playlist.Instance.CurrentMusic = _currentMusic;
-            }
-        }
 
         public TimeSpan CurrentTime
         {
@@ -61,60 +47,41 @@ namespace GTMusicPlayer
                 return _reader.CurrentTime;
             }
         }
-
-        public TimeSpan TotalTime
-        {
-            get
-            {
-                if (CurrentMusic == null) return new TimeSpan();
-                return CurrentMusic.DurationTime;
-            }
-        }
         #endregion
 
         #region Public Method
         public void Play(Music music)
         {
             // 현재 재생중인 곡이 있을시 대기
-            if (_bw.IsBusy)
-            {
-                while (_bw.IsBusy) { Thread.Sleep(10); }
-            }
+            while (_bw.IsBusy) { Thread.Sleep(10); }
 
-            _bw.RunWorkerAsync(music);
+            lock (_playSync)
+            {
+                _bw.RunWorkerAsync(music);
+            }
         }
 
         public bool Resume()
         {
-            if (_player.PlaybackState == PlaybackState.Playing) return false;
-
-            // 재생중이 아닐시 마지막 재생한 곡 리플레이
-            if (!_bw.IsBusy)
-            {
-                if (CurrentMusic != null) Play(CurrentMusic);
-                return true;
-            }
-
             try
             {
-                StartPlayer();
+                return StartPlayer();
             }
             catch (Exception e)
             {
                 Console.WriteLine(e);
-                Next();
             }
-            return true;
+            return false;
         }
 
         public bool Pause()
         {
-            if (_player.PlaybackState != PlaybackState.Playing) return false;
-            if (!_bw.IsBusy) return false;
-
             lock (_playSync)
             {
-                _player.Pause();
+                if (_wavePlayer == null) return false;
+                if (_wavePlayer.PlaybackState != PlaybackState.Playing) return false;
+
+                _wavePlayer.Pause();
             }
             return true;
         }
@@ -122,34 +89,27 @@ namespace GTMusicPlayer
         public void SetVolume(int value)
         {
             _volume = value / 100F;
-            _player.Volume = _volume;
+            if (_wavePlayer != null) _wavePlayer.Volume = _volume;
         }
 
         public void Skip(int sec)
         {
-            if (!_bw.IsBusy) return;
-
             lock (_playSync)
             {
                 if (_reader == null) return;
+
                 _reader.Skip(sec);
             }
         }
 
-        public void Next()
+        public void SkipToEnd()
         {
-            if (!_bw.IsBusy) return;
-
             lock (_playSync)
             {
                 if (_reader == null) return;
+
                 _reader.Position = _reader.Length;
             }
-        }
-
-        public void SetCurrentMusic(Music music)
-        {
-            CurrentMusic = music;
         }
         #endregion
 
@@ -157,23 +117,23 @@ namespace GTMusicPlayer
         // 실제 재생 담당 쓰레드
         private void PlayThread(object sender, DoWorkEventArgs e)
         {
-            CurrentMusic = e.Argument as Music;
-            if (CurrentMusic == null) return;
-
-            if (!CurrentMusic.Load())
-            {
-                OnError?.Invoke(this, new MusicEventArgs(CurrentMusic, "Load failed. file does not exist."));
-                return;
-            }
+            var music = e.Argument as Music;
+            if (music == null) return;
 
             try
             {
-                _reader = CreateReader(CurrentMusic.FilePath);
-                _player = new WaveOut(WaveCallbackInfo.FunctionCallback());
-                _player.Init(_reader);
-                _player.Volume = _volume;
+                if (!music.Load())
+                {
+                    OnError?.Invoke(this, new MusicEventArgs(music, "Load failed. file does not exist."));
+                    return;
+                }
+
+                _reader = CreateReader(music.FilePath);
+                _wavePlayer = new WaveOut(WaveCallbackInfo.FunctionCallback());
+                _wavePlayer.Init(_reader);
+                _wavePlayer.Volume = _volume;
                 StartPlayer();
-                OnStarted?.Invoke(this, new MusicEventArgs(CurrentMusic));
+                OnStarted?.Invoke(this, new MusicEventArgs(music));
 
                 while (true)
                 {
@@ -187,18 +147,14 @@ namespace GTMusicPlayer
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
-                OnError?.Invoke(this, new MusicEventArgs(CurrentMusic, ex.Message));
-            }
-            finally
-            {
-                StopPlayer();
+                OnError?.Invoke(this, new MusicEventArgs(music, ex.Message));
             }
         }
 
         private void PlayCompleted(object sender, RunWorkerCompletedEventArgs e)
         {
-            OnStoped?.Invoke(this, new MusicEventArgs(CurrentMusic));
-            CurrentMusic = null;
+            StopPlayer();
+            OnStoped?.Invoke(this, EventArgs.Empty);
         }
 
         private WaveStream CreateReader(string filePath)
@@ -216,11 +172,15 @@ namespace GTMusicPlayer
             }
         }
 
-        private void StartPlayer()
+        private bool StartPlayer()
         {
             lock (_playSync)
             {
-                if (_player != null) _player.Play();
+                if (_wavePlayer == null) return false;
+                if (_wavePlayer.PlaybackState == PlaybackState.Playing) return false;
+
+                _wavePlayer.Play();
+                return true;
             }
         }
 
@@ -228,7 +188,12 @@ namespace GTMusicPlayer
         {
             lock (_playSync)
             {
-                if (_player != null) _player.Stop();
+                if (_wavePlayer != null)
+                {
+                    _wavePlayer.Stop();
+                    _wavePlayer.Dispose();
+                    _wavePlayer = null;
+                }
 
                 if (_reader != null)
                 {

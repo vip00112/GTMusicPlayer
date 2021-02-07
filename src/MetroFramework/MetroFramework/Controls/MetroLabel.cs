@@ -218,6 +218,30 @@ namespace MetroFramework.Controls
             set { wrapToLine = value; Refresh(); }
         }
 
+        // Label 더블클릭시 Text가 Clipboard로 들어가는것을 방지하기 위한 처리
+        private string _text;
+        public override string Text
+        {
+            get
+            {
+                return _text;
+            }
+            set
+            {
+                if (value == null)
+                {
+                    value = "";
+                }
+
+                if (_text != value)
+                {
+                    _text = value;
+                    Refresh();
+                    OnTextChanged(EventArgs.Empty);
+                }
+            }
+        }
+
         #endregion
 
         #region Constructor
@@ -603,7 +627,6 @@ namespace MetroFramework.Controls
             baseTextBox.SelectAll();
             Native.WinCaret.HideCaret(baseTextBox.Handle);
         }
-
         #endregion
     }
 }

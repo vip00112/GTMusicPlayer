@@ -19,7 +19,7 @@ namespace GTMusicPlayer
     {
         private Player _player;
         private bool _isPrev;
-        private bool _isFocusedDurationTrackBar;
+        private bool _isFixedDurationTrackBar;
         private SelectType _selectType;
 
         #region Constructor
@@ -49,6 +49,7 @@ namespace GTMusicPlayer
 
             Width = 305;
 
+            Tag = Text;
             metroLabel_title.Tag = metroLabel_title.Text;
             metroLabel_singer.Tag = metroLabel_singer.Text;
 
@@ -68,7 +69,6 @@ namespace GTMusicPlayer
             lyricListControl.Visible = false;
             lyricListControl.OnClickedLyric += OnClickedLyric;
 
-            Playlist.Instance.OnChangedViewType += OnChangedViewType;
             Playlist.Instance.OnChangedAlbum += OnChangedAlbum;
 
             if (Setting.IsLoaded)
@@ -76,7 +76,6 @@ namespace GTMusicPlayer
                 metroStyleManager.Theme = (MetroThemeStyle) Setting.Instance.UITheme;
                 metroStyleManager.Style = (MetroColorStyle) Setting.Instance.UIStyle;
                 metroTrackBar_volume.Value = Setting.Instance.Volume;
-                _player.SetVolume(Setting.Instance.Volume);
 
                 musicListControl.ClearItems();
                 foreach (var music in Setting.Instance.RecentPlaylist)
@@ -122,7 +121,7 @@ namespace GTMusicPlayer
         {
             if (sender == metroTrackBar_duration)
             {
-                _isFocusedDurationTrackBar = true;
+                _isFixedDurationTrackBar = true;
             }
         }
 
@@ -130,7 +129,7 @@ namespace GTMusicPlayer
         {
             if (sender == metroTrackBar_duration)
             {
-                _isFocusedDurationTrackBar = false;
+                _isFixedDurationTrackBar = false;
 
                 int value = metroTrackBar_duration.Value;
                 int current = (int) _player.CurrentTime.TotalSeconds;
@@ -158,9 +157,9 @@ namespace GTMusicPlayer
         private void menuItem_toolLyric_Click(object sender, EventArgs e)
         {
             var form = FormUtil.ActiveForm<LyricEditForm>();
-            if (_player.CurrentMusic != null)
+            if (Playlist.Instance.CurrentMusic != null)
             {
-                form.InitSearch(_player.CurrentMusic);
+                form.InitSearch(Playlist.Instance.CurrentMusic);
             }
         }
 
@@ -228,7 +227,7 @@ namespace GTMusicPlayer
 
         private void metroLabel_next_Click(object sender, EventArgs e)
         {
-            _player.Next();
+            Next();
         }
 
         private void metroCheckBox_mute_CheckedChanged(object sender, EventArgs e)
@@ -257,66 +256,46 @@ namespace GTMusicPlayer
         }
         #endregion
 
-        #region EventHandler Method
+        #region EventHandler
+        #region Player
         private void OnStarted(object sender, MusicEventArgs e)
         {
             if (Disposing || IsDisposed) return;
 
             metroLabel_title.Invoke((MethodInvoker) delegate ()
             {
-                Text = e.Music.Title + " - " + e.Music.ViewSinger;
-                metroLabel_title.Text = e.Music.Title;
-                metroLabel_singer.Text = e.Music.ViewSinger;
-                metroLabel_totalTime.Text = e.Music.DurationTime.View();
+                _isFixedDurationTrackBar = false;
 
-                metroButton_play.Enabled = true;
-                metroButton_play.Text = "■";
-
-                metroLabel_prev.Enabled = true;
-                metroLabel_next.Enabled = true;
-                metroTrackBar_duration.Enabled = true;
-                metroTrackBar_duration.Maximum = (int) e.Music.DurationTime.TotalSeconds;
-                metroTrackBar_duration.Value = 0;
-
-                musicListControl.SetPlayUI(e.Music);
-
-                if (lyricListControl.InitUI(e.Music.Lyrics))
-                {
-                    Width = 576;
-                    lyricListControl.Visible = true;
-                }
-                else
-                {
-                    Width = 305;
-                    lyricListControl.Visible = false;
-                }
+                SetPlayUI(e.Music);
             });
         }
 
-        private void OnStoped(object sender, MusicEventArgs e)
+        private void OnStoped(object sender, EventArgs e)
         {
             if (Disposing || IsDisposed) return;
 
             metroButton_play.Invoke((MethodInvoker) delegate ()
             {
-                Music nextMusic = null;
                 if (_isPrev)
                 {
                     _isPrev = false;
-                    nextMusic = Playlist.Instance.GetPrevMusic(e.Music);
-                    if (nextMusic == null) nextMusic = e.Music;
+                    Playlist.Instance.ChangePrevPosition();
+                }
+
+                if (Playlist.Instance.RepeatType == RepeatType.One)
+                {
+                    Playlist.Instance.ChangePosition(Playlist.Instance.CurrentMusic);
+                }
+
+                Playlist.Instance.NextMusic();
+                if (Playlist.Instance.CurrentMusic != null)
+                {
+                    _player.Play(Playlist.Instance.CurrentMusic);
                 }
                 else
                 {
-                    nextMusic = Playlist.Instance.GetNextMusic(e.Music);
+                    InitUI(null);
                 }
-
-                if (nextMusic != null)
-                {
-                    _player.Play(nextMusic);
-                    return;
-                }
-                InitUI();
             });
         }
 
@@ -330,7 +309,7 @@ namespace GTMusicPlayer
         private void OnChangedDuration(object sender, ChangedDurationEventArgs e)
         {
             if (Disposing || IsDisposed) return;
-            if (_isFocusedDurationTrackBar) return;
+            if (_isFixedDurationTrackBar) return;
 
             metroTrackBar_duration.Invoke((MethodInvoker) delegate ()
             {
@@ -345,30 +324,32 @@ namespace GTMusicPlayer
                 lyricListControl.UpdateUI(e.CurrentTime);
             });
         }
+        #endregion
 
+        #region MusicListControl
         private void OnAddedMusic(object sender, MusicEventArgs e)
         {
             if (e.Music == null) return;
 
             Playlist.Instance.AddMusic(e.Music);
-
-            // 최초 등록시 표기
             if (Playlist.Instance.Musics.Count == 1)
             {
-                metroLabel_title.Text = e.Music.Title;
-                metroLabel_singer.Text = e.Music.ViewSinger;
-                metroLabel_totalTime.Text = e.Music.DurationTime.View();
-                metroButton_play.Text = "▶";
+                InitUI(Playlist.Instance.Musics[0]);
                 metroButton_play.Enabled = true;
-                _player.SetCurrentMusic(e.Music);
             }
         }
 
         private void OnDeletedMusic(object sender, MusicEventArgs e)
         {
             Playlist.Instance.RemoveMusic(e.Music);
-
-            if (_player.CurrentMusic == e.Music) _player.Next();
+            if (_player.IsPlaying && Playlist.Instance.CurrentMusic == e.Music)
+            {
+                _player.SkipToEnd();
+            }
+            else if (Playlist.Instance.Musics.Count == 0)
+            {
+                InitUI(null);
+            }
         }
 
         private void OnClickedMusic(object sender, MusicEventArgs e)
@@ -382,15 +363,18 @@ namespace GTMusicPlayer
         {
             if (e.Music.IsError) return;
 
-            Playlist.Instance.ChangeMusic(e.Music);
+            Playlist.Instance.ChangePosition(e.Music);
             if (_player.IsPlaying)
             {
-                _player.Next();
-                _player.SetCurrentMusic(null);
+                _player.SkipToEnd();
             }
             else
             {
-                _player.Play(e.Music);
+                Playlist.Instance.NextMusic();
+                if (Playlist.Instance.CurrentMusic != null)
+                {
+                    _player.Play(Playlist.Instance.CurrentMusic);
+                }
             }
         }
 
@@ -403,30 +387,39 @@ namespace GTMusicPlayer
         {
             _selectType = SelectType.None;
         }
+        #endregion
 
-        private void OnChangedViewType(object sender, EventArgs e)
-        {
-            musicListControl.ChangeViewType();
-        }
-
+        #region Playlist
         private void OnChangedAlbum(object sender, AlbumEventArgs e)
         {
-            _player.Next();
-            _player.SetCurrentMusic(null);
-            InitUI();
-
             musicListControl.ClearItems();
             foreach (var music in e.Album.Musics)
             {
                 musicListControl.AddItem(music);
             }
-        }
+            Playlist.Instance.RefreshOrder(null);
 
+            if (_player.IsPlaying)
+            {
+                _player.SkipToEnd();
+            }
+        }
+        #endregion
+
+        #region LyricControl
         private void OnClickedLyric(object sender, LyricEventArgs e)
         {
             int value = (int) e.Lyric.Time.TotalSeconds;
             int current = (int) _player.CurrentTime.TotalSeconds;
             _player.Skip(value - current);
+        }
+        #endregion
+        #endregion
+
+        #region Public Method
+        public void ChangeViewType()
+        {
+            musicListControl.ChangeViewType();
         }
         #endregion
 
@@ -483,7 +476,7 @@ namespace GTMusicPlayer
             {
                 if (!metroLabel_next.Enabled) return true;
 
-                _player.Next();
+                Next();
                 return true;
             }
             if (keyData == Keys.Left)
@@ -537,30 +530,88 @@ namespace GTMusicPlayer
         #endregion
 
         #region Private Method
-        private void InitUI()
+        private void InitUI(Music music)
         {
-            metroLabel_title.Text = (string) metroLabel_title.Tag;
-            metroLabel_singer.Text = (string) metroLabel_singer.Tag;
+            if (music != null)
+            {
+                Text = music.Title + " - " + music.ViewSinger;
+                metroLabel_title.Text = music.Title;
+                metroLabel_singer.Text = music.ViewSinger;
+                metroLabel_currentTime.Text = "00:00";
+                metroLabel_totalTime.Text = music.DurationTime.View();
+            }
+            else
+            {
+                Text = (string) Tag;
+                metroLabel_title.Text = (string) metroLabel_title.Tag;
+                metroLabel_singer.Text = (string) metroLabel_singer.Tag;
+                metroLabel_currentTime.Text = "00:00";
+                metroLabel_totalTime.Text = "00:00";
+
+                Width = 305;
+                lyricListControl.Visible = false;
+            }
+
             metroButton_play.Text = "▶";
+            metroButton_play.Enabled = true;
+
             metroLabel_prev.Enabled = false;
             metroLabel_next.Enabled = false;
+
             metroTrackBar_duration.Enabled = false;
             metroTrackBar_duration.Value = 0;
-            metroLabel_currentTime.Text = "00:00";
+        }
+
+        private void SetPlayUI(Music music)
+        {
+            InitUI(music);
+            musicListControl.SetPlayUI(music);
+
+            metroButton_play.Text = "■";
+            metroButton_play.Enabled = true;
+
+            metroLabel_prev.Enabled = true;
+            metroLabel_next.Enabled = true;
+
+            metroTrackBar_duration.Enabled = true;
+            metroTrackBar_duration.Maximum = (int) music.DurationTime.TotalSeconds;
+            metroTrackBar_duration.Value = 0;
+
+            if (lyricListControl.InitUI(music.Lyrics))
+            {
+                Width = 576;
+                lyricListControl.Visible = true;
+            }
+            else
+            {
+                Width = 305;
+                lyricListControl.Visible = false;
+            }
         }
 
         private void PlayOrPause()
         {
-            if (_player.CurrentMusic == null) return;
-            if (!metroButton_play.Enabled) return;
-
-            if (metroButton_play.Text == "▶")
+            if (!_player.IsPlaying)
             {
-                if (_player.Resume()) metroButton_play.Text = "■";
+                if (Playlist.Instance.CurrentMusic == null)
+                {
+                    Playlist.Instance.NextMusic();
+                    if (Playlist.Instance.CurrentMusic != null)
+                    {
+                        _player.Play(Playlist.Instance.CurrentMusic);
+                    }
+                }
             }
             else
             {
-                if (_player.Pause()) metroButton_play.Text = "▶";
+                if (metroButton_play.Text == "▶")
+                {
+                    if (_player.Resume()) metroButton_play.Text = "■";
+                }
+                else
+                {
+                    if (_player.Pause()) metroButton_play.Text = "▶";
+                }
             }
         }
 
@@ -570,12 +621,18 @@ namespace GTMusicPlayer
             if (current <= 3)
             {
                 _isPrev = true;
-                _player.Next();
+                Next();
             }
             else
             {
                 _player.Skip(-current);
             }
+        }
+
+        private void Next()
+        {
+            _isFixedDurationTrackBar = true;
+            _player.SkipToEnd();
         }
         #endregion
     }
