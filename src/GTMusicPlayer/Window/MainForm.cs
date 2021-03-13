@@ -36,7 +36,7 @@ namespace GTMusicPlayer
             set
             {
                 MinimumSize = new Size(value, 425);
-                MaximumSize = new Size(value, Int32.MaxValue);
+                MaximumSize = new Size(value, int.MaxValue);
                 base.Width = value;
             }
         }
@@ -46,8 +46,6 @@ namespace GTMusicPlayer
         private void MainForm_Load(object sender, EventArgs e)
         {
             if (DesignMode) return;
-
-            Width = 305;
 
             Tag = Text;
             metroLabel_title.Tag = metroLabel_title.Text;
@@ -65,9 +63,6 @@ namespace GTMusicPlayer
             musicListControl.OnDoubleClickedMusic += OnDoubleClickedMusic;
             musicListControl.OnMovedMusic += OnMovedMusic;
             musicListControl.OnOpeningContextMenu += OnOpeningMusicListContextMenu;
-
-            lyricListControl.Visible = false;
-            lyricListControl.OnClickedLyric += OnClickedLyric;
 
             Playlist.Instance.OnChangedAlbum += OnChangedAlbum;
 
@@ -151,15 +146,6 @@ namespace GTMusicPlayer
             else
             {
                 menuItem_exit.Visible = true;
-            }
-        }
-
-        private void menuItem_toolLyric_Click(object sender, EventArgs e)
-        {
-            var form = FormUtil.ActiveForm<LyricEditForm>();
-            if (Playlist.Instance.CurrentMusic != null)
-            {
-                form.InitSearch(Playlist.Instance.CurrentMusic);
             }
         }
 
@@ -320,8 +306,6 @@ namespace GTMusicPlayer
                     metroTrackBar_duration.Value = value;
                     metroLabel_currentTime.Text = e.CurrentTime.View();
                 }
-
-                lyricListControl.UpdateUI(e.CurrentTime);
             });
         }
         #endregion
@@ -405,15 +389,6 @@ namespace GTMusicPlayer
             }
         }
         #endregion
-
-        #region LyricControl
-        private void OnClickedLyric(object sender, LyricEventArgs e)
-        {
-            int value = (int) e.Lyric.Time.TotalSeconds;
-            int current = (int) _player.CurrentTime.TotalSeconds;
-            _player.Skip(value - current);
-        }
-        #endregion
         #endregion
 
         #region Public Method
@@ -428,10 +403,6 @@ namespace GTMusicPlayer
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
         {
             if (keyData == Keys.Tab) return true;
-
-            #region Lyric
-            if (lyricListControl.DoShortcutCommand(keyData)) return true;
-            #endregion
 
             #region Play/Pause
             if (keyData == Keys.Space)
@@ -547,9 +518,6 @@ namespace GTMusicPlayer
                 metroLabel_singer.Text = (string) metroLabel_singer.Tag;
                 metroLabel_currentTime.Text = "00:00";
                 metroLabel_totalTime.Text = "00:00";
-
-                Width = 305;
-                lyricListControl.Visible = false;
             }
 
             metroButton_play.Text = "▶";
@@ -576,17 +544,6 @@ namespace GTMusicPlayer
             metroTrackBar_duration.Enabled = true;
             metroTrackBar_duration.Maximum = (int) music.DurationTime.TotalSeconds;
             metroTrackBar_duration.Value = 0;
-
-            if (lyricListControl.InitUI(music.Lyrics))
-            {
-                Width = 576;
-                lyricListControl.Visible = true;
-            }
-            else
-            {
-                Width = 305;
-                lyricListControl.Visible = false;
-            }
         }
 
         private void PlayOrPause()

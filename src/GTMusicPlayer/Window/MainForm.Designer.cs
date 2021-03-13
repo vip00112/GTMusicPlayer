@@ -39,8 +39,6 @@
             this.metroLabel_singer = new MetroFramework.Controls.MetroLabel();
             this.metroCheckBox_mute = new MetroFramework.Controls.MetroCheckBox();
             this.metroContextMenu = new MetroFramework.Controls.MetroContextMenu(this.components);
-            this.toolToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuItem_toolLyric = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItem_album = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItem_setting = new System.Windows.Forms.ToolStripMenuItem();
             this.menuItem_mode = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,7 +48,6 @@
             this.metroLabel_prev = new MetroFramework.Controls.MetroLabel();
             this.metroLabel_next = new MetroFramework.Controls.MetroLabel();
             this.notifyIcon = new System.Windows.Forms.NotifyIcon(this.components);
-            this.lyricListControl = new GTMusicPlayer.LyricListControl();
             this.musicListControl = new GTMusicPlayer.MusicListControl();
             ((System.ComponentModel.ISupportInitialize)(this.metroStyleManager)).BeginInit();
             this.metroContextMenu.SuspendLayout();
@@ -134,7 +131,6 @@
             this.metroContextMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(238)))), ((int)(((byte)(238)))));
             this.metroContextMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.metroContextMenu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolToolStripMenuItem,
             this.menuItem_album,
             this.menuItem_setting,
             this.menuItem_mode,
@@ -143,19 +139,6 @@
             resources.ApplyResources(this.metroContextMenu, "metroContextMenu");
             this.metroContextMenu.UseStyleColors = true;
             this.metroContextMenu.Opening += new System.ComponentModel.CancelEventHandler(this.metroContextMenu_Opening);
-            // 
-            // toolToolStripMenuItem
-            // 
-            this.toolToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.menuItem_toolLyric});
-            this.toolToolStripMenuItem.Name = "toolToolStripMenuItem";
-            resources.ApplyResources(this.toolToolStripMenuItem, "toolToolStripMenuItem");
-            // 
-            // menuItem_toolLyric
-            // 
-            this.menuItem_toolLyric.Name = "menuItem_toolLyric";
-            resources.ApplyResources(this.menuItem_toolLyric, "menuItem_toolLyric");
-            this.menuItem_toolLyric.Click += new System.EventHandler(this.menuItem_toolLyric_Click);
             // 
             // menuItem_album
             // 
@@ -221,12 +204,6 @@
             resources.ApplyResources(this.notifyIcon, "notifyIcon");
             this.notifyIcon.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.notifyIcon_MouseDoubleClick);
             // 
-            // lyricListControl
-            // 
-            resources.ApplyResources(this.lyricListControl, "lyricListControl");
-            this.lyricListControl.Name = "lyricListControl";
-            this.lyricListControl.UseSelectable = true;
-            // 
             // musicListControl
             // 
             resources.ApplyResources(this.musicListControl, "musicListControl");
@@ -240,7 +217,6 @@
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ContextMenuStrip = this.metroContextMenu;
-            this.Controls.Add(this.lyricListControl);
             this.Controls.Add(this.musicListControl);
             this.Controls.Add(this.metroLabel_next);
             this.Controls.Add(this.metroLabel_prev);
@@ -289,12 +265,9 @@
         private MetroFramework.Controls.MetroLabel metroLabel_prev;
         private MusicListControl musicListControl;
         private System.Windows.Forms.ToolStripMenuItem menuItem_album;
-        private LyricListControl lyricListControl;
         private System.Windows.Forms.NotifyIcon notifyIcon;
         private System.Windows.Forms.ToolStripMenuItem menuItem_exit;
         private System.Windows.Forms.ToolStripMenuItem menuItem_mode;
-        private System.Windows.Forms.ToolStripMenuItem toolToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem menuItem_toolLyric;
     }
 }
 

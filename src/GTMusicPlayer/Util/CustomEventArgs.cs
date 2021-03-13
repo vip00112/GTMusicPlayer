@@ -63,14 +63,4 @@ namespace GTMusicPlayer
             Items = itmes;
         }
     }
-
-    public class LyricEventArgs : EventArgs
-    {
-        public Lyric Lyric { get; }
-
-        public LyricEventArgs(Lyric lyric)
-        {
-            Lyric = lyric;
-        }
-    }
 }

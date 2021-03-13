@@ -33,7 +33,6 @@
             this.metroLabel_next = new MetroFramework.Controls.MetroLabel();
             this.metroLabel_prev = new MetroFramework.Controls.MetroLabel();
             this.metroLabel1 = new MetroFramework.Controls.MetroLabel();
-            this.lyricListControl = new GTMusicPlayer.LyricListControl();
             this.SuspendLayout();
             // 
             // metroLabel_title
@@ -89,21 +88,11 @@
             this.metroLabel1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.metroLabel1.UseStyleColors = true;
             // 
-            // lyricListControl
-            // 
-            this.lyricListControl.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.lyricListControl.Location = new System.Drawing.Point(20, 52);
-            this.lyricListControl.Name = "lyricListControl";
-            this.lyricListControl.Size = new System.Drawing.Size(279, 44);
-            this.lyricListControl.TabIndex = 10;
-            this.lyricListControl.UseSelectable = true;
-            // 
             // MiniForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(322, 119);
-            this.Controls.Add(this.lyricListControl);
             this.Controls.Add(this.metroLabel_next);
             this.Controls.Add(this.metroLabel1);
             this.Controls.Add(this.metroLabel_prev);
@@ -131,6 +120,5 @@
         private MetroFramework.Controls.MetroLabel metroLabel_next;
         private MetroFramework.Controls.MetroLabel metroLabel_prev;
         private MetroFramework.Controls.MetroLabel metroLabel1;
-        private LyricListControl lyricListControl;
     }
 }

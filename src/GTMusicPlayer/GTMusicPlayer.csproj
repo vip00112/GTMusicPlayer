@@ -77,10 +77,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Model\Enums.cs" />
-    <Compile Include="MusicTagEditDialog.cs">
+    <Compile Include="Window\MusicTagEditDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MusicTagEditDialog.Designer.cs">
+    <Compile Include="Window\MusicTagEditDialog.Designer.cs">
       <DependentUpon>MusicTagEditDialog.cs</DependentUpon>
     </Compile>
     <Compile Include="Util\FormUtil.cs" />
@@ -92,44 +92,17 @@
       <DependentUpon>MiniForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\IStackItem.cs" />
-    <Compile Include="Window\Lyric\LyricEditDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Window\Lyric\LyricEditDialog.Designer.cs">
-      <DependentUpon>LyricEditDialog.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Window\Lyric\ALSongLyricHeaderControl.cs">
+    <Compile Include="Window\AlbumListControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Window\Lyric\ALSongLyricHeaderControl.Designer.cs">
-      <DependentUpon>ALSongLyricHeaderControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Window\Lyric\LyricEditForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Window\Lyric\LyricEditForm.Designer.cs">
-      <DependentUpon>LyricEditForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Window\Lyric\LyricListControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Window\Lyric\LyricListControl.Designer.cs">
-      <DependentUpon>LyricListControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Window\Album\AlbumListControl.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Window\Album\AlbumListControl.Designer.cs">
+    <Compile Include="Window\AlbumListControl.Designer.cs">
       <DependentUpon>AlbumListControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Window\Album\AlbumListItemControl.cs">
+    <Compile Include="Window\AlbumListItemControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Window\Album\AlbumListItemControl.Designer.cs">
+    <Compile Include="Window\AlbumListItemControl.Designer.cs">
       <DependentUpon>AlbumListItemControl.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Window\Lyric\LyricListItemControl.cs">
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Window\MainForm.cs">
       <SubType>Form</SubType>
@@ -140,44 +113,35 @@
     <Compile Include="Window\StackPanel.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Window\Album\AlbumCreateDialog.cs">
+    <Compile Include="Window\AlbumCreateDialog.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Window\Album\AlbumCreateDialog.Designer.cs">
+    <Compile Include="Window\AlbumCreateDialog.Designer.cs">
       <DependentUpon>AlbumCreateDialog.cs</DependentUpon>
     </Compile>
-    <Compile Include="Window\Album\AlbumForm.cs">
+    <Compile Include="Window\AlbumForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Window\Album\AlbumForm.Designer.cs">
+    <Compile Include="Window\AlbumForm.Designer.cs">
       <DependentUpon>AlbumForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Model\ALSongContainer.cs" />
-    <Compile Include="Model\Lyric.cs" />
-    <Compile Include="Model\LyricParser.cs" />
     <Compile Include="Extension\ExtensionList.cs" />
     <Compile Include="Util\MessageBoxUtil.cs" />
     <Compile Include="Util\CustomEventArgs.cs" />
     <Compile Include="Extension\ExtensionTimeSpan.cs" />
     <Compile Include="Util\Setting.cs" />
     <Compile Include="Model\Playlist.cs" />
-    <Compile Include="Window\Music\MusicListControl.cs">
+    <Compile Include="Window\MusicListControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Window\Music\MusicListControl.Designer.cs">
+    <Compile Include="Window\MusicListControl.Designer.cs">
       <DependentUpon>MusicListControl.cs</DependentUpon>
     </Compile>
-    <Compile Include="Window\WaitDialog.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Window\WaitDialog.Designer.cs">
-      <DependentUpon>WaitDialog.cs</DependentUpon>
-    </Compile>
     <Compile Include="Model\Music.cs" />
-    <Compile Include="Window\Music\MusicListItemControl.cs">
+    <Compile Include="Window\MusicListItemControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Window\Music\MusicListItemControl.Designer.cs">
+    <Compile Include="Window\MusicListItemControl.Designer.cs">
       <DependentUpon>MusicListItemControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Player.cs" />
@@ -190,50 +154,29 @@
     <Compile Include="Window\SettingForm.Designer.cs">
       <DependentUpon>SettingForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="MusicTagEditDialog.resx">
+    <EmbeddedResource Include="Window\MusicTagEditDialog.resx">
       <DependentUpon>MusicTagEditDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Window\Lyric\LyricEditDialog.ko.resx">
-      <DependentUpon>LyricEditDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Window\Lyric\LyricEditDialog.resx">
-      <DependentUpon>LyricEditDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Window\Lyric\ALSongLyricHeaderControl.resx">
-      <DependentUpon>ALSongLyricHeaderControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Window\Lyric\LyricEditForm.ko.resx">
-      <DependentUpon>LyricEditForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Window\Lyric\LyricEditForm.resx">
-      <DependentUpon>LyricEditForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Window\Lyric\LyricListControl.ko.resx">
-      <DependentUpon>LyricListControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Window\Lyric\LyricListControl.resx">
-      <DependentUpon>LyricListControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Window\Album\AlbumForm.ko.resx">
+    <EmbeddedResource Include="Window\AlbumForm.ko.resx">
       <DependentUpon>AlbumForm.cs</DependentUpon>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Window\Album\AlbumListControl.ko.resx">
+    <EmbeddedResource Include="Window\AlbumListControl.ko.resx">
       <DependentUpon>AlbumListControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Window\Album\AlbumListControl.resx">
+    <EmbeddedResource Include="Window\AlbumListControl.resx">
       <DependentUpon>AlbumListControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Window\Album\AlbumListItemControl.resx">
+    <EmbeddedResource Include="Window\AlbumListItemControl.resx">
       <DependentUpon>AlbumListItemControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Window\Album\AlbumCreateDialog.ko.resx">
+    <EmbeddedResource Include="Window\AlbumCreateDialog.ko.resx">
       <DependentUpon>AlbumCreateDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Window\Album\AlbumCreateDialog.resx">
+    <EmbeddedResource Include="Window\AlbumCreateDialog.resx">
       <DependentUpon>AlbumCreateDialog.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Window\Album\AlbumForm.resx">
+    <EmbeddedResource Include="Window\AlbumForm.resx">
       <DependentUpon>AlbumForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Window\MainForm.ko.resx">
@@ -245,19 +188,16 @@
     <EmbeddedResource Include="Window\MiniForm.resx">
       <DependentUpon>MiniForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Window\Music\MusicListControl.ko.resx">
+    <EmbeddedResource Include="Window\MusicListControl.ko.resx">
       <DependentUpon>MusicListControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Window\Music\MusicListControl.resx">
+    <EmbeddedResource Include="Window\MusicListControl.resx">
       <DependentUpon>MusicListControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Window\SettingForm.ko.resx">
       <DependentUpon>SettingForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Window\WaitDialog.resx">
-      <DependentUpon>WaitDialog.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Window\Music\MusicListItemControl.resx">
+    <EmbeddedResource Include="Window\MusicListItemControl.resx">
       <DependentUpon>MusicListItemControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -274,7 +214,6 @@
       <DependentUpon>SettingForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
-    <None Include="LICENSE" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

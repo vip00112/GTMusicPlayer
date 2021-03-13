@@ -17,7 +17,6 @@ namespace GTMusicPlayer
             Album = "Unknown";
             Title = "Unknown";
             Singers = new List<string>();
-            Lyrics = new List<Lyric>();
         }
         #endregion
 
@@ -30,6 +29,8 @@ namespace GTMusicPlayer
 
         public List<string> Singers { get; set; }
 
+        public string Lyric { get; set; }
+
         public TimeSpan DurationTime { get; set; }
 
         [JsonIgnore]
@@ -41,9 +42,6 @@ namespace GTMusicPlayer
                 return Path.GetFileNameWithoutExtension(FilePath);
             }
         }
-
-        [JsonIgnore]
-        public List<Lyric> Lyrics { get; set; }
 
         [JsonIgnore]
         public string ViewSinger
@@ -65,20 +63,6 @@ namespace GTMusicPlayer
             // 파일 존재 여부 확인
             if (!File.Exists(FilePath)) return false;
 
-            // 가사 파일 확인
-            string dirPath = Path.GetDirectoryName(FilePath);
-            string fileName = Path.GetFileNameWithoutExtension(FilePath) + ".lyric";
-            string lyricFilePath = Path.Combine(dirPath, fileName);
-            if (File.Exists(lyricFilePath))
-            {
-                string content = File.ReadAllText(lyricFilePath);
-                var lyrics = LyricParser.Convert(content);
-                if (lyrics != null && lyrics.Count > 0)
-                {
-                    Lyrics.Clear();
-                    Lyrics.AddRange(lyrics);
-                }
-            }
             return true;
         }
         #endregion

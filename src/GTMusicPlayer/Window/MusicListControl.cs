@@ -69,7 +69,6 @@ namespace GTMusicPlayer
 
             menuItem_deleteSelected.Enabled = _selectedItems.Count > 0;
             menuItem_deleteWithoutSelected.Enabled = _selectedItems.Count > 0;
-            menuItem_editLyric.Enabled = _itemByContextMenu != null;
 
             OnOpeningContextMenu?.Invoke(this, EventArgs.Empty);
         }
@@ -102,17 +101,6 @@ namespace GTMusicPlayer
         private void menuItem_deleteAll_Click(object sender, EventArgs e)
         {
             DeleteAll();
-        }
-
-        private void menuItem_editLyric_Click(object sender, EventArgs e)
-        {
-            if (_itemByContextMenu == null) return;
-
-            var form = FormUtil.ActiveForm<LyricEditForm>();
-            if (_itemByContextMenu.Music != null)
-            {
-                if (!form.InitEdit(_itemByContextMenu.Music)) form.SearchLyrics();
-            }
         }
 
         private void menuItem_editTag_Click(object sender, EventArgs e)
