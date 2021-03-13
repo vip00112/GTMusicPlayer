@@ -217,7 +217,7 @@ namespace GTMusicPlayer
         {
             if (Music == null) return;
 
-            var type = (ViewType) Setting.Instance.ViewType;
+            var type = Setting.Instance.ViewType;
             if (type == ViewType.TitleTag)
             {
                 metroLabel_title.Text = Music.Title;

@@ -1,4 +1,5 @@
-﻿using Newtonsoft.Json;
+﻿using MetroFramework;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -12,11 +13,11 @@ namespace GTMusicPlayer
     {
         private const string FileName = "Setting.josn";
 
-        private int _uiTheme;
-        private int _uistyle;
-        private int _repeatType;
-        private int _orderType;
-        private int _viewType;
+        private MetroThemeStyle _uiTheme;
+        private MetroColorStyle _uistyle;
+        private RepeatType _repeatType;
+        private OrderType _orderType;
+        private ViewType _viewType;
         private int _volume;
 
         static Setting()
@@ -42,7 +43,7 @@ namespace GTMusicPlayer
 
         public static bool IsLoaded { get; private set; }
 
-        public int UITheme
+        public MetroThemeStyle UITheme
         {
             get { return _uiTheme; }
             set
@@ -54,7 +55,7 @@ namespace GTMusicPlayer
             }
         }
 
-        public int UIStyle
+        public MetroColorStyle UIStyle
         {
             get { return _uistyle; }
             set
@@ -66,7 +67,7 @@ namespace GTMusicPlayer
             }
         }
 
-        public int RepeatType
+        public RepeatType RepeatType
         {
             get { return _repeatType; }
             set
@@ -78,7 +79,7 @@ namespace GTMusicPlayer
             }
         }
 
-        public int OrderType
+        public OrderType OrderType
         {
             get { return _orderType; }
             set
@@ -94,7 +95,7 @@ namespace GTMusicPlayer
             }
         }
 
-        public int ViewType
+        public ViewType ViewType
         {
             get { return _viewType; }
             set

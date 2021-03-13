@@ -16,6 +16,8 @@ namespace GTMusicPlayer
 {
     public partial class SettingForm : MetroForm
     {
+        private bool _isLoaded;
+
         #region Constructor
         public SettingForm()
         {
@@ -28,47 +30,68 @@ namespace GTMusicPlayer
         {
             GlobalStyleManager.Instance.ApplyManagerToControl(this);
 
-            metroComboBox_theme.SelectedIndex = ((int) GlobalStyleManager.Instance.Theme) - 1;
-            metroComboBox_style.SelectedIndex = ((int) GlobalStyleManager.Instance.Style) - 1;
-            metroComboBox_repeat.SelectedIndex = Setting.Instance.RepeatType;
-            metroComboBox_order.SelectedIndex = Setting.Instance.OrderType;
-            metroComboBox_view.SelectedIndex = Setting.Instance.ViewType;
+            metroComboBox_theme.DataSource = Enum.GetValues(typeof(MetroThemeStyle));
+            metroComboBox_theme.SelectedItem = GlobalStyleManager.Instance.Theme;
+
+            metroComboBox_style.DataSource = Enum.GetValues(typeof(MetroColorStyle));
+            metroComboBox_style.SelectedItem = GlobalStyleManager.Instance.Style;
+
+            metroComboBox_order.DataSource = Enum.GetValues(typeof(OrderType));
+            metroComboBox_order.SelectedItem = Setting.Instance.OrderType;
+
+            metroComboBox_repeat.DataSource = Enum.GetValues(typeof(RepeatType));
+            metroComboBox_repeat.SelectedItem = Setting.Instance.RepeatType;
+
+            metroComboBox_view.DataSource = Enum.GetValues(typeof(ViewType));
+            metroComboBox_view.SelectedItem = Setting.Instance.ViewType;
+
+            _isLoaded = true;
         }
 
         private void metroComboBox_theme_SelectedIndexChanged(object sender, EventArgs e)
         {
-            GlobalStyleManager.Instance.Theme = (MetroThemeStyle) metroComboBox_theme.SelectedIndex + 1;
-            Setting.Instance.UITheme = (int) GlobalStyleManager.Instance.Theme;
+            if (!_isLoaded) return;
+
+            GlobalStyleManager.Instance.Theme = (MetroThemeStyle) metroComboBox_theme.SelectedItem;
+            Setting.Instance.UITheme = GlobalStyleManager.Instance.Theme;
         }
 
         private void metroComboBox_style_SelectedIndexChanged(object sender, EventArgs e)
         {
-            GlobalStyleManager.Instance.Style = (MetroColorStyle) metroComboBox_style.SelectedIndex + 1;
-            Setting.Instance.UIStyle = (int) GlobalStyleManager.Instance.Style;
+            if (!_isLoaded) return;
+
+            GlobalStyleManager.Instance.Style = (MetroColorStyle) metroComboBox_style.SelectedItem;
+            Setting.Instance.UIStyle = GlobalStyleManager.Instance.Style;
         }
 
         private void metroComboBox_order_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Setting.Instance.OrderType = metroComboBox_order.SelectedIndex;
+            if (!_isLoaded) return;
+
+            Setting.Instance.OrderType = (OrderType) metroComboBox_order.SelectedItem;
         }
 
         private void metroComboBox_repeat_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Setting.Instance.RepeatType = metroComboBox_repeat.SelectedIndex;
+            if (!_isLoaded) return;
+
+            Setting.Instance.RepeatType = (RepeatType) metroComboBox_repeat.SelectedItem;
         }
 
         private void metroComboBox_view_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Setting.Instance.ViewType = metroComboBox_view.SelectedIndex;
+            if (!_isLoaded) return;
+
+            Setting.Instance.ViewType = (ViewType) metroComboBox_view.SelectedItem;
         }
 
         private void metroButton_default_Click(object sender, EventArgs e)
         {
-            metroComboBox_theme.SelectedIndex = (int) MetroThemeStyle.Dark - 1;
-            metroComboBox_style.SelectedIndex = (int) MetroColorStyle.Red - 1;
-            metroComboBox_repeat.SelectedIndex = (int) RepeatType.All;
-            metroComboBox_order.SelectedIndex = (int) OrderType.Orderd;
-            metroComboBox_view.SelectedIndex = (int) ViewType.TitleTag;
+            metroComboBox_theme.SelectedItem = MetroThemeStyle.Dark;
+            metroComboBox_style.SelectedItem = MetroColorStyle.Red;
+            metroComboBox_repeat.SelectedItem = RepeatType.All;
+            metroComboBox_order.SelectedItem = OrderType.Orderd;
+            metroComboBox_view.SelectedItem = ViewType.TitleTag;
         }
         #endregion
     }

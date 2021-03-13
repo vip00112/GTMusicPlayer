@@ -68,8 +68,8 @@ namespace GTMusicPlayer
 
             if (Setting.IsLoaded)
             {
-                metroStyleManager.Theme = (MetroThemeStyle) Setting.Instance.UITheme;
-                metroStyleManager.Style = (MetroColorStyle) Setting.Instance.UIStyle;
+                metroStyleManager.Theme = Setting.Instance.UITheme;
+                metroStyleManager.Style = Setting.Instance.UIStyle;
                 metroTrackBar_volume.Value = Setting.Instance.Volume;
 
                 musicListControl.ClearItems();
@@ -82,11 +82,11 @@ namespace GTMusicPlayer
             }
             else
             {
-                Setting.Instance.UITheme = (int) metroStyleManager.Theme;
-                Setting.Instance.UIStyle = (int) metroStyleManager.Style;
-                Setting.Instance.RepeatType = (int) RepeatType.All;
-                Setting.Instance.OrderType = (int) OrderType.Orderd;
-                Setting.Instance.OrderType = (int) ViewType.TitleTag;
+                Setting.Instance.UITheme = metroStyleManager.Theme;
+                Setting.Instance.UIStyle = metroStyleManager.Style;
+                Setting.Instance.RepeatType = RepeatType.All;
+                Setting.Instance.OrderType = OrderType.Orderd;
+                Setting.Instance.ViewType = ViewType.TitleTag;
                 Setting.Instance.Volume = metroTrackBar_volume.Value;
                 Setting.Instance.Save();
             }

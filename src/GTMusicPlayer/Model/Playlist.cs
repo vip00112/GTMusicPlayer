@@ -30,10 +30,10 @@ namespace GTMusicPlayer
 
         #region Properties
         [JsonIgnore]
-        public RepeatType RepeatType { get { return (RepeatType) Setting.Instance.RepeatType; } }
+        public RepeatType RepeatType { get { return Setting.Instance.RepeatType; } }
 
         [JsonIgnore]
-        public OrderType OrderType { get { return (OrderType) Setting.Instance.OrderType; } }
+        public OrderType OrderType { get { return Setting.Instance.OrderType; } }
 
         [JsonIgnore]
         public Music CurrentMusic { get; set; }
