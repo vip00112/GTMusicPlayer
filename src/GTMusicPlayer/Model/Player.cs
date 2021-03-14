@@ -122,13 +122,13 @@ namespace GTMusicPlayer
 
             try
             {
-                if (!music.Load())
+                if (!music.Load(true))
                 {
                     OnError?.Invoke(this, new MusicEventArgs(music, "Load failed. file does not exist."));
                     return;
                 }
 
-                _reader = CreateReader(music.FilePath);
+                _reader = CreateReader(music.FilePathForPlay);
                 _wavePlayer = new WaveOut(WaveCallbackInfo.FunctionCallback());
                 _wavePlayer.Init(_reader);
                 _wavePlayer.Volume = _volume;

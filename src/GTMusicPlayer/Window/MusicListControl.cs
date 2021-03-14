@@ -147,7 +147,7 @@ namespace GTMusicPlayer
             if (item == null) return;
 
             _items.Clear();
-            _selectedItems.Clear();
+            Unselect();
 
             _items.AddRange(e.Items);
 
@@ -254,7 +254,7 @@ namespace GTMusicPlayer
 
             metroLabel_count.Text = string.Format("Total : {0}", _items.Count);
 
-            if (!music.Load())
+            if (!music.Load(false))
             {
                 SetErrorUI(music, "Load failed. file does not exist.");
             }

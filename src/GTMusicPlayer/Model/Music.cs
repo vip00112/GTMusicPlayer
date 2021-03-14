@@ -34,6 +34,18 @@ namespace GTMusicPlayer
         public TimeSpan DurationTime { get; set; }
 
         [JsonIgnore]
+        public string FilePathForPlay
+        {
+            get
+            {
+                if (string.IsNullOrWhiteSpace(FilePath)) return null;
+                string dirPath = Path.GetDirectoryName(FilePath);
+                string extension = Path.GetExtension(FilePath);
+                return Path.Combine(dirPath, "CurrentMusic" + extension);
+            }
+        }
+
+        [JsonIgnore]
         public string FileName
         {
             get
@@ -58,10 +70,15 @@ namespace GTMusicPlayer
         #endregion
 
         #region Public Method
-        public bool Load()
+        public bool Load(bool isPlay)
         {
             // 파일 존재 여부 확인
             if (!File.Exists(FilePath)) return false;
+
+            if (isPlay)
+            {
+                File.Copy(FilePath, FilePathForPlay, true);
+            }
 
             return true;
         }
