@@ -157,7 +157,11 @@ namespace MetroFramework.Controls
         public bool UseStyleColors
         {
             get { return useStyleColors; }
-            set { useStyleColors = value; }
+            set
+            {
+                useStyleColors = value;
+                Invalidate();
+            }
         }
 
         [Browsable(false)]

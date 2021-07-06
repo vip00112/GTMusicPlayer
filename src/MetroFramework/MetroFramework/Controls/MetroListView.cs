@@ -17,7 +17,7 @@ namespace MetroFramework.Controls
     public partial class MetroListView : ListView, IMetroControl
     {
         private ListViewColumnSorter lvwColumnSorter;
-        private Font stdFont = new Font("Segoe UI", 11f, FontStyle.Regular, GraphicsUnit.Pixel);
+        private Font stdFont = MetroFonts.Default(11f);
         float _offset = 0.2F;
 
         #region Interface
@@ -143,7 +143,11 @@ namespace MetroFramework.Controls
         public bool UseStyleColors
         {
             get { return useStyleColors; }
-            set { useStyleColors = value; }
+            set
+            {
+                useStyleColors = value;
+                Invalidate();
+            }
         }
 
         [Browsable(false)]
@@ -286,15 +290,15 @@ namespace MetroFramework.Controls
         public void GetScrollPosition(out int min, out int max, out int pos, out int smallchange, out int largechange)
         {
             SCROLLINFO scrollinfo = new SCROLLINFO();
-            scrollinfo.cbSize = (uint)Marshal.SizeOf(typeof(SCROLLINFO));
-            scrollinfo.fMask = (int)ScrollInfoMask.SIF_ALL;
-            if (GetScrollInfo(this.Handle, (int)SBTYPES.SB_VERT, ref scrollinfo))
+            scrollinfo.cbSize = (uint) Marshal.SizeOf(typeof(SCROLLINFO));
+            scrollinfo.fMask = (int) ScrollInfoMask.SIF_ALL;
+            if (GetScrollInfo(this.Handle, (int) SBTYPES.SB_VERT, ref scrollinfo))
             {
                 min = scrollinfo.nMin;
                 max = scrollinfo.nMax;
                 pos = scrollinfo.nPos + 1;
                 smallchange = 1;
-                largechange = (int)scrollinfo.nPage;
+                largechange = (int) scrollinfo.nPage;
             }
             else
             {
@@ -327,7 +331,7 @@ namespace MetroFramework.Controls
 
         public void SetScrollPosition(int pos)
         {
-            pos = Math.Min(Items.Count -1, pos);
+            pos = Math.Min(Items.Count - 1, pos);
 
             if (pos < 0 || pos >= Items.Count)
                 return;
@@ -389,7 +393,7 @@ namespace MetroFramework.Controls
             }
             else if (m.Msg == WM_NCCALCSIZE) // WM_NCCALCSIZE
             {
-                int style = (int)GetWindowLong(this.Handle, GWL_STYLE);
+                int style = (int) GetWindowLong(this.Handle, GWL_STYLE);
                 if ((style & WS_VSCROLL) == WS_VSCROLL)
                     SetWindowLong(this.Handle, GWL_STYLE, style & ~WS_VSCROLL);
             }
@@ -410,17 +414,17 @@ namespace MetroFramework.Controls
         public static int GetWindowLong(IntPtr hWnd, int nIndex)
         {
             if (IntPtr.Size == 4)
-                return (int)GetWindowLong32(hWnd, nIndex);
+                return (int) GetWindowLong32(hWnd, nIndex);
             else
-                return (int)(long)GetWindowLongPtr64(hWnd, nIndex);
+                return (int) (long) GetWindowLongPtr64(hWnd, nIndex);
         }
 
         public static int SetWindowLong(IntPtr hWnd, int nIndex, int dwNewLong)
         {
             if (IntPtr.Size == 4)
-                return (int)SetWindowLongPtr32(hWnd, nIndex, dwNewLong);
+                return (int) SetWindowLongPtr32(hWnd, nIndex, dwNewLong);
             else
-                return (int)(long)SetWindowLongPtr64(hWnd, nIndex, dwNewLong);
+                return (int) (long) SetWindowLongPtr64(hWnd, nIndex, dwNewLong);
         }
 
         [DllImport("user32.dll", EntryPoint = "GetWindowLong", CharSet = CharSet.Auto)]
@@ -438,7 +442,9 @@ namespace MetroFramework.Controls
 
         public MetroListView()
         {
-            this.Font = new Font("Segoe UI", 12.0f);
+            this.Font = MetroFonts.Default(11f);
+            this.BackColor = MetroPaint.BackColor.Form(Theme);
+            this.ForeColor = MetroPaint.ForeColor.Button.Disabled(Theme);
             this.HideSelection = true;
 
             this.OwnerDraw = true;
@@ -539,7 +545,7 @@ namespace MetroFramework.Controls
             Color itemForeColor = MetroPaint.ForeColor.Button.Disabled(Theme);
             if (this.View == View.Details)
             {
-             
+
                 if (e.Item.Selected)
                 {
                     e.Graphics.FillRectangle(new SolidBrush(ControlPaint.Light(MetroPaint.GetStyleColor(Style), _offset)), e.Bounds);
@@ -723,7 +729,7 @@ namespace MetroFramework.Controls
                     Rectangle rect = new Rectangle(e.Item.Bounds.X + _left, e.Item.Bounds.Y + _fill, e.Item.Bounds.Width, e.Item.Bounds.Height);
 
                     TextFormatFlags align = TextFormatFlags.Left;
-                    TextRenderer.DrawText(e.Graphics, item.Text, new Font("Segoe UI", 9.0f), rect, itemForeColor, align | TextFormatFlags.SingleLine | TextFormatFlags.GlyphOverhangPadding | TextFormatFlags.WordEllipsis);
+                    TextRenderer.DrawText(e.Graphics, item.Text, MetroFonts.Default(11f), rect, itemForeColor, align | TextFormatFlags.SingleLine | TextFormatFlags.GlyphOverhangPadding | TextFormatFlags.WordEllipsis);
                     _fill += 15;
                 }
             }
@@ -851,8 +857,8 @@ public class ListViewColumnSorter : IComparer
         ListViewItem listviewX, listviewY;
 
         // Cast the objects to be compared to ListViewItem objects
-        listviewX = (ListViewItem)x;
-        listviewY = (ListViewItem)y;
+        listviewX = (ListViewItem) x;
+        listviewY = (ListViewItem) y;
 
         DateTime dateX;
         DateTime dateY;

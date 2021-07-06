@@ -199,7 +199,11 @@ namespace MetroFramework.Controls
         public bool UseStyleColors
         {
             get { return useStyleColors; }
-            set { useStyleColors = value; }
+            set
+            {
+                useStyleColors = value;
+                Invalidate();
+            }
         }
 
         [Browsable(false)]
@@ -287,6 +291,9 @@ namespace MetroFramework.Controls
             }
         }
 
+        [DefaultValue(false)]
+        [Category(MetroDefaults.PropertyCategory.Appearance)]
+        public bool HideHeaderOnRuntime { get; set; }
         #endregion
 
         #region Constructor
@@ -488,7 +495,6 @@ namespace MetroFramework.Controls
         #endregion
 
         #region Overridden Methods
-
         protected override void OnEnabledChanged(EventArgs e)
         {
             base.OnEnabledChanged(e);
@@ -575,6 +581,13 @@ namespace MetroFramework.Controls
             base.OnCreateControl();
             this.OnFontChanged(EventArgs.Empty);
             FindUpDown();
+
+            if (HideHeaderOnRuntime)
+            {
+                Appearance = TabAppearance.FlatButtons;
+                ItemSize = new Size(0, 1);
+                SizeMode = TabSizeMode.Fixed;
+            }
         }
 
         protected override void OnControlAdded(ControlEventArgs e)

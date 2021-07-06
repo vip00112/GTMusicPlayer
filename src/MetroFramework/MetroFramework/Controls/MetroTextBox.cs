@@ -151,7 +151,11 @@ namespace MetroFramework.Controls
         public bool UseStyleColors
         {
             get { return useStyleColors; }
-            set { useStyleColors = value; }
+            set
+            {
+                useStyleColors = value;
+                Invalidate();
+            }
         }
 
         [Browsable(false)]
@@ -1239,7 +1243,11 @@ namespace MetroFramework.Controls
             public bool UseStyleColors
             {
                 get { return useStyleColors; }
-                set { useStyleColors = value; }
+                set
+                {
+                    useStyleColors = value;
+                    Invalidate();
+                }
             }
 
             [Browsable(false)]
@@ -1429,7 +1437,7 @@ namespace MetroFramework.Controls
                             break;
                     }
 
-                    g.DrawImage((Theme == MetroThemeStyle.Dark) ? ((isPressed) ? _image : Image) : (isPressed) ? Image : _image, new Rectangle(iconLocation, iconSize));
+                    g.DrawImage((Theme == MetroThemeStyle.Dark || Theme == MetroThemeStyle.Default) ? ((isPressed) ? _image : Image) : (isPressed) ? Image : _image, new Rectangle(iconLocation, iconSize));
                 }
             }
 

@@ -64,7 +64,7 @@ namespace MetroFramework.Controls
                 }
                 if (StyleManager == null && metroStyle == MetroColorStyle.Default)
                 {
-                    return MetroColorStyle.Blue;
+                    return MetroDefaults.Style;
                 }
 
                 return metroStyle;
@@ -90,7 +90,7 @@ namespace MetroFramework.Controls
                 }
                 if (StyleManager == null && metroTheme == MetroThemeStyle.Default)
                 {
-                    return MetroThemeStyle.Light;
+                    return MetroDefaults.Theme;
                 }
 
                 return metroTheme;
@@ -131,7 +131,11 @@ namespace MetroFramework.Controls
         public bool UseStyleColors
         {
             get { return useStyleColors; }
-            set { useStyleColors = value; }
+            set
+            {
+                useStyleColors = value;
+                Invalidate();
+            }
         }
 
         [Browsable(false)]
@@ -211,7 +215,7 @@ namespace MetroFramework.Controls
             this.BackgroundColor = MetroPaint.BackColor.Form(Theme);
             this.GridColor = MetroPaint.BackColor.Form(Theme);
             this.ForeColor = MetroPaint.ForeColor.Button.Disabled(Theme);
-            this.Font = new Font("Segoe UI", 11f, FontStyle.Regular, GraphicsUnit.Pixel);
+            this.Font = MetroFonts.Default(11f);
 
             this.RowHeadersWidthSizeMode = DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.AllowUserToResizeRows = false;

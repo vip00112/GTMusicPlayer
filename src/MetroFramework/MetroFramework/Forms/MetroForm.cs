@@ -77,7 +77,7 @@ namespace MetroFramework.Forms
     {
         #region Interface
 
-        private MetroColorStyle metroStyle = MetroColorStyle.Blue;
+        private MetroColorStyle metroStyle = MetroColorStyle.Default;
         [Category(MetroDefaults.PropertyCategory.Appearance)]
         public MetroColorStyle Style
         {
@@ -88,10 +88,14 @@ namespace MetroFramework.Forms
 
                 return metroStyle;
             }
-            set { metroStyle = value; }
+            set
+            {
+                metroStyle = value;
+                Invalidate();
+            }
         }
 
-        private MetroThemeStyle metroTheme = MetroThemeStyle.Light;
+        private MetroThemeStyle metroTheme = MetroThemeStyle.Default;
 
         [Category(MetroDefaults.PropertyCategory.Appearance)]
         public MetroThemeStyle Theme
@@ -103,7 +107,11 @@ namespace MetroFramework.Forms
 
                 return metroTheme;
             }
-            set { metroTheme = value; }
+            set
+            {
+                metroTheme = value;
+                Invalidate();
+            }
         }
 
         private MetroStyleManager metroStyleManager = null;
@@ -111,7 +119,11 @@ namespace MetroFramework.Forms
         public MetroStyleManager StyleManager
         {
             get { return metroStyleManager; }
-            set { metroStyleManager = value; }
+            set
+            {
+                metroStyleManager = value;
+                Invalidate();
+            }
         }
 
         #endregion
@@ -124,7 +136,11 @@ namespace MetroFramework.Forms
         public MetroFormTextAlign TextAlign
         {
             get { return textAlign; }
-            set { textAlign = value; }
+            set
+            {
+                textAlign = value;
+                Invalidate();
+            }
         }
 
         [Browsable(false)]
@@ -140,7 +156,11 @@ namespace MetroFramework.Forms
         public MetroFormBorderStyle BorderStyle
         {
             get { return formBorderStyle; }
-            set { formBorderStyle = value; }
+            set
+            {
+                formBorderStyle = value;
+                Invalidate();
+            }
         }
 
         private bool isMovable = true;
@@ -148,7 +168,11 @@ namespace MetroFramework.Forms
         public bool Movable
         {
             get { return isMovable; }
-            set { isMovable = value; }
+            set
+            {
+                isMovable = value;
+                Invalidate();
+            }
         }
 
         public new Padding Padding
@@ -158,6 +182,7 @@ namespace MetroFramework.Forms
             {
                 value.Top = Math.Max(value.Top, DisplayHeader ? 60 : 30);
                 base.Padding = value;
+                Invalidate();
             }
         }
 
@@ -181,6 +206,7 @@ namespace MetroFramework.Forms
                     base.Padding = p;
                 }
                 displayHeader = value;
+                Invalidate();
             }
         }
 
@@ -189,7 +215,11 @@ namespace MetroFramework.Forms
         public bool Resizable
         {
             get { return isResizable; }
-            set { isResizable = value; }
+            set
+            {
+                isResizable = value;
+                Invalidate();
+            }
         }
 
         private MetroFormShadowType shadowType = MetroFormShadowType.Flat;
@@ -198,14 +228,22 @@ namespace MetroFramework.Forms
         public MetroFormShadowType ShadowType
         {
             get { return IsMdiChild ? MetroFormShadowType.None : shadowType; }
-            set { shadowType = value; }
+            set
+            {
+                shadowType = value;
+                Invalidate();
+            }
         }
 
         [Browsable(false)]
         public new FormBorderStyle FormBorderStyle
         {
             get { return base.FormBorderStyle; }
-            set { base.FormBorderStyle = value; }
+            set
+            {
+                base.FormBorderStyle = value;
+                Invalidate();
+            }
         }
 
         public new Form MdiParent
@@ -287,6 +325,16 @@ namespace MetroFramework.Forms
             {
                 _imageinvert = value;
                 Refresh();
+            }
+        }
+
+        public new string Text
+        {
+            get { return base.Text; }
+            set
+            {
+                base.Text = value;
+                Invalidate();
             }
         }
         #endregion
@@ -380,7 +428,7 @@ namespace MetroFramework.Forms
                 Image img = MetroImage.ResizeImage(backImage, new Rectangle(0, 0, backMaxSize, backMaxSize));
                 if (_imageinvert)
                 {
-                    img = MetroImage.ResizeImage((Theme == MetroThemeStyle.Dark) ? _image : backImage, new Rectangle(0, 0, backMaxSize, backMaxSize));
+                    img = MetroImage.ResizeImage((Theme == MetroThemeStyle.Dark || Theme == MetroThemeStyle.Default) ? _image : backImage, new Rectangle(0, 0, backMaxSize, backMaxSize));
                 }
 
                 switch (backLocation)
@@ -866,7 +914,11 @@ namespace MetroFramework.Forms
 
                     return metroStyle;
                 }
-                set { metroStyle = value; }
+                set
+                {
+                    metroStyle = value;
+                    Invalidate();
+                }
             }
 
             private MetroThemeStyle metroTheme = MetroThemeStyle.Default;
@@ -892,7 +944,11 @@ namespace MetroFramework.Forms
 
                     return metroTheme;
                 }
-                set { metroTheme = value; }
+                set
+                {
+                    metroTheme = value;
+                    Invalidate();
+                }
             }
 
             private MetroStyleManager metroStyleManager = null;
@@ -928,7 +984,11 @@ namespace MetroFramework.Forms
             public bool UseStyleColors
             {
                 get { return useStyleColors; }
-                set { useStyleColors = value; }
+                set
+                {
+                    useStyleColors = value;
+                    Invalidate();
+                }
             }
 
             [Browsable(false)]

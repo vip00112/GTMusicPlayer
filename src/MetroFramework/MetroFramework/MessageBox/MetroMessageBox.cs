@@ -196,6 +196,11 @@ namespace MetroFramework
                 //    _control.Style = ((MetroForm)_owner).Style;
                 //}
 
+                if (_owner.Size.Height <= 220)
+                {
+                    height = _owner.Size.Height - 20;
+                }
+
                 _control.Size = new Size(_owner.Size.Width, height);
                 _control.Location = new Point(_owner.Location.X, _owner.Location.Y + (_owner.Height - _control.Height) / 2);
                 _control.ArrangeApperance();

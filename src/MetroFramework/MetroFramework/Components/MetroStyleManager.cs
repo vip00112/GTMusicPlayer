@@ -38,7 +38,7 @@ namespace MetroFramework.Components
 
         private readonly IContainer parentContainer;
 
-        private MetroColorStyle metroStyle = MetroDefaults.Style;
+        private MetroColorStyle metroStyle = MetroColorStyle.Default;
         [DefaultValue(MetroDefaults.Style)]
         [Category(MetroDefaults.PropertyCategory.Appearance)]
         public MetroColorStyle Style
@@ -46,11 +46,6 @@ namespace MetroFramework.Components
             get { return metroStyle; }
             set
             {
-                if (value == MetroColorStyle.Default)
-                {
-                    value = MetroDefaults.Style;
-                }
-
                 metroStyle = value;
 
                 if (!isInitializing)
@@ -60,7 +55,7 @@ namespace MetroFramework.Components
             }
         }
 
-        private MetroThemeStyle metroTheme = MetroDefaults.Theme;
+        private MetroThemeStyle metroTheme = MetroThemeStyle.Default;
         [DefaultValue(MetroDefaults.Theme)]
         [Category(MetroDefaults.PropertyCategory.Appearance)]
         public MetroThemeStyle Theme
@@ -68,11 +63,6 @@ namespace MetroFramework.Components
             get { return metroTheme; }
             set
             {
-                if (value == MetroThemeStyle.Default)
-                {
-                    value = MetroDefaults.Theme;
-                }
-
                 metroTheme = value;
 
                 if (!isInitializing)

@@ -37,7 +37,7 @@ namespace MetroFramework.Components
     {
         #region Interface
 
-        private MetroColorStyle metroStyle = MetroColorStyle.Blue;
+        private MetroColorStyle metroStyle = MetroColorStyle.Default;
         [Category(MetroDefaults.PropertyCategory.Appearance)]
         public MetroColorStyle Style
         {
@@ -51,7 +51,7 @@ namespace MetroFramework.Components
             set { metroStyle = value; }
         }
 
-        private MetroThemeStyle metroTheme = MetroThemeStyle.Light;
+        private MetroThemeStyle metroTheme = MetroThemeStyle.Default;
         [Category(MetroDefaults.PropertyCategory.Appearance)]
         public MetroThemeStyle Theme
         {
@@ -178,7 +178,7 @@ namespace MetroFramework.Components
 
         private void MetroToolTip_Draw(object sender, DrawToolTipEventArgs e)
         {
-            MetroThemeStyle displayTheme = (Theme == MetroThemeStyle.Light) ? MetroThemeStyle.Dark : MetroThemeStyle.Light;
+            MetroThemeStyle displayTheme = (Theme == MetroThemeStyle.Dark || Theme == MetroThemeStyle.Default) ? MetroThemeStyle.Light : MetroThemeStyle.Dark;
 
             Color backColor = MetroPaint.BackColor.Form(displayTheme);
             Color borderColor = MetroPaint.BorderColor.Button.Normal(displayTheme);

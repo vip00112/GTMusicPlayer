@@ -177,8 +177,7 @@ namespace MetroFramework.Controls
             set
             {
                 useStyleColors = value;
-                if (DesignMode)
-                    Invalidate();
+                Invalidate();
             }
         }
 
@@ -444,7 +443,7 @@ private void DrawIcon(Graphics g)
 
         if (_nofocus == null)
         {
-            if (Theme == MetroThemeStyle.Dark)
+            if (Theme == MetroThemeStyle.Dark || Theme == MetroThemeStyle.Default)
             {
                 g.DrawImage((isHovered && !isPressed) ? _darkimg : _darklightimg, new Rectangle(iconLocation, new Size(_imgW, _imgH)));
             }
@@ -455,7 +454,7 @@ private void DrawIcon(Graphics g)
         }
         else
         {
-            if (Theme == MetroThemeStyle.Dark)
+            if (Theme == MetroThemeStyle.Dark || Theme == MetroThemeStyle.Default)
             {
                 g.DrawImage((isHovered && !isPressed) ? _darkimg : _nofocus, new Rectangle(iconLocation, new Size(_imgW, _imgH)));
             }

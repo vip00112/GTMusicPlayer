@@ -63,7 +63,7 @@ namespace MetroFramework.Controls
                 }
                 if (StyleManager == null && metroStyle == MetroColorStyle.Default)
                 {
-                    return MetroColorStyle.Blue;
+                    return MetroDefaults.Style;
                 }
 
                 return metroStyle;
@@ -89,7 +89,7 @@ namespace MetroFramework.Controls
                 }
                 if (StyleManager == null && metroTheme == MetroThemeStyle.Default)
                 {
-                    return MetroThemeStyle.Light;
+                    return MetroDefaults.Theme;
                 }
 
                 return metroTheme;
@@ -134,7 +134,11 @@ namespace MetroFramework.Controls
         public bool UseStyleColors
         {
             get { return useStyleColors; }
-            set { useStyleColors = value; }
+            set
+            {
+                useStyleColors = value;
+                Invalidate();
+            }
         }
 
         [Browsable(false)]
@@ -180,8 +184,8 @@ namespace MetroFramework.Controls
 
         private class contextcolors : ProfessionalColorTable
         {
-            MetroThemeStyle _theme = MetroThemeStyle.Light;
-            MetroColorStyle _style = MetroColorStyle.Blue;
+            MetroThemeStyle _theme = MetroDefaults.Theme;
+            MetroColorStyle _style = MetroDefaults.Style;
 
             public contextcolors(MetroFramework.MetroThemeStyle Theme, MetroColorStyle Style)
             {

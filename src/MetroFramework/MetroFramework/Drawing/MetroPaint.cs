@@ -47,7 +47,7 @@ namespace MetroFramework.Drawing
         {
             public static Color Form(MetroThemeStyle theme)
             {
-                if (theme == MetroThemeStyle.Dark)
+                if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                     return Color.FromArgb(68, 68, 68);
 
                 return Color.FromArgb(204, 204, 204);
@@ -57,7 +57,7 @@ namespace MetroFramework.Drawing
             {
                 public static Color Normal(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(68, 68, 68);
 
                     return Color.FromArgb(204, 204, 204);
@@ -65,7 +65,7 @@ namespace MetroFramework.Drawing
 
                 public static Color Hover(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(170, 170, 170);
 
                     return Color.FromArgb(102, 102, 102);
@@ -73,7 +73,7 @@ namespace MetroFramework.Drawing
 
                 public static Color Press(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(238, 238, 238);
 
                     return Color.FromArgb(51, 51, 51);
@@ -81,7 +81,7 @@ namespace MetroFramework.Drawing
 
                 public static Color Disabled(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(109, 109, 109);
 
                     return Color.FromArgb(155, 155, 155);
@@ -92,7 +92,7 @@ namespace MetroFramework.Drawing
             {
                 public static Color Normal(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(153, 153, 153);
 
                     return Color.FromArgb(153, 153, 153);
@@ -100,7 +100,7 @@ namespace MetroFramework.Drawing
 
                 public static Color Hover(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(204, 204, 204);
 
                     return Color.FromArgb(51, 51, 51);
@@ -108,7 +108,7 @@ namespace MetroFramework.Drawing
 
                 public static Color Press(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(153, 153, 153);
 
                     return Color.FromArgb(153, 153, 153);
@@ -116,7 +116,7 @@ namespace MetroFramework.Drawing
 
                 public static Color Disabled(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(85, 85, 85);
 
                     return Color.FromArgb(204, 204, 204);
@@ -127,7 +127,7 @@ namespace MetroFramework.Drawing
             {
                 public static Color Normal(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(153, 153, 153);
 
                     return Color.FromArgb(153, 153, 153);
@@ -135,7 +135,7 @@ namespace MetroFramework.Drawing
 
                 public static Color Hover(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(204, 204, 204);
 
                     return Color.FromArgb(51, 51, 51);
@@ -143,7 +143,7 @@ namespace MetroFramework.Drawing
 
                 public static Color Press(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(153, 153, 153);
 
                     return Color.FromArgb(153, 153, 153);
@@ -151,7 +151,7 @@ namespace MetroFramework.Drawing
 
                 public static Color Disabled(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(85, 85, 85);
 
                     return Color.FromArgb(204, 204, 204);
@@ -162,7 +162,7 @@ namespace MetroFramework.Drawing
             {
                 public static Color Normal(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(68, 68, 68);
 
                     return Color.FromArgb(204, 204, 204);
@@ -170,7 +170,7 @@ namespace MetroFramework.Drawing
 
                 public static Color Hover(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(68, 68, 68);
 
                     return Color.FromArgb(204, 204, 204);
@@ -178,7 +178,7 @@ namespace MetroFramework.Drawing
 
                 public static Color Press(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(68, 68, 68);
 
                     return Color.FromArgb(204, 204, 204);
@@ -186,7 +186,7 @@ namespace MetroFramework.Drawing
 
                 public static Color Disabled(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(109, 109, 109);
 
                     return Color.FromArgb(155, 155, 155);
@@ -197,7 +197,7 @@ namespace MetroFramework.Drawing
             {
                 public static Color Normal(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(68, 68, 68);
 
                     return Color.FromArgb(204, 204, 204);
@@ -205,7 +205,7 @@ namespace MetroFramework.Drawing
 
                 public static Color Hover(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(68, 68, 68);
 
                     return Color.FromArgb(204, 204, 204);
@@ -213,7 +213,7 @@ namespace MetroFramework.Drawing
 
                 public static Color Press(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(68, 68, 68);
 
                     return Color.FromArgb(204, 204, 204);
@@ -221,7 +221,7 @@ namespace MetroFramework.Drawing
 
                 public static Color Disabled(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(109, 109, 109);
 
                     return Color.FromArgb(155, 155, 155);
@@ -233,7 +233,7 @@ namespace MetroFramework.Drawing
         {
             //public static Color Form(MetroThemeStyle theme)
             //{
-            //    if (theme == MetroThemeStyle.Dark)
+            //    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
             //        return Color.FromArgb(17, 17, 17);
 
             //    return Color.FromArgb(255, 255, 255);
@@ -241,7 +241,7 @@ namespace MetroFramework.Drawing
 
             public static Color Form(MetroThemeStyle theme)
             {
-                if (theme == MetroThemeStyle.Dark)
+                if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                     return Color.FromArgb(33, 33, 33);
 
                 return Color.FromArgb(238, 238, 238);
@@ -251,7 +251,7 @@ namespace MetroFramework.Drawing
             {
                 public static Color Normal(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(33, 33, 33);
 
                     return Color.FromArgb(238, 238, 238);
@@ -259,7 +259,7 @@ namespace MetroFramework.Drawing
 
                 public static Color Hover(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(170, 170, 170);
 
                     return Color.FromArgb(102, 102, 102);
@@ -267,7 +267,7 @@ namespace MetroFramework.Drawing
 
                 public static Color Press(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(238, 238, 238);
 
                     return Color.FromArgb(51, 51, 51);
@@ -275,7 +275,7 @@ namespace MetroFramework.Drawing
 
                 public static Color Disabled(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(80, 80, 80);
 
                     return Color.FromArgb(204, 204, 204);
@@ -288,7 +288,7 @@ namespace MetroFramework.Drawing
                 {
                     public static Color Normal(MetroThemeStyle theme)
                     {
-                        if (theme == MetroThemeStyle.Dark)
+                        if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                             return Color.FromArgb(153, 153, 153);
 
                         return Color.FromArgb(102, 102, 102);
@@ -296,7 +296,7 @@ namespace MetroFramework.Drawing
 
                     public static Color Hover(MetroThemeStyle theme)
                     {
-                        if (theme == MetroThemeStyle.Dark)
+                        if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                             return Color.FromArgb(204, 204, 204);
 
                         return Color.FromArgb(17, 17, 17);
@@ -304,7 +304,7 @@ namespace MetroFramework.Drawing
 
                     public static Color Press(MetroThemeStyle theme)
                     {
-                        if (theme == MetroThemeStyle.Dark)
+                        if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                             return Color.FromArgb(204, 204, 204);
 
                         return Color.FromArgb(17, 17, 17);
@@ -312,7 +312,7 @@ namespace MetroFramework.Drawing
 
                     public static Color Disabled(MetroThemeStyle theme)
                     {
-                        if (theme == MetroThemeStyle.Dark)
+                        if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                             return Color.FromArgb(85, 85, 85);
 
                         return Color.FromArgb(179, 179, 179);
@@ -323,7 +323,7 @@ namespace MetroFramework.Drawing
                 {
                     public static Color Normal(MetroThemeStyle theme)
                     {
-                        if (theme == MetroThemeStyle.Dark)
+                        if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                             return Color.FromArgb(51, 51, 51);
 
                         return Color.FromArgb(204, 204, 204);
@@ -331,7 +331,7 @@ namespace MetroFramework.Drawing
 
                     public static Color Hover(MetroThemeStyle theme)
                     {
-                        if (theme == MetroThemeStyle.Dark)
+                        if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                             return Color.FromArgb(51, 51, 51);
 
                         return Color.FromArgb(204, 204, 204);
@@ -339,7 +339,7 @@ namespace MetroFramework.Drawing
 
                     public static Color Press(MetroThemeStyle theme)
                     {
-                        if (theme == MetroThemeStyle.Dark)
+                        if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                             return Color.FromArgb(51, 51, 51);
 
                         return Color.FromArgb(204, 204, 204);
@@ -347,7 +347,7 @@ namespace MetroFramework.Drawing
 
                     public static Color Disabled(MetroThemeStyle theme)
                     {
-                        if (theme == MetroThemeStyle.Dark)
+                        if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                             return Color.FromArgb(34, 34, 34);
 
                         return Color.FromArgb(230, 230, 230);
@@ -361,7 +361,7 @@ namespace MetroFramework.Drawing
                 {
                     public static Color Normal(MetroThemeStyle theme)
                     {
-                        if (theme == MetroThemeStyle.Dark)
+                        if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                             return Color.FromArgb(51, 51, 51);
 
                         return Color.FromArgb(221, 221, 221);
@@ -369,7 +369,7 @@ namespace MetroFramework.Drawing
 
                     public static Color Hover(MetroThemeStyle theme)
                     {
-                        if (theme == MetroThemeStyle.Dark)
+                        if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                             return Color.FromArgb(204, 204, 204);
 
                         return Color.FromArgb(96, 96, 96);
@@ -377,7 +377,7 @@ namespace MetroFramework.Drawing
 
                     public static Color Press(MetroThemeStyle theme)
                     {
-                        if (theme == MetroThemeStyle.Dark)
+                        if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                             return Color.FromArgb(204, 204, 204);
 
                         return Color.FromArgb(96, 96, 96);
@@ -385,7 +385,7 @@ namespace MetroFramework.Drawing
 
                     public static Color Disabled(MetroThemeStyle theme)
                     {
-                        if (theme == MetroThemeStyle.Dark)
+                        if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                             return Color.FromArgb(51, 51, 51);
 
                         return Color.FromArgb(221, 221, 221);
@@ -396,7 +396,7 @@ namespace MetroFramework.Drawing
                 {
                     public static Color Normal(MetroThemeStyle theme)
                     {
-                        if (theme == MetroThemeStyle.Dark)
+                        if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                             return Color.FromArgb(33, 33, 33);
 
                         return Color.FromArgb(234, 234, 234);
@@ -404,7 +404,7 @@ namespace MetroFramework.Drawing
 
                     public static Color Hover(MetroThemeStyle theme)
                     {
-                        if (theme == MetroThemeStyle.Dark)
+                        if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                             return Color.FromArgb(33, 33, 33);
 
                         return Color.FromArgb(234, 234, 234);
@@ -412,7 +412,7 @@ namespace MetroFramework.Drawing
 
                     public static Color Press(MetroThemeStyle theme)
                     {
-                        if (theme == MetroThemeStyle.Dark)
+                        if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                             return Color.FromArgb(33, 33, 33);
 
                         return Color.FromArgb(234, 234, 234);
@@ -420,7 +420,7 @@ namespace MetroFramework.Drawing
 
                     public static Color Disabled(MetroThemeStyle theme)
                     {
-                        if (theme == MetroThemeStyle.Dark)
+                        if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                             return Color.FromArgb(33, 33, 33);
 
                         return Color.FromArgb(234, 234, 234);
@@ -434,7 +434,7 @@ namespace MetroFramework.Drawing
                 {
                     public static Color Normal(MetroThemeStyle theme)
                     {
-                        if (theme == MetroThemeStyle.Dark)
+                        if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                             return Color.FromArgb(33, 33, 33);
 
                         return Color.FromArgb(234, 234, 234);
@@ -442,7 +442,7 @@ namespace MetroFramework.Drawing
 
                     public static Color Hover(MetroThemeStyle theme)
                     {
-                        if (theme == MetroThemeStyle.Dark)
+                        if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                             return Color.FromArgb(33, 33, 33);
 
                         return Color.FromArgb(234, 234, 234);
@@ -450,7 +450,7 @@ namespace MetroFramework.Drawing
 
                     public static Color Press(MetroThemeStyle theme)
                     {
-                        if (theme == MetroThemeStyle.Dark)
+                        if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                             return Color.FromArgb(33, 33, 33);
 
                         return Color.FromArgb(234, 234, 234);
@@ -458,7 +458,7 @@ namespace MetroFramework.Drawing
 
                     public static Color Disabled(MetroThemeStyle theme)
                     {
-                        if (theme == MetroThemeStyle.Dark)
+                        if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                             return Color.FromArgb(51, 51, 51);
 
                         return Color.FromArgb(221, 221, 221);
@@ -473,7 +473,7 @@ namespace MetroFramework.Drawing
             {
                 public static Color Normal(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(204, 204, 204);
 
                     return Color.FromArgb(0, 0, 0);
@@ -481,7 +481,7 @@ namespace MetroFramework.Drawing
 
                 public static Color Hover(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(17, 17, 17);
 
                     return Color.FromArgb(255, 255, 255);
@@ -489,7 +489,7 @@ namespace MetroFramework.Drawing
 
                 public static Color Press(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(17, 17, 17);
 
                     return Color.FromArgb(255, 255, 255);
@@ -497,7 +497,7 @@ namespace MetroFramework.Drawing
 
                 public static Color Disabled(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(109, 109, 109);
 
                     return Color.FromArgb(136, 136, 136);
@@ -506,7 +506,7 @@ namespace MetroFramework.Drawing
 
             public static Color Title(MetroThemeStyle theme)
             {
-                if (theme == MetroThemeStyle.Dark)
+                if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                     return Color.FromArgb(255, 255, 255);
 
                 return Color.FromArgb(0, 0, 0);
@@ -516,7 +516,7 @@ namespace MetroFramework.Drawing
             {
                 public static Color Normal(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(255, 255, 255);
 
                     return Color.FromArgb(255, 255, 255);
@@ -524,7 +524,7 @@ namespace MetroFramework.Drawing
 
                 public static Color Hover(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(255, 255, 255);
 
                     return Color.FromArgb(255, 255, 255);
@@ -532,7 +532,7 @@ namespace MetroFramework.Drawing
 
                 public static Color Press(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(255, 255, 255);
 
                     return Color.FromArgb(255, 255, 255);
@@ -540,7 +540,7 @@ namespace MetroFramework.Drawing
 
                 public static Color Disabled(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(209, 209, 209);
 
                     return Color.FromArgb(209, 209, 209);
@@ -551,7 +551,7 @@ namespace MetroFramework.Drawing
             {
                 public static Color Normal(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(170, 170, 170);
 
                     return Color.FromArgb(0, 0, 0);
@@ -559,7 +559,7 @@ namespace MetroFramework.Drawing
 
                 public static Color Hover(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(93, 93, 93);
 
                     return Color.FromArgb(128, 128, 128);
@@ -567,7 +567,7 @@ namespace MetroFramework.Drawing
 
                 public static Color Press(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(93, 93, 93);
 
                     return Color.FromArgb(128, 128, 128);
@@ -575,7 +575,7 @@ namespace MetroFramework.Drawing
 
                 public static Color Disabled(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(51, 51, 51);
 
                     return Color.FromArgb(209, 209, 209);
@@ -586,7 +586,7 @@ namespace MetroFramework.Drawing
             {
                 public static Color Normal(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(170, 170, 170);
 
                     return Color.FromArgb(0, 0, 0);
@@ -594,7 +594,7 @@ namespace MetroFramework.Drawing
 
                 public static Color Disabled(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(51, 51, 51);
 
                     return Color.FromArgb(209, 209, 209);
@@ -605,7 +605,7 @@ namespace MetroFramework.Drawing
             {
                 public static Color Normal(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(170, 170, 170);
 
                     return Color.FromArgb(17, 17, 17);
@@ -613,7 +613,7 @@ namespace MetroFramework.Drawing
 
                 public static Color Hover(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(153, 153, 153);
 
                     return Color.FromArgb(153, 153, 153);
@@ -621,7 +621,7 @@ namespace MetroFramework.Drawing
 
                 public static Color Press(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(153, 153, 153);
 
                     return Color.FromArgb(153, 153, 153);
@@ -629,7 +629,7 @@ namespace MetroFramework.Drawing
 
                 public static Color Disabled(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(93, 93, 93);
 
                     return Color.FromArgb(136, 136, 136);
@@ -640,7 +640,7 @@ namespace MetroFramework.Drawing
             {
                 public static Color Normal(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(153, 153, 153);
 
                     return Color.FromArgb(153, 153, 153);
@@ -648,7 +648,7 @@ namespace MetroFramework.Drawing
 
                 public static Color Hover(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(170, 170, 170);
 
                     return Color.FromArgb(17, 17, 17);
@@ -656,7 +656,7 @@ namespace MetroFramework.Drawing
 
                 public static Color Press(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(153, 153, 153);
 
                     return Color.FromArgb(153, 153, 153);
@@ -664,7 +664,7 @@ namespace MetroFramework.Drawing
 
                 public static Color Disabled(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(93, 93, 93);
 
                     return Color.FromArgb(136, 136, 136);
@@ -675,7 +675,7 @@ namespace MetroFramework.Drawing
             {
                 public static Color Normal(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(170, 170, 170);
 
                     return Color.FromArgb(0, 0, 0);
@@ -683,7 +683,7 @@ namespace MetroFramework.Drawing
 
                 public static Color Disabled(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(51, 51, 51);
 
                     return Color.FromArgb(209, 209, 209);
@@ -694,7 +694,7 @@ namespace MetroFramework.Drawing
             {
                 public static Color Normal(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(170, 170, 170);
 
                     return Color.FromArgb(0, 0, 0);
@@ -702,7 +702,7 @@ namespace MetroFramework.Drawing
 
                 public static Color Disabled(MetroThemeStyle theme)
                 {
-                    if (theme == MetroThemeStyle.Dark)
+                    if (theme == MetroThemeStyle.Dark || theme == MetroThemeStyle.Default)
                         return Color.FromArgb(51, 51, 51);
 
                     return Color.FromArgb(209, 209, 209);
@@ -759,7 +759,7 @@ namespace MetroFramework.Drawing
                     return MetroColors.Yellow;
 
                 default:
-                    return MetroColors.Blue;
+                    return MetroColors.Red;
             }
         }
 
@@ -810,7 +810,7 @@ namespace MetroFramework.Drawing
                     return MetroBrushes.Yellow;
 
                 default:
-                    return MetroBrushes.Blue;
+                    return MetroBrushes.Red;
             }
         }
 
@@ -861,7 +861,7 @@ namespace MetroFramework.Drawing
                     return MetroPens.Yellow;
 
                 default:
-                    return MetroPens.Blue;
+                    return MetroPens.Red;
             }
         }
 
